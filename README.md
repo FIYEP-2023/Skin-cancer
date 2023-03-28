@@ -1,7 +1,6 @@
 # Skin-cancer
 
-### Bachelor of Science in Data Science, ITU Copenhagen 2022/23
-### First Year Project
+### Bachelor of Science in Data Science, ITU Copenhagen 2022/23 - First Year Project
 
 ## Second project: analysis of skin lesions
 
