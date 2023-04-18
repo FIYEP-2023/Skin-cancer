@@ -9,7 +9,7 @@ at the start. The only requirement is that there are at least two
 categories of images.
 
 ## Answer
-- The images contain either skin cancer, or skin diseases. The cancer ones are BCC, SCC, MEL and BOD (merged within SCC). The rest, ACK, NEV, and SEK are skin diseases.   
+- The images contain either skin cancer, or skin diseases. The cancer ones are BCC, SCC, MEL and BOD(?) (merged within SCC) (Basal Cell Carcinoma, Squamous Cell Carcinoma, Melanoma). The rest, ACK, NEV, and SEK are skin diseases (Actinic Keratosis, Nevus, Seborrheic Keratosis).   
 - Some datapoints are missing, such as background_father and smoke.  
 - Images are of varying quality and size, though all are square, though some are one pixel off e.g. 1189x1190.  
 The sizes vary wildly, from 147x147 to 3474x3476. The focus of the images also varies.  
