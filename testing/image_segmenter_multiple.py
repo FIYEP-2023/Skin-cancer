@@ -17,7 +17,7 @@ for file_im in files:
     im = plt.imread('testimages/' + file_im)
     # Remove fourth dimension - transparency
     im = im[:,:,:3]
-    im = rgb2gray(im)
+    # im = rgb2gray(im)
     # im = im[0:1500,1000:2500]
 
     #Resize for speed
@@ -51,4 +51,4 @@ for file_im in files:
     print(file_im)
 
     # Export image to file
-    plt.imsave('snakes/' + file_im, im)
+    # plt.imsave('snakes/' + file_im, im)
