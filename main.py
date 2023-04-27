@@ -34,12 +34,12 @@ def main():
     imgs = os.listdir("data/segmented")
     # Choose first image and corresponding mask
     img = [i for i in imgs if "mask" not in i][0]
-    mask = img.replace(".jpg", "_mask.jpg")
+    mask = img[:-4] + "_mask.png"
 
     # Load image
     img = plt.imread(f"data/segmented/{img}")
     mask = plt.imread(f"data/segmented/{mask}")
-
+    
     # Feature extraction
     if args.extract is not None:
         result = extract_features(args.extract, img, mask)
