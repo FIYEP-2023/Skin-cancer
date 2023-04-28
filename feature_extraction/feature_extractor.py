@@ -7,16 +7,19 @@ class FeatureExtractor:
         return 0 # return the value of the feature
 
     def compactness(self, img, mask):
-        if img.shape[2] == 4: # if img has 4th dim (alpha)
-            img = np.delete(img, 3, 2) # remove alpha
-
-        brush = ndimage.generate_binary_structure(3, 1) # create 3 dim erosion brush
+        brush = ndimage.generate_binary_structure(2, 1) # create 2 dim erosion brush
         eroded = ndimage.binary_erosion(mask, brush) # eroded mask
         p = np.sum(mask - eroded) # find perimeter
 
+        ''' use following to plot '''
+        # import matplotlib.pyplot as plt
+        ''' can use mask-eroded / mask / brush / eroded'''
+        # plt.imshow(mask-eroded)
+        # plt.show()
+
         area = np.sum(mask) # lesion area
 
-        c = (p**2)/(4*area)
+        c = (p**2)/(4*area) # calculate compactness
         return c
     
     def color(self, img, mask):
