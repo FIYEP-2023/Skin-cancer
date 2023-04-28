@@ -2,7 +2,7 @@ import argparse
 import os
 import matplotlib.pyplot as plt
 # types
-from numpy import ndarray
+import numpy as np
 
 def add_args():
     parser = argparse.ArgumentParser()
@@ -11,7 +11,22 @@ def add_args():
     args = parser.parse_args()
     return args
 
-def extract_features(feat_type: str, img: ndarray, mask: ndarray):
+def clean_image(img: np.ndarray, to_binary: bool = False):
+    # Check if image contains alpha channel
+    if img.shape[2] == 4:
+        # Remove alpha channel
+        img = img[:, :, :3]
+    
+    # Convert to binary if specified
+    if to_binary:
+        # Merge all color channels
+        img = img.mean(axis=2)
+        # Convert to binary
+        img = (img > 0).astype(np.uint8)
+
+    return img
+
+def extract_features(feat_type: str, img: np.ndarray, mask: np.ndarray):
     from feature_extraction.feature_extractor import FeatureExtractor
     extractor = FeatureExtractor()
 
@@ -39,6 +54,10 @@ def main():
     # Load image
     img = plt.imread(f"data/segmented/{img}")
     mask = plt.imread(f"data/segmented/{mask}")
+
+    # Clean image
+    img = clean_image(img)
+    mask = clean_image(mask, to_binary=True)
     
     # Feature extraction
     if args.extract is not None:
