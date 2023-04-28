@@ -1,13 +1,12 @@
+from scipy import ndimage # updated morphology in newest scipy(?)
+import numpy as np # needs full import for np.delete(?)
+
 class FeatureExtractor:
     def asymmetry(self, img, mask):
         print("uwu")
         return 0 # return the value of the feature
 
     def compactness(self, img, mask):
-        ''' move these imports upwards if used in other functions too (?) '''
-        from scipy import ndimage # updated morphology in newest scipy(?)
-        import numpy as np # needs full import for np.delete(?)
-
         if img.shape[2] == 4: # if img has 4th dim (alpha)
             img = np.delete(img, 3, 2) # remove alpha
 
