@@ -1,5 +1,6 @@
 from scipy import ndimage # updated morphology in newest scipy(?)
 import numpy as np # needs full import for np.delete(?)
+import math # for pi and sqrt
 from statistics import mean # for mean
 # from timeit import default_timer as timer
 
@@ -215,7 +216,7 @@ class FeatureExtractor:
 
         area = np.sum(mask) # lesion area
 
-        c = (p**2)/(4*area) # calculate compactness
+        c = (p**2)/(4*math.pi*area) # calculate compactness
         return c
     
     def color(self, img, mask):
