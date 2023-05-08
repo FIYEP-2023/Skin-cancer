@@ -8,6 +8,7 @@ def add_args():
     parser = argparse.ArgumentParser()
     parser.add_argument("--test", "-t", help="run main on a single image file", action="store_true")
     parser.add_argument("--extract", "-e", help="extract a specific feature or all features")
+    parser.add_argument("--image", "-i", help="image to extract features from. Format like 'PAT_86_1082_41.png'. The .png is optional", default=None)
     args = parser.parse_args()
     return args
 
@@ -47,6 +48,10 @@ def main():
     
     # Get testing image
     imgs = os.listdir("data/segmented")
+    
+    # Choose user specified image
+    if args.image is not None:
+        imgs = [i for i in imgs if args.image in i]
     # Choose first image and corresponding mask
     img = [i for i in imgs if "mask" not in i][0]
     mask = img[:-4] + "_mask.png"
