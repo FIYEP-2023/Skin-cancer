@@ -3,6 +3,9 @@ import numpy as np # needs full import for np.delete(?)
 import math # for pi and sqrt
 from statistics import mean # for mean
 # from timeit import default_timer as timer
+import matplotlib.pyplot as plt # for testing
+import skimage
+import json
 
 class FeatureExtractor:
 
@@ -248,9 +251,39 @@ class FeatureExtractor:
         return 0
 
     def filters(self, img, mask):
-        print("OwO")
-        return 0
-    
+        # Apply multiscale filters
+        filtered = skimage.feature.multiscale_basic_features(img, channel_axis=2)
+        
+        n_features = filtered.shape[2]
+        if not n_features == 72:
+            raise ValueError(f"Expected 72 features, got {n_features}")
+        # Extract each feature and get the leasion part only
+        lesion_features = [filtered[:,:,i][mask==1] for i in range(n_features)]
+        
+        #region Bin size creator
+        # Create n bins of different width, with the same number of elements in each bin
+        # n_bins = 10
+        # quantile_bins = np.array([np.quantile(lesion_features[i]*256, np.arange(0,1,1/n_bins)) for i in range(n_features)])
+        #
+        # Verify that each bin has the same number of elements
+        # print([np.sum((lesion_features[feat_num]*256 > quantile_bins[i]) & (lesion_features[feat_num]*256 < quantile_bins[i+1])) for i in range(len(quantile_bins)-1)])
+        #endregion
+
+        # Load bin widths from feature_extraction/filter_bins_default.json
+        bins = json.load(open("feature_extraction/filter_bins_default.json", "r")).get("filter_bins")
+        if len(bins) != len(lesion_features):
+            raise ValueError(f"Expected {len(lesion_features)} bins, got {len(bins)}")
+        # bins is a n*m array, where n is the number of features and m is the number of bins for each feature
+        # each value is the upper bound of the bin. It is built from PAT_637_1434_684.
+
+        # Turn each feature into a histogram
+        hist_features = [np.histogram(lesion_features[i]*256, bins=bins[i])[0] for i in range(n_features)]
+        
+        # Each bin in each histogram is a feature, represented as the difference between the base image (PAT_637_1434_684) and this one
+        merged = np.concatenate(hist_features)
+        return merged
+
+
     def figure_something_out_you_are_original(self, img, mask):
         print(".w.")
         return 0
