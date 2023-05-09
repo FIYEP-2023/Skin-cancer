@@ -319,12 +319,15 @@ class FeatureExtractor:
         merged = np.concatenate(hist_features)
         return merged
     
-    def do_all(self, img, mask):
+    def do_all(self, img, mask) -> np.ndarray:
         # do all of them
-        asymmetry = self.asymmetry(img, mask)
-        compactness = self.compactness(img, mask)
-        return (asymmetry, compactness)
-    
+        asymmetry = np.array([self.asymmetry(img, mask)])
+        compactness = np.array([self.compactness(img, mask)])
+        color = np.array(self.color(img, mask))
+        filters = self.filters(img, mask)
+        merged = np.concatenate([asymmetry, compactness, color, filters])
+        return merged
+
     def extract_feat(self, feat: str, img, mask):
         """
         Runs the method with the name of `feat`
