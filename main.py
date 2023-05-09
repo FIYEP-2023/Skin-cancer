@@ -39,6 +39,7 @@ def extract_features(args):
         path = "data/resized"
         imgs = os.listdir("data/resized")
     else:
+        print("Warning: Resized images not found, proceeding with original sizes.")
         path = "data/segmented"
         imgs = os.listdir("data/segmented")
 
