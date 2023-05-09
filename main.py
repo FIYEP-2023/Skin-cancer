@@ -12,6 +12,9 @@ def add_args():
     group.add_argument("--random", "-r", help="extract features from a random image in the dataset", action="store_true")
     group.add_argument("--image", "-i", help="image to extract features from. Format like 'PAT_86_1082_41.png'. The .png is optional", default=None)
     group.add_argument("--images", "-is", help="number of images to extract features from, or 'all' for all images", default=None)
+    # pca
+    parser.add_argument("--pca", "-p", help="perform pca on the extracted features", action="store_true")
+    parser.add_argument("--has_cancer", "-hc", help="check if the images have cancer", action="store_true")
     args = parser.parse_args()
     return args
 
@@ -80,6 +83,13 @@ def extract_features(args):
             result = extract(img, mask)
             feats.append(result)
         
+        # Get labels
+        labels = has_cancer(non_masks)
+
+        # Save features and labels to file
+        np.save("data/features/X.npy", feats)
+        np.save("data/features/y.npy", labels)
+
         return feats
 
     # Choose first image and corresponding mask
@@ -105,16 +115,98 @@ def resize_images(size=(1024, 1024)):
         img.save(f"data/resized/{img_name}")
     print("Done!")
 
+def has_cancer(img_names: np.ndarray):
+    # Load csv
+    import pandas as pd
+    df = pd.read_csv("data/metadata.csv")
+    # Get labels
+    cancerous = ["BCC", "SCC", "MEL"]
+    labels = []
+    for img_name in img_names:
+        diagnosis = df.loc[df["img_id"] == img_name]["diagnostic"].values[0]
+        cancer = diagnosis in cancerous
+        labels.append(cancer)
+    
+    return np.array(labels)
+
+def pca():
+    # Load features and labels from file
+    X = np.load("data/features/X.npy")
+    y = np.load("data/features/y.npy")
+
+    # Perform PCA
+    from model.pca import PCA
+    pca = PCA(X, y)
+    pca_result = pca.fit(min_variance=0.8)
+    print(f"PC count: {pca_result.shape[1]}")
+
+    # Get dummy validation data
+    imgs = os.listdir("data/resized")
+    imgs = [i for i in imgs if "mask" not in i]
+    # Get 10 random images
+    np.random.shuffle(imgs)
+    imgs = imgs[:10]
+    # Get corresponding masks
+    masks = [i[:-4] + "_mask.png" for i in imgs]
+    # Load images and masks
+    X_validate = []
+    for img_name, img_mask_name in zip(imgs, masks):
+        img = plt.imread(f"data/resized/{img_name}")
+        mask = plt.imread(f"data/resized/{img_mask_name}")
+        img = clean_image(img)
+        mask = clean_image(mask, to_binary=True)
+        print(img_name[:-4])
+        feat = extract_features({
+            "extract": "all",
+            "image": img_name[:-4],
+            "random": None,
+            "images": None
+        })
+        X_validate.append(feat)
+    # get labels
+    y_validate = has_cancer(imgs)
+
+    from sklearn.neighbors import KNeighborsClassifier
+    k = 4
+    # Train KNN
+    knn = KNeighborsClassifier(n_neighbors=k)
+    knn.fit(pca_result, y)
+
+    # Transform test data because we used PCA on the training data so the axes are different
+    X_test_transformed = pca.transform(X_validate)
+    # Discard the same components as we did for the training data
+    n_components = pca_result.shape[1]
+    X_test_transformed_pruned = X_test_transformed[:, :n_components]
+    # Predict
+    y_pred = knn.predict(X_test_transformed_pruned)
+    # Calculate accuracy
+    accuracy = np.mean(y_pred == y_validate)
+    print(f'k={k}, accuracy={accuracy:.3f}')
+
 def main():
     args = add_args()
     
     if args.extract is not None:
-        result = extract_features(args)
-        print(result)
+        extract_features(args)
 
     
     if args.resize:
         resize_images()
+    
+    if args.has_cancer:
+        if args.image is None:
+            raise ValueError("Please specify an image to check for cancer using -i or --image")
+        # add .png if not present
+        if ".png" not in args.image:
+            args.image += ".png"
+        # throw error if using mask
+        if "_mask" in args.image:
+            raise ValueError("Please specify an image without the mask")
+        result = has_cancer(np.array([args.image]))
+        print(result)
+    
+    if args.pca:
+        pca()
 
 if __name__ == '__main__':
     main()
