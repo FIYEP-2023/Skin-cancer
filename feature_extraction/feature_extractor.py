@@ -247,8 +247,44 @@ class FeatureExtractor:
         return c
     
     def color(self, img, mask):
-        print("owo")
-        return 0
+        def manhatten(true_color, pixel_color):
+            return np.sum(np.abs(true_color - pixel_color))
+        
+        color_dict = {
+            'white':[(175, 172, 167),0],
+            'light-brown':[(143, 100, 76),0],
+            'dark-brown':[(82, 70, 67),0],
+            'blue-grey':[(59, 63, 75),0],
+            'red':[(146, 80, 86),0],
+            'black':[(48, 51, 49),0] 
+        }
+
+        slic = skimage.segmentation.slic(img, n_segments=100, compactness=10, sigma=1, start_label=1, mask=mask)
+
+        img_new = img.copy()
+        #img_res = img.copy()
+        for i in np.unique(slic):
+            if np.sum(mask[slic == i]) == 0:
+                continue
+            #img_new[slic == i] = np.mean(img_new[slic == i], axis=0)
+            norm = np.mean(img_new[slic == i], axis=0)
+            rgb = np.array((norm * 255).astype(int))
+
+            min_dist = 1000
+            color = None
+            for key, value in color_dict.items():
+                dist = manhatten(rgb, value[0])
+                if dist < min_dist:
+                    min_dist = dist
+                    color = key
+
+            color_dict[color][1] += 1
+            #img_res[slic == i] = np.array(color_dict[color][0]) / 255   
+        #fig, ax = plt.subplots(1, 2, figsize=(10, 5))
+        #ax[0].imshow(img_new)
+        #ax[1].imshow(img_res)  
+           
+        return [v[1] for v in color_dict.values()]
 
     def filters(self, img, mask):
         # Apply multiscale filters
@@ -282,11 +318,6 @@ class FeatureExtractor:
         # Each bin in each histogram is a feature, represented as the difference between the base image (PAT_637_1434_684) and this one
         merged = np.concatenate(hist_features)
         return merged
-
-
-    def figure_something_out_you_are_original(self, img, mask):
-        print(".w.")
-        return 0
     
     def do_all(self, img, mask):
         # do all of them
@@ -300,6 +331,7 @@ class FeatureExtractor:
         """
         try:
             feat = getattr(self, feat)(img, mask)
-        except AttributeError:
-            print(f"Invalid feature name: {feat}")
+        except AttributeError as e:
+            print(f"Invalid feature name: {feat}, or error in the feature extractor:")
+            print(e)
         return feat
