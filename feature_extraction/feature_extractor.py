@@ -45,10 +45,12 @@ class FeatureExtractor:
         # add empty rows/columns to mask until distance to com is max_dist+10
         # this keeps com in center and mask square
         if r1 < 0:
-            mask = np.insert(mask, np.zeros([abs(r1), mask.shape[1]]), 0)
+            mask = np.append(np.zeros([abs(r1), mask.shape[1]]), mask, 0)
+            r2 += abs(r1)
             r1 = 0
         if c1 < 0:
-            mask = np.insert(mask, np.zeros([mask.shape[0], abs(c1)]), 1)
+            mask = np.append(np.zeros([mask.shape[0], abs(c1)]), mask, 1)
+            c2 += abs(c1)
             c1 = 0
         if r2 > mask.shape[0]:
             mask = np.append(mask, np.zeros([r2-mask.shape[0], mask.shape[1]]), 0)
@@ -63,10 +65,10 @@ class FeatureExtractor:
         # check and correct if new_mask is uneven in either axis
         if new_mask.shape[0] %2 != 0:
             # add a row of zeros to the bottom
-            new_mask= np.append(new_mask,np.zeros([new_mask.shape[0],1]),1)
+            new_mask = np.append(new_mask,np.zeros([1,new_mask.shape[1]]),0)
         if new_mask.shape[1] %2 != 0:
             # add a column of zeros to the right
-            new_mask= np.append(new_mask,np.zeros([1,new_mask.shape[1]]),0)
+            new_mask = np.append(new_mask,np.zeros([new_mask.shape[0],1]),1)
 
 
         def split_vertical():
