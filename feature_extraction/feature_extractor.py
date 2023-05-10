@@ -35,33 +35,35 @@ class FeatureExtractor:
         # max distance from center of mass to edge of mask + 10 pixels
         max_dist = max(dist_list) + 10
         
-        # slice the mask into a square of side length max_dist + 10 with com at the center
-        r1 = com[0] - max_dist  # lower bound for row 
-        r2 = com[0] + max_dist  # upper bound for row 
+        # slice the mask into a square of side length max_dist+10 with com at the center
+        r1 = com[0] - max_dist  # lower bound for row
+        r2 = com[0] + max_dist  # upper bound for row
         c1 = com[1] - max_dist  # lower bound for col
         c2 = com[1] + max_dist  # upper bound for col
-        
-        # make sure the lower bounds are not outside the image
-        if r1 < 0 or c1 < 0:
-            # if they are, set them to 0 (edge of image)
-            # both to keep the square centered around the com
-            r1 = 0
-            c1 = 0
 
-        # same for upper bounds
-        shortest = min(mask.shape[0], mask.shape[1])
-        if r2 > mask.shape[0] or c2 > mask.shape[1]:
-            r2 = shortest
-            c2 = shortest
+        # if any of the bounds are outside the image
+        # add empty rows/columns to mask until distance to com is max_dist+10
+        # this keeps com in center and mask square
+        if r1 < 0:
+            mask = np.insert(mask, np.zeros([abs(r1), mask.shape[1]]), 0)
+            r1 = 0
+        if c1 < 0:
+            mask = np.insert(mask, np.zeros([mask.shape[0], abs(c1)]), 1)
+            c1 = 0
+        if r2 > mask.shape[0]:
+            mask = np.append(mask, np.zeros([r2-mask.shape[0], mask.shape[1]]), 0)
+            r2 = mask.shape[0]
+        if c2 > mask.shape[1]:
+            mask = np.append(mask, np.zeros([mask.shape[0], c2-mask.shape[1]]), 1)
+            c2 = mask.shape[1]
 
         # make the square around the lesion
         new_mask = mask[r1:r2,c1:c2]
-        
-        # if the image is uneven in either axis
+
+        # check and correct if new_mask is uneven in either axis
         if new_mask.shape[0] %2 != 0:
             # add a row of zeros to the bottom
             new_mask= np.append(new_mask,np.zeros([new_mask.shape[0],1]),1)
-
         if new_mask.shape[1] %2 != 0:
             # add a column of zeros to the right
             new_mask= np.append(new_mask,np.zeros([1,new_mask.shape[1]]),0)
