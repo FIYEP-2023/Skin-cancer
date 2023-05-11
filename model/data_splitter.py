@@ -1,5 +1,6 @@
 import numpy as np
 from sklearn.model_selection import train_test_split
+from sklearn.model_selection import StratifiedShuffleSplit
 from model.logger import LogTypes, Logger
 from typing import Tuple
 import pandas as pd
@@ -26,36 +27,23 @@ class DataSplitter():
         Warning: As this method shuffles the data, make sure to append the labels as a column to the data before splitting.
         """
         # Shuffle data
-        np.random.shuffle(self.data)
+        # np.random.shuffle(self.data)
         Logger.log(f"Splitting data into {train_size} train size with {folds} folds")
         # Split into train/validation and test
-        train_val, test = train_test_split(self.data, train_size=train_size, random_state=self.random_state)
+        # train_val, test = train_test_split(self.data, train_size=train_size, random_state=self.random_state)
+        sss = StratifiedShuffleSplit(n_splits=1, train_size=train_size, random_state=self.random_state)
+        # returns the indices
+        train_val, test = next(sss.split(self.data[:, :-1], self.data[:, -1]))
+        print(train_val, test)
         # Split train/validation into folds
-        train_val_folds = np.array_split(train_val, folds)
+        # train_val_folds = np.array_split(train_val, folds)
         # Split train/validation into train and validation
-        train_folds = []
-        val_folds = []
-        for i in range(folds):
-            val_folds.append(train_val_folds[i])
-            train_folds.append(np.concatenate([train_val_folds[j] for j in range(folds) if j != i]))
+        # train_folds = []
+        # val_folds = []
+        # for i in range(folds):
+            # val_folds.append(train_val_folds[i])
+            # train_folds.append(np.concatenate([train_val_folds[j] for j in range(folds) if j != i]))
         
-        Logger.log(f"Train folds: {[len(train_fold) for train_fold in train_folds]}")
-        Logger.log(f"Val folds: {[len(val_fold) for val_fold in val_folds]}")
-        return train_folds, val_folds, test
-
-    @staticmethod
-    def has_cancer(img_names: np.ndarray):
-        """
-        Given an array of image names (in the form PAT_45.66.822.png), returns an array of booleans indicating whether or not the image has cancer.
-        """
-        # Load csv
-        df = pd.read_csv("data/metadata.csv")
-        # Get labels
-        cancerous = ["BCC", "SCC", "MEL"]
-        labels = []
-        for img_name in img_names:
-            diagnosis = df.loc[df["img_id"] == img_name]["diagnostic"].values[0]
-            cancer = diagnosis in cancerous
-            labels.append(cancer)
-        
-        return np.array(labels)
+        # Logger.log(f"Train folds: {[len(train_fold) for train_fold in train_folds]}")
+        # Logger.log(f"Val folds: {[len(val_fold) for val_fold in val_folds]}")
+        # return train_folds, val_folds, test
