@@ -309,8 +309,8 @@ class FeatureExtractor:
         # print([np.sum((lesion_features[feat_num]*256 > quantile_bins[i]) & (lesion_features[feat_num]*256 < quantile_bins[i+1])) for i in range(len(quantile_bins)-1)])
         #endregion
 
-        # Load bin widths from feature_extraction/filter_bins_default.json
-        bins = json.load(open("feature_extraction/filter_bins_default.json", "r")).get("filter_bins")
+        # Load bin widths from model/filter_bins_default.json
+        bins = json.load(open("model/filter_bins_default.json", "r")).get("filter_bins")
         if len(bins) != len(lesion_features):
             raise ValueError(f"Expected {len(lesion_features)} bins, got {len(bins)}")
         # bins is a n*m array, where n is the number of features and m is the number of bins for each feature
