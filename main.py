@@ -1,9 +1,14 @@
 import argparse
 import os
 import matplotlib.pyplot as plt
+from PIL import Image
 # types
 import numpy as np
 
+# Custom
+from model.feature_extractor import FeatureExtractor
+from model.pca import PCA
+from model.data_splitter import DataSplitter
 from model.logger import LogTypes, Logger
 
 def add_args():
@@ -14,11 +19,19 @@ def add_args():
     group.add_argument("--random", "-r", help="extract features from a random image in the dataset", action="store_true")
     group.add_argument("--image", "-i", help="image to extract features from. Format like 'PAT_86_1082_41.png'. The .png is optional", default=None)
     group.add_argument("--images", "-is", help="number of images to extract features from, or 'all' for all images", default=None)
+    parser.add_argument("--has_cancer", "-hc", help="check if the images have cancer", action="store_true")
     # pca
     parser.add_argument("--pca", "-p", help="perform pca on the extracted features", action="store_true")
-    parser.add_argument("--has_cancer", "-hc", help="check if the images have cancer", action="store_true")
+    # split
+    parser.add_argument("--split", "-s", help="split the data into training and testing sets", action="store_true")
+    parser.add_argument("--train_size", "-ts", help="the size of the training set", default=0.8)
+    parser.add_argument("--folds", "-f", help="the number of folds to use for cross validation", default=5)
     args = parser.parse_args()
     return args
+
+def validate_folder(path: str, prerequisite: str = None):
+    if not os.path.exists(path) or os.listdir(path) == []:
+        raise ValueError(f"Folder {path} does not exist or is empty." + (f"Please run {prerequisite} first." if prerequisite is not None else ""))
 
 def clean_image(img: np.ndarray, to_binary: bool = False):
     # Check if image contains alpha channel
@@ -36,7 +49,6 @@ def clean_image(img: np.ndarray, to_binary: bool = False):
     return img
 
 def extract_features(args):
-    from feature_extraction.feature_extractor import FeatureExtractor
     extractor = FeatureExtractor()
     # Prepare
     # Select resized images if they exist, else go with the original ones
@@ -86,7 +98,7 @@ def extract_features(args):
             feats.append(result)
         
         # Get labels
-        labels = has_cancer(non_masks)
+        labels = DataSplitter.has_cancer(non_masks)
 
         # Save features and labels to file
         np.save("data/features/X.npy", feats)
@@ -108,7 +120,6 @@ def extract_features(args):
 
 def resize_images(size=(1024, 1024)):
     print("Resizing images...")
-    from PIL import Image
     imgs = os.listdir("data/segmented")
     for i, img_name in enumerate(imgs):
         print(f"{i+1}/{len(imgs)}", end="\r")
@@ -117,21 +128,10 @@ def resize_images(size=(1024, 1024)):
         img.save(f"data/resized/{img_name}")
     print("Done!")
 
-def has_cancer(img_names: np.ndarray):
-    # Load csv
-    import pandas as pd
-    df = pd.read_csv("data/metadata.csv")
-    # Get labels
-    cancerous = ["BCC", "SCC", "MEL"]
-    labels = []
-    for img_name in img_names:
-        diagnosis = df.loc[df["img_id"] == img_name]["diagnostic"].values[0]
-        cancer = diagnosis in cancerous
-        labels.append(cancer)
-    
-    return np.array(labels)
-
 def pca():
+def split_training(train_size: None, folds: None):
+    # Make sure our data exists
+    validate_folder("data/features", "--extract")
     # Load features and labels from file
     X = np.load("data/features/X.npy")
     y = np.load("data/features/y.npy")
@@ -184,6 +184,21 @@ def pca():
     # Calculate accuracy
     accuracy = np.mean(y_pred == y_validate)
     print(f'k={k}, accuracy={accuracy:.3f}')
+    Logger.log(f"Splitting data with {X.shape[0]} samples and {X.shape[1]} features", log_type = LogTypes.INFO)
+    # Make sure X and y have the same amount of samples
+    if X.shape[0] != y.shape[0]:
+        raise ValueError(f"X and y have different amounts of samples ({X.shape[0]} and {y.shape[0]} respectively)")
+
+    # Add y as column in X
+    X = np.hstack((X, y.reshape(-1, 1)))
+    # Split
+    trains, validates, test = DataSplitter.split(X, train_size=train_size, folds=folds)
+
+    # Save to file
+    np.save("data/training/training_splits.npy", trains)
+    np.save("data/training/validation_splits.npy", validates)
+    np.save("data/training/test_data.npy", test)
+
 
 def main():
     args = add_args()
@@ -204,11 +219,14 @@ def main():
         # throw error if using mask
         if "_mask" in args.image:
             raise ValueError("Please specify an image without the mask")
-        result = has_cancer(np.array([args.image]))
+        result = DataSplitter.has_cancer(np.array([args.image]))
         print(result)
     
     if args.pca:
         pca()
+    
+    if args.split:
+        split_training(args.train_size, args.folds)
 
 if __name__ == '__main__':
     main()
