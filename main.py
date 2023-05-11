@@ -57,7 +57,7 @@ def extract_features(args):
         path = "data/resized"
         imgs = os.listdir("data/resized")
     else:
-        print("Warning: Resized images not found, proceeding with original sizes.")
+        Logger.log("Resized images not found, proceeding with original sizes.", LogTypes.WARNING)
         path = "data/segmented"
         imgs = os.listdir("data/segmented")
 
@@ -67,7 +67,7 @@ def extract_features(args):
         # Remove _mask from name if present
         random_image = random_image.replace("_mask", "")
         args.image = random_image
-        print(f"Using image {random_image}")
+        Logger.log(f"Using image {random_image}")
     # Choose user specified image
     if args.image is not None:
         imgs = [i for i in imgs if args.image in i]
@@ -85,12 +85,12 @@ def extract_features(args):
         non_masks = [i for i in imgs if "mask" not in i]
         np.random.shuffle(non_masks)
         if args.images.isdigit():
-            print(f"Using {args.images} randomly selected images")
+            Logger.log(f"Using {args.images} randomly selected images")
             non_masks = non_masks[:int(args.images)]
 
         feats = []
         for i, img_name in enumerate(non_masks):
-            print(f"{i+1}/{len(non_masks)}", end="\r")
+            Logger.log(f"{i+1}/{len(non_masks)}", end="\r")
             img = plt.imread(f"{path}/{img_name}")
             mask = plt.imread(f"{path}/{img_name[:-4]}_mask.png")
             img = clean_image(img)
@@ -120,14 +120,14 @@ def extract_features(args):
     return extract(img, mask)
 
 def resize_images(size=(1024, 1024)):
-    print("Resizing images...")
+    Logger.log("Resizing images...")
     imgs = os.listdir("data/segmented")
     for i, img_name in enumerate(imgs):
-        print(f"{i+1}/{len(imgs)}", end="\r")
+        Logger.log(f"{i+1}/{len(imgs)}", end="\r")
         img = Image.open(f"data/segmented/{img_name}")
         img = img.resize(size)
         img.save(f"data/resized/{img_name}")
-    print("Done!")
+    Logger.log("Done!")
 
 def split_training(train_size: None, folds: None):
     # Make sure our data exists
@@ -197,7 +197,7 @@ def main():
         if "_mask" in args.image:
             raise ValueError("Please specify an image without the mask")
         result = DataSplitter.has_cancer(np.array([args.image]))
-        print(result)
+        Logger.log(f"Image {args.image} has cancer: {result[0]}", log_type=LogTypes.INFO)
     
     if args.pca:
         pca(args.min_variance)
