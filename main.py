@@ -2,6 +2,7 @@ import argparse
 import os
 import matplotlib.pyplot as plt
 from PIL import Image
+import pickle
 # types
 import numpy as np
 
@@ -97,6 +98,7 @@ def extract_features(args):
             mask = clean_image(mask, to_binary=True)
             result = extract(img, mask)
             feats.append(result)
+            Logger.log(f"Feature count: {len(result)}")
         
         # Get labels
         labels = DataSplitter.has_cancer(non_masks)
@@ -135,35 +137,42 @@ def split_training(train_size: None, folds: None):
     # Load features and labels from file
     X = np.load("data/features/X.npy")
     y = np.load("data/features/y.npy")
-    Logger.log(f"Splitting data with {X.shape[0]} samples and {X.shape[1]} features", log_type = LogTypes.INFO)
+    Logger.log(f"Splitting data with {X.shape[0]} samples and {X.shape[1]} features", level = LogTypes.INFO)
     # Make sure X and y have the same amount of samples
     if X.shape[0] != y.shape[0]:
         raise ValueError(f"X and y have different amounts of samples ({X.shape[0]} and {y.shape[0]} respectively)")
 
     # Add y as column in X
-    X = np.hstack((X, y.reshape(-1, 1)))
+    data = np.append(X, y.reshape(-1, 1), axis=1)
     # Split
-    trains, validates, test = DataSplitter.split(X, train_size=train_size, folds=folds)
+    trains, validates, test = DataSplitter(data).split(train_size=train_size, folds=folds)
 
-    # Save to file
-    np.save("data/training/training_splits.npy", trains)
-    np.save("data/training/validation_splits.npy", validates)
-    np.save("data/training/test_data.npy", test)
+    # Save to file (cant use numpy because they are no arrays)
+    with open("data/training/training_splits.npy", "wb") as f:
+        pickle.dump(trains, f)
+    with open("data/training/validation_splits.npy", "wb") as f:
+        pickle.dump(validates, f)
+    with open("data/training/test_data.npy", "wb") as f:
+        pickle.dump(test, f)
+    Logger.log(f"Saved {len(trains)} training splits, {len(validates)} validation splits and {len(test)} test data to file", level=LogTypes.INFO)
 
 def pca(min_variance: float = None):
     # Make sure our data exists
     validate_folder("data/training", "--split")
 
-    # Load data
-    training_splits = np.load("data/training/training_splits.npy")
-    validation_splits = np.load("data/training/validation_splits.npy")
-    test_data = np.load("data/training/test_data.npy")
+    # Load data with pickle
+    with open("data/training/training_splits.npy", "rb") as f:
+        training_splits = pickle.load(f)
+    with open("data/training/validation_splits.npy", "rb") as f:
+        validation_splits = pickle.load(f)
+    with open("data/training/test_data.npy", "rb") as f:
+        test_data = pickle.load(f)
 
     def fit_pca(X: np.ndarray, y: np.ndarray):
         # Perform PCA
         pca = PCA(X, y)
         pca.fit(min_variance=min_variance)
-        Logger.log(f"PCA result has {pca.pca_result_pruned.shape[1]} components", log_type=LogTypes.INFO)
+        Logger.log(f"PCA result has {pca.pca_result_pruned.shape[1]} components", level=LogTypes.INFO)
         return pca
 
     # Train PCA
@@ -182,7 +191,6 @@ def main():
     
     if args.extract is not None:
         extract_features(args)
-
     
     if args.resize:
         resize_images()
@@ -197,7 +205,7 @@ def main():
         if "_mask" in args.image:
             raise ValueError("Please specify an image without the mask")
         result = DataSplitter.has_cancer(np.array([args.image]))
-        Logger.log(f"Image {args.image} has cancer: {result[0]}", log_type=LogTypes.INFO)
+        Logger.log(f"Image {args.image} has cancer: {result[0]}", level=LogTypes.INFO)
     
     if args.pca:
         pca(args.min_variance)

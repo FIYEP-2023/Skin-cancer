@@ -226,7 +226,6 @@ class FeatureExtractor:
 
         return ratio
 
-
     def compactness(self, img, mask):
         brush = ndimage.generate_binary_structure(2, 1) # create 2 dim erosion brush
         eroded = ndimage.binary_erosion(mask, brush) # eroded mask
