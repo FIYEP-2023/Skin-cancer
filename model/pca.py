@@ -9,9 +9,10 @@ class PCA:
     
     def fit(self, min_variance: int = 1) -> np.ndarray:
         pca_result = self.pca.fit_transform(self.X_train)
+        self.pca_result = pca_result
 
         pca_result_pruned = pca_result[:, np.cumsum(self.pca.explained_variance_ratio_) < min_variance]
-        return pca_result_pruned
+        self.pca_result_pruned = pca_result_pruned
     
     def transform(self, X_test: np.ndarray) -> np.ndarray:
         return self.pca.transform(X_test)
