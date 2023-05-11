@@ -1,6 +1,6 @@
 from enum import Enum
 
-LogTypes = Enum("LogTypes", "INFO", "WARNING", "ERROR", "DEBUG")
+LogTypes = Enum("LogTypes", ["INFO", "WARNING", "ERROR", "DEBUG"])
 
 class Logger:
     @staticmethod

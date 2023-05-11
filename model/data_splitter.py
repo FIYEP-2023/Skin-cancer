@@ -1,6 +1,7 @@
 import numpy as np
 from sklearn.model_selection import train_test_split
 from model.logger import LogTypes, Logger
+from typing import Tuple
 
 class DataSplitter():
     data: np.ndarray = None
@@ -12,7 +13,7 @@ class DataSplitter():
             self.random_state = random_state
         np.random.seed(self.random_state)
     
-    def split(self, train_size: float = 0.8, folds: int = 5) -> tuple[tuple[np.ndarray], tuple[np.ndarray], np.ndarray]:
+    def split(self, train_size: float = 0.8, folds: int = 5) -> Tuple[Tuple[np.ndarray], Tuple[np.ndarray], np.ndarray]:
         """
         Splits the data into training and testing sets.  
         :param train_size: The size of the training set.
