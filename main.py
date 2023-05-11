@@ -4,6 +4,8 @@ import matplotlib.pyplot as plt
 # types
 import numpy as np
 
+from model.logger import LogTypes, Logger
+
 def add_args():
     parser = argparse.ArgumentParser()
     parser.add_argument("--extract", "-e", help="extract a specific feature or all features")
