@@ -8,6 +8,22 @@ import skimage
 import json
 
 class FeatureExtractor:
+    @staticmethod
+    def has_cancer(img_names: np.ndarray):
+        """
+        Given an array of image names (in the form PAT_45.66.822.png), returns an array of booleans indicating whether or not the image has cancer.
+        """
+        # Load csv
+        df = pd.read_csv("data/metadata.csv")
+        # Get labels
+        cancerous = ["BCC", "SCC", "MEL"]
+        labels = []
+        for img_name in img_names:
+            diagnosis = df.loc[df["img_id"] == img_name]["diagnostic"].values[0]
+            cancer = diagnosis in cancerous
+            labels.append(cancer)
+        
+        return np.array(labels)
 
     def asymmetry(self, img, mask):
         ''' uncomment to time, also lines 217,218 '''

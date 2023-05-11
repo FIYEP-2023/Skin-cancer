@@ -11,6 +11,7 @@ from model.feature_extractor import FeatureExtractor
 from model.pca import PCA
 from model.data_splitter import DataSplitter
 from model.logger import LogTypes, Logger
+from model.knn import KNN
 
 def add_args():
     parser = argparse.ArgumentParser()
@@ -23,17 +24,19 @@ def add_args():
     parser.add_argument("--has_cancer", "-hc", help="check if the images have cancer", action="store_true")
     # pca
     parser.add_argument("--pca", "-p", help="perform pca on the extracted features", action="store_true")
-    parser.add_argument("--min_variance", "-mv", help="the minimum variance to keep", default=0.8)
+    parser.add_argument("--min_variance", "-mv", help="the minimum variance to keep", default=None)
     # split
     parser.add_argument("--split", "-s", help="split the data into training and testing sets", action="store_true")
-    parser.add_argument("--train_size", "-ts", help="the size of the training set", default=0.8)
+    parser.add_argument("--train_size", "-ts", help="the size of the training set", default=None)
     parser.add_argument("--folds", "-f", help="the number of folds to use for cross validation", default=5)
+    # knn
+    parser.add_argument("--knn", "-k", help="perform knn on the extracted features", action="store_true")
     args = parser.parse_args()
     return args
 
-def validate_folder(path: str, prerequisite: str = None):
-    if not os.path.exists(path) or os.listdir(path) == []:
-        raise ValueError(f"Folder {path} does not exist or is empty." + (f"Please run {prerequisite} first." if prerequisite is not None else ""))
+def validate_file(filepath: str, prerequisite: str = None):
+    if not os.path.exists(filepath) or os.stat(filepath).st_size == 0:
+        raise ValueError(f"The file {filepath} does not exist or is empty." + (f"Please run {prerequisite} first." if prerequisite is not None else ""))
 
 def clean_image(img: np.ndarray, to_binary: bool = False):
     # Check if image contains alpha channel
@@ -101,7 +104,7 @@ def extract_features(args):
             Logger.log(f"Feature count: {len(result)}")
         
         # Get labels
-        labels = DataSplitter.has_cancer(non_masks)
+        labels = FeatureExtractor.has_cancer(non_masks)
 
         # Save features and labels to file
         np.save("data/features/X.npy", feats)
@@ -133,7 +136,8 @@ def resize_images(size=(1024, 1024)):
 
 def split_training(train_size: None, folds: None):
     # Make sure our data exists
-    validate_folder("data/features", "--extract")
+    validate_file("data/features/X.npy", "--extract")
+    validate_file("data/features/y.npy", "--extract")
     # Load features and labels from file
     X = np.load("data/features/X.npy")
     y = np.load("data/features/y.npy")
@@ -148,27 +152,27 @@ def split_training(train_size: None, folds: None):
     trains, validates, test = DataSplitter(data).split(train_size=train_size, folds=folds)
 
     # Save to file (cant use numpy because they are no arrays)
-    with open("data/training/training_splits.npy", "wb") as f:
+    with open("data/training/training_splits.pickle", "wb") as f:
         pickle.dump(trains, f)
-    with open("data/training/validation_splits.npy", "wb") as f:
+    with open("data/training/validation_splits.pickle", "wb") as f:
         pickle.dump(validates, f)
-    with open("data/training/test_data.npy", "wb") as f:
+    with open("data/training/test_data.pickle", "wb") as f:
         pickle.dump(test, f)
     Logger.log(f"Saved {len(trains)} training splits, {len(validates)} validation splits and {len(test)} test data to file", level=LogTypes.INFO)
 
 def pca(min_variance: float = None):
     # Make sure our data exists
-    validate_folder("data/training", "--split")
+    validate_file("data/training/training_splits.pickle", "--split")
+    validate_file("data/training/validation_splits.pickle", "--split")
 
     # Load data with pickle
-    with open("data/training/training_splits.npy", "rb") as f:
+    with open("data/training/training_splits.pickle", "rb") as f:
         training_splits = pickle.load(f)
-    with open("data/training/validation_splits.npy", "rb") as f:
+    with open("data/training/validation_splits.pickle", "rb") as f:
         validation_splits = pickle.load(f)
-    with open("data/training/test_data.npy", "rb") as f:
-        test_data = pickle.load(f)
 
     def fit_pca(X: np.ndarray, y: np.ndarray):
+        Logger.log(f"Original has {X.shape[1]} features", level=LogTypes.INFO)
         # Perform PCA
         pca = PCA(X, y)
         pca.fit(min_variance=min_variance)
@@ -176,15 +180,62 @@ def pca(min_variance: float = None):
         return pca
 
     # Train PCA
+    Logger.log("Fitting PCA for each training split...")
     pcas = []
     for i in range(len(training_splits)):
+        Logger.log(f"{i+1}/{len(training_splits)}")
         X = training_splits[i][:, :-1]
         y = training_splits[i][:, -1]
-        pca = fit_pca(X, y)
+        X_norm = PCA.normalise(X)
+        pca = fit_pca(X_norm, y)
         pcas.append(pca)
     
+    # Transform validation data with PCA
+    Logger.log("Transforming validation data with PCA...")
+    validation_splits_transformed = []
+    for i in range(len(validation_splits)):
+        Logger.log(f"{i+1}/{len(validation_splits)}")
+        X = validation_splits[i][:, :-1]
+        y = validation_splits[i][:, -1]
+        X_norm = PCA.normalise(X)
+        pca = pcas[i]
+        X_transformed = pca.transform(X_norm)
+        # Remove features so validation matches training
+        X_transformed = X_transformed[:, :pca.pca_result_pruned.shape[1]]
+        validation_splits_transformed.append(np.append(X_transformed, y.reshape(-1, 1), axis=1))
+
     # Save PCA
     np.save("data/training/pcas.npy", pcas)
+    # Save transformed validation data
+    with open("data/training/validation_splits_transformed.pickle", "wb") as f:
+        pickle.dump(validation_splits_transformed, f)
+
+def knn_train():
+    # Make sure our data exists
+    validate_file("data/training/pcas.npy", "--pca")
+    validate_file("data/training/validation_splits_transformed.pickle", "--split")
+
+    # Load data
+    pcas = np.load("data/training/pcas.npy", allow_pickle=True)
+    with open("data/training/validation_splits_transformed.pickle", "rb") as f:
+        validation_splits = pickle.load(f)
+    
+    # Train KNN
+    knn = KNN(pcas, validation_splits)
+    knn.train()
+
+    # Get results
+    accuracy = knn.accuracy()
+    precicion = knn.precision()
+    recall = knn.recall()
+    fmeasure = knn.fmeasure()
+    roc_auc = knn.roc_auc()
+
+    Logger.log(f"Accuracy: {accuracy}", level=LogTypes.INFO)
+    Logger.log(f"Precision: {precicion}", level=LogTypes.INFO)
+    Logger.log(f"Recall: {recall}", level=LogTypes.INFO)
+    Logger.log(f"F-measure: {fmeasure}", level=LogTypes.INFO)
+    Logger.log(f"ROC AUC: {roc_auc}", level=LogTypes.INFO)
 
 def main():
     args = add_args()
@@ -204,14 +255,17 @@ def main():
         # throw error if using mask
         if "_mask" in args.image:
             raise ValueError("Please specify an image without the mask")
-        result = DataSplitter.has_cancer(np.array([args.image]))
+        result = FeatureExtractor.has_cancer(np.array([args.image]))
         Logger.log(f"Image {args.image} has cancer: {result[0]}", level=LogTypes.INFO)
-    
-    if args.pca:
-        pca(args.min_variance)
     
     if args.split:
         split_training(args.train_size, args.folds)
+
+    if args.pca:
+        pca(float(args.min_variance) if args.min_variance is not None else None)
+    
+    if args.knn:
+        knn_train()
 
 if __name__ == '__main__':
     main()
