@@ -22,6 +22,7 @@ def add_args():
     parser.add_argument("--has_cancer", "-hc", help="check if the images have cancer", action="store_true")
     # pca
     parser.add_argument("--pca", "-p", help="perform pca on the extracted features", action="store_true")
+    parser.add_argument("--min_variance", "-mv", help="the minimum variance to keep", default=0.8)
     # split
     parser.add_argument("--split", "-s", help="split the data into training and testing sets", action="store_true")
     parser.add_argument("--train_size", "-ts", help="the size of the training set", default=0.8)
@@ -128,62 +129,12 @@ def resize_images(size=(1024, 1024)):
         img.save(f"data/resized/{img_name}")
     print("Done!")
 
-def pca():
 def split_training(train_size: None, folds: None):
     # Make sure our data exists
     validate_folder("data/features", "--extract")
     # Load features and labels from file
     X = np.load("data/features/X.npy")
     y = np.load("data/features/y.npy")
-
-    # Perform PCA
-    from model.pca import PCA
-    pca = PCA(X, y)
-    pca_result = pca.fit(min_variance=0.8)
-    print(f"PC count: {pca_result.shape[1]}")
-
-    # Get dummy validation data
-    imgs = os.listdir("data/resized")
-    imgs = [i for i in imgs if "mask" not in i]
-    # Get 10 random images
-    np.random.shuffle(imgs)
-    imgs = imgs[:10]
-    # Get corresponding masks
-    masks = [i[:-4] + "_mask.png" for i in imgs]
-    # Load images and masks
-    X_validate = []
-    for img_name, img_mask_name in zip(imgs, masks):
-        img = plt.imread(f"data/resized/{img_name}")
-        mask = plt.imread(f"data/resized/{img_mask_name}")
-        img = clean_image(img)
-        mask = clean_image(mask, to_binary=True)
-        print(img_name[:-4])
-        feat = extract_features({
-            "extract": "all",
-            "image": img_name[:-4],
-            "random": None,
-            "images": None
-        })
-        X_validate.append(feat)
-    # get labels
-    y_validate = has_cancer(imgs)
-
-    from sklearn.neighbors import KNeighborsClassifier
-    k = 4
-    # Train KNN
-    knn = KNeighborsClassifier(n_neighbors=k)
-    knn.fit(pca_result, y)
-
-    # Transform test data because we used PCA on the training data so the axes are different
-    X_test_transformed = pca.transform(X_validate)
-    # Discard the same components as we did for the training data
-    n_components = pca_result.shape[1]
-    X_test_transformed_pruned = X_test_transformed[:, :n_components]
-    # Predict
-    y_pred = knn.predict(X_test_transformed_pruned)
-    # Calculate accuracy
-    accuracy = np.mean(y_pred == y_validate)
-    print(f'k={k}, accuracy={accuracy:.3f}')
     Logger.log(f"Splitting data with {X.shape[0]} samples and {X.shape[1]} features", log_type = LogTypes.INFO)
     # Make sure X and y have the same amount of samples
     if X.shape[0] != y.shape[0]:
@@ -199,6 +150,32 @@ def split_training(train_size: None, folds: None):
     np.save("data/training/validation_splits.npy", validates)
     np.save("data/training/test_data.npy", test)
 
+def pca(min_variance: float = None):
+    # Make sure our data exists
+    validate_folder("data/training", "--split")
+
+    # Load data
+    training_splits = np.load("data/training/training_splits.npy")
+    validation_splits = np.load("data/training/validation_splits.npy")
+    test_data = np.load("data/training/test_data.npy")
+
+    def fit_pca(X: np.ndarray, y: np.ndarray):
+        # Perform PCA
+        pca = PCA(X, y)
+        pca.fit(min_variance=min_variance)
+        Logger.log(f"PCA result has {pca.pca_result_pruned.shape[1]} components", log_type=LogTypes.INFO)
+        return pca
+
+    # Train PCA
+    pcas = []
+    for i in range(len(training_splits)):
+        X = training_splits[i][:, :-1]
+        y = training_splits[i][:, -1]
+        pca = fit_pca(X, y)
+        pcas.append(pca)
+    
+    # Save PCA
+    np.save("data/training/pcas.npy", pcas)
 
 def main():
     args = add_args()
@@ -223,7 +200,7 @@ def main():
         print(result)
     
     if args.pca:
-        pca()
+        pca(args.min_variance)
     
     if args.split:
         split_training(args.train_size, args.folds)
