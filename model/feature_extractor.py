@@ -6,6 +6,7 @@ from statistics import mean # for mean
 import matplotlib.pyplot as plt # for testing
 import skimage
 import json
+import pandas as pd
 
 class FeatureExtractor:
     @staticmethod

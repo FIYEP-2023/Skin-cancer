@@ -109,6 +109,9 @@ def extract_features(args):
         # Save features and labels to file
         np.save("data/features/X.npy", feats)
         np.save("data/features/y.npy", labels)
+        # Save image names
+        with open("data/features/img_names.pkl", "wb") as f:
+            pickle.dump(non_masks, f)
 
         return feats
 
@@ -134,24 +137,22 @@ def resize_images(size=(1024, 1024)):
         img.save(f"data/resized/{img_name}")
     Logger.log("Done!")
 
-def split_training(train_size: None, folds: None):
-    # Make sure our data exists
-    validate_file("data/features/X.npy", "--extract")
-    validate_file("data/features/y.npy", "--extract")
-    # Load features and labels from file
-    X = np.load("data/features/X.npy")
-    y = np.load("data/features/y.npy")
-    Logger.log(f"Splitting data with {X.shape[0]} samples and {X.shape[1]} features", level = LogTypes.INFO)
-    # Make sure X and y have the same amount of samples
-    if X.shape[0] != y.shape[0]:
-        raise ValueError(f"X and y have different amounts of samples ({X.shape[0]} and {y.shape[0]} respectively)")
+def split_data(train_size: None, folds: None):
+    # Select resized images if they exist, else go with the original ones
+    if os.path.exists("data/resized"):
+        path = "data/resized"
+    else:
+        Logger.log("Resized images not found, proceeding with original sizes.", LogTypes.WARNING)
+        path = "data/segmented"
+    imgs = os.listdir(path)
+    # Remove masks
+    imgs = [i for i in imgs if "mask" not in i]
 
-    # Add y as column in X
-    data = np.append(X, y.reshape(-1, 1), axis=1)
-    # Split
-    trains, validates, test = DataSplitter(data).split(train_size=train_size, folds=folds)
+    # Send to splitter
+    splitter = DataSplitter(imgs)
+    trains, validates, test = splitter.split(train_size, folds)
 
-    # Save to file (cant use numpy because they are no arrays)
+    # Save to file (cant use numpy because their length does not match)
     with open("data/training/training_splits.pickle", "wb") as f:
         pickle.dump(trains, f)
     with open("data/training/validation_splits.pickle", "wb") as f:
@@ -240,6 +241,9 @@ def knn_train():
 def main():
     args = add_args()
     
+    if args.split:
+        split_data(args.train_size, args.folds)
+
     if args.extract is not None:
         extract_features(args)
     
@@ -258,9 +262,6 @@ def main():
         result = FeatureExtractor.has_cancer(np.array([args.image]))
         Logger.log(f"Image {args.image} has cancer: {result[0]}", level=LogTypes.INFO)
     
-    if args.split:
-        split_training(args.train_size, args.folds)
-
     if args.pca:
         pca(float(args.min_variance) if args.min_variance is not None else None)
     
