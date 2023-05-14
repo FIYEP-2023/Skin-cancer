@@ -26,7 +26,7 @@ class DataSplitter():
         [0]: an array of length :folds:, with the training images for a split,  
         [1]: an array of length :folds:, with the validation images for a split,  
         [2]: an array of testing data, with the testing images.  
-        Each of the arrays contain strings of the image names.
+        Each of the arrays contain strings of the image names.  
         Warning: As this method shuffles the data, make sure to append the labels as a column to the data before splitting.
         """
         Logger.log(f"Splitting data into {train_size} train size with {folds} folds")
@@ -44,7 +44,7 @@ class DataSplitter():
         for X_index, y_index in skf.split(X_train_val, y_train_val):
             X_part, y_part = X_train_val[X_index], y_train_val[X_index]
             folds.append(X_part)
-        test_splits = []
+        train_splits = []
         val_splits = []
         for i in range(len(folds)):
             # Set ith fold as validation set
@@ -53,6 +53,6 @@ class DataSplitter():
             train_split = np.concatenate(folds[:i] + folds[i+1:])
             # Append to list
             val_splits.append(val_split)
-            test_splits.append(train_split)
+            train_splits.append(train_split)
         
-        return test_splits, val_splits, (X_test, y_test)
+        return train_splits, val_splits, X_test
