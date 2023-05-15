@@ -28,12 +28,20 @@ def train_splits(pca_splits: list[PCA], X_val_splits: np.ndarray, y_val_splits: 
         models.append((knn, logistic))
     return models
 
-def evaluate_splits(models: list[Tuple]):
+def evaluate_splits(models: list[Tuple], probability: bool = False, probability_threshold: float = 0.5):
     """
     Evaluates all the models for each data split and takes the average  
     Returns a dictionary of metrics. Each metric is a list of length 2, where the first element is the KNN metric and the second element is the Logistic metric
     """
     Logger.log(f"Evaluating KNNs and Logistics for {len(models)} splits")
+
+    if probability:
+        for knn, logistic in models:
+            knn.probability = True
+            logistic.probability = True
+            knn.probability_threshold = probability_threshold
+            logistic.probability_threshold = probability_threshold
+
     accuracies = np.array([[knn.accuracy(), logistic.accuracy()] for (knn, logistic) in models])
     precisions = np.array([[knn.precision(), logistic.precision()] for (knn, logistic) in models])
     recalls = np.array([[knn.recall(), logistic.recall()] for (knn, logistic) in models])
@@ -49,6 +57,7 @@ def evaluate_splits(models: list[Tuple]):
     }
 
 class Evaluator:
+    probability = False
     def get_confusion_matrix(self):
         """
         Returns the confusion matrix of the KNN  
@@ -144,6 +153,9 @@ class KNN(Evaluator):
         Predicts the labels for the given test data  
         Note: make sure to transform the test data with the PCA first
         """
+        if self.probability:
+            threshold = self.probability_threshold
+            return np.array([1 if prob > threshold else 0 for prob in self.knn.predict_proba(X_test)[:,1]])
         return self.knn.predict(X_test)
 
 class Logistic(Evaluator):
@@ -160,4 +172,8 @@ class Logistic(Evaluator):
         self.logistic.fit(X_train, y_train)
     
     def predict(self, X_test: np.ndarray) -> np.ndarray:
+        print(self.probability)
+        if self.probability:
+            threshold = self.probability_threshold
+            return np.array([1 if prob > threshold else 0 for prob in self.logistic.predict_proba(X_test)[:,1]])
         return self.logistic.predict(X_test)

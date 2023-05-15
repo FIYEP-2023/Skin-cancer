@@ -5,13 +5,14 @@ from PIL import Image
 import pickle
 # types
 import numpy as np
+from typing import Tuple
 
 # Custom
 from model.feature_extractor import FeatureExtractor
 from model.pca import PCA
 from model.data_splitter import DataSplitter
 from model.logger import LogTypes, Logger
-from model.classifiers import KNN, train_splits, evaluate_splits
+from model.classifiers import KNN, LogisticRegression, train_splits, evaluate_splits
 
 def add_args():
     parser = argparse.ArgumentParser()
@@ -25,7 +26,9 @@ def add_args():
     # pca
     parser.add_argument("--pca", "-p", help="perform pca on the extracted features", action="store_true")
     parser.add_argument("--n_components", "-c", help="number of principal components in PCA", default=None)
+    # Testing
     parser.add_argument("--test_components", "-tc", help="test different numbers of components from 1 to n_components for PCA", action="store_true")
+    parser.add_argument("--test_neighbors", "-tn", help="test different numbers of neighbors from 1 to n_neighbors for KNN", action="store_true")
     # split
     parser.add_argument("--split", "-s", help="split the data into training and testing sets", action="store_true")
     parser.add_argument("--train_size", "-ts", help="the size of the training set", default=None)
@@ -33,8 +36,9 @@ def add_args():
     # training
     parser.add_argument("--train", "-t", help="train all models on the data", action="store_true")
     parser.add_argument("--k_neighbors", "-k", help="number of neighbors to use for KNN", default=5)
-    # validation
+    # evaluation
     parser.add_argument("--eval", "-ev", help="evaluate cross-validated model and get statistics", action="store_true")
+    parser.add_argument("--probability_threshold", "-pt", help="the probability threshold to use for logistic regression", default=0.5)
     args = parser.parse_args()
     return args
 
@@ -290,7 +294,7 @@ def train(k_neighbors: int = 5):
     # Close loaded files
     del X, y, img_names, pcas, full_pca, validation_splits, test_data
 
-def evaluate():
+def evaluate(probability_threshold):
     """
     Evaluate cross-trained models trained with train()
     """
@@ -299,11 +303,20 @@ def evaluate():
 
     # Load data
     with open("data/training/cross_val_models.pkl", "rb") as f:
-        knns: list[KNN] = pickle.load(f)
+        model: list[Tuple(KNN, LogisticRegression)] = pickle.load(f)
     
     # Evaluate
     Logger.log("Evaluating cross-trained models")
-    stats = evaluate_splits(knns)
+    for knn, log in model:
+        knn.probability = True
+        log.probability = True
+        knn.probability_threshold = probability_threshold
+        log.probability_threshold = probability_threshold
+    confs = [(knn.get_confusion_matrix(), log.get_confusion_matrix()) for knn, log in model]
+    knn_conf = np.mean([conf[0] for conf in confs], axis=0)
+    log_conf = np.mean([conf[1] for conf in confs], axis=0)
+
+    stats = evaluate_splits(model, True, probability_threshold=probability_threshold)
     acc_knn, acc_log = stats["accuracy"]
     prec_knn, prec_log = stats["precision"]
     rec_knn, rec_log = stats["recall"]
@@ -315,6 +328,12 @@ def evaluate():
     Logger.log(f"Recall: {rec_knn:.4f}")
     Logger.log(f"F1: {f1_knn:.4f}")
     Logger.log(f"ROC AUC: {roc_auc_knn:.4f}")
+    Logger.log(f"Confusion matrix:  Actual values")
+    Logger.log(f"                     1       0    ")
+    Logger.log(f"                 +-----------------+")
+    Logger.log(f"    Predicted 1: |  {knn_conf[0][0]:.1f}   {knn_conf[0][1]:.1f}  |")
+    Logger.log(f"              0: |  {knn_conf[1][0]:.1f}    {knn_conf[1][1]:.1f}    |")
+    Logger.log(f"                 +-----------------+")
 
     Logger.log("Cross-trained model stats (Logistic Regression):")
     Logger.log(f"Accuracy: {acc_log:.4f}")
@@ -322,9 +341,16 @@ def evaluate():
     Logger.log(f"Recall: {rec_log:.4f}")
     Logger.log(f"F1: {f1_log:.4f}")
     Logger.log(f"ROC AUC: {roc_auc_log:.4f}")
+    Logger.log(f"Confusion matrix:  Actual values")
+    Logger.log(f"                     1        0    ")
+    Logger.log(f"                 +-----------------+")
+    Logger.log(f"    Predicted 1: |  {log_conf[0][0]:.1f}   {log_conf[0][1]:.1f}  |")
+    Logger.log(f"              0: |  {log_conf[1][0]:.1f}     {log_conf[1][1]:.1f}    |")
+    Logger.log(f"                 +-----------------+")
+
 
     # Close loaded files
-    del knns
+    del model
 
 def test_components(max_components: int, k_neighbors: int = 5):
     """
@@ -337,11 +363,12 @@ def test_components(max_components: int, k_neighbors: int = 5):
     y = []
     for n in range(1, max_components+1):
         pca(n)
-        train()
+        train(k_neighbors=k_neighbors)
 
         # Load data
-        with open("data/training/cross_val_knns.pkl", "rb") as f:
-            knns: list[KNN] = pickle.load(f)
+        with open("data/training/cross_val_models.pkl", "rb") as f:
+            models: list[Tuple[KNN, LogisticRegression]] = pickle.load(f)
+            knns: list[KNN] = [model[0] for model in models]
         
         # Evaluate
         stats = evaluate_splits(knns)
@@ -366,6 +393,48 @@ def test_components(max_components: int, k_neighbors: int = 5):
     with open("data/training/components_y.pkl", "wb") as f:
         pickle.dump(y, f)
     plt.savefig(f"data/training/components_plot_{max_components}.png")
+
+    plt.show()
+
+def test_neighbors(max_neighbors: int):
+    """
+    Test different numbers of neighbors for KNN and plots neighbors vs. f1 score.
+    """
+    # Run tests
+    Logger.log("Testing different numbers of neighbors for KNN")
+    x = []
+    y = []
+    for k in range(1, max_neighbors+1):
+        Logger.log(f"Testing {k} neighbors")
+        train(k)
+
+        # Load data
+        with open("data/training/cross_val_models.pkl", "rb") as f:
+            models: list[Tuple[KNN, LogisticRegression]] = pickle.load(f)
+        
+        # Evaluate
+        stats = evaluate_splits(models)
+        f1_knn, f1_log = stats["f1"]
+        x.append(k)
+        y.append(f1_knn)
+
+        # Close loaded files
+        del models
+    
+    # Plot results
+    Logger.log("Plotting results")
+    plt.plot(x, y)
+    plt.xlabel("Number of neighbors")
+    plt.ylabel("F1 score")
+    plt.title("Number of neighbors vs. F1 score")
+
+    # Save x, y and plot to file
+    Logger.log("Saving results to file")
+    with open("data/training/neighbors_x.pkl", "wb") as f:
+        pickle.dump(x, f)
+    with open("data/training/neighbors_y.pkl", "wb") as f:
+        pickle.dump(y, f)
+    plt.savefig(f"data/training/neighbors_plot_{max_neighbors}.png")
 
     plt.show()
 
@@ -405,6 +474,11 @@ def main():
             raise ValueError("Please specify the number of components to test using -n or --n_components")
         test_components(int(args.n_components), args.k_neighbors)
         return # If we're testing components, we don't need to do anything else
+    if args.test_neighbors:
+        if args.k_neighbors is None:
+            raise ValueError("Please specify the number of neighbors to test using -k or --k_neighbors")
+        test_neighbors(int(args.k_neighbors))
+        return
 
     if args.pca:
         if args.n_components is not None:
@@ -419,7 +493,7 @@ def main():
             train()
 
     if args.eval:
-        evaluate()
+        evaluate(float(args.probability_threshold))
 
 if __name__ == '__main__':
     main()
