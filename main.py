@@ -317,6 +317,9 @@ def evaluate(probability_threshold):
     confs = [(knn.get_confusion_matrix(), log.get_confusion_matrix()) for knn, log in model]
     knn_conf = np.mean([conf[0] for conf in confs], axis=0)
     log_conf = np.mean([conf[1] for conf in confs], axis=0)
+    # Change confusion matrices to percentages
+    knn_conf = (knn_conf / np.sum(knn_conf, axis=1, keepdims=True))*100
+    log_conf = (log_conf / np.sum(log_conf, axis=1, keepdims=True))*100
 
     stats = evaluate_splits(model, True, probability_threshold=probability_threshold)
     acc_knn, acc_log = stats["accuracy"]
@@ -330,12 +333,12 @@ def evaluate(probability_threshold):
     Logger.log(f"Recall: {rec_knn:.4f}")
     Logger.log(f"F1: {f1_knn:.4f}")
     Logger.log(f"ROC AUC: {roc_auc_knn:.4f}")
-    Logger.log(f"Confusion matrix:  Actual values")
+    Logger.log(f"Confusion matrix:   Actual values")
     Logger.log(f"                     1       0    ")
-    Logger.log(f"                 +-----------------+")
-    Logger.log(f"    Predicted 1: |  {knn_conf[0][0]:.1f}   {knn_conf[0][1]:.1f}  |")
-    Logger.log(f"              0: |  {knn_conf[1][0]:.1f}    {knn_conf[1][1]:.1f}    |")
-    Logger.log(f"                 +-----------------+")
+    Logger.log(f"                 +----------------+")
+    Logger.log(f"    Predicted 1: |  {knn_conf[0][0]:.1f}%  {knn_conf[0][1]:.1f}%  |")
+    Logger.log(f"              0: |  {knn_conf[1][0]:.1f}%  {knn_conf[1][1]:.1f}%  |")
+    Logger.log(f"                 +----------------+")
 
     Logger.log("Cross-trained model stats (Logistic Regression):")
     Logger.log(f"Accuracy: {acc_log:.4f}")
@@ -343,12 +346,12 @@ def evaluate(probability_threshold):
     Logger.log(f"Recall: {rec_log:.4f}")
     Logger.log(f"F1: {f1_log:.4f}")
     Logger.log(f"ROC AUC: {roc_auc_log:.4f}")
-    Logger.log(f"Confusion matrix:  Actual values")
+    Logger.log(f"Confusion matrix:   Actual values")
     Logger.log(f"                     1        0    ")
-    Logger.log(f"                 +-----------------+")
-    Logger.log(f"    Predicted 1: |  {log_conf[0][0]:.1f}   {log_conf[0][1]:.1f}  |")
-    Logger.log(f"              0: |  {log_conf[1][0]:.1f}     {log_conf[1][1]:.1f}    |")
-    Logger.log(f"                 +-----------------+")
+    Logger.log(f"                 +---------------+")
+    Logger.log(f"    Predicted 1: |  {log_conf[0][0]:.1f}%  {log_conf[0][1]:.1f}% |")
+    Logger.log(f"              0: |  {log_conf[1][0]:.1f}%  {log_conf[1][1]:.1f}% |")
+    Logger.log(f"                 +---------------+")
 
 
     # Close loaded files
