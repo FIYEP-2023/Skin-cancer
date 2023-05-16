@@ -19,12 +19,21 @@ class PCA:
         return (X - mean) / std
 
     def fit(self) -> np.ndarray:
-        Logger.log(f"Fitting PCA with {self.n_components} principal components")
-        pca_result = self.pca.fit_transform(self.X_train)
-        self.pca_result = pca_result
+        # Logger.log(f"Fitting PCA with {self.n_components} principal components")
+        # pca_result = self.pca.fit_transform(self.X_train)
+        # self.pca_result = pca_result
 
-        pca_result_pruned = self.pca_result[:, :self.n_components]
-        self.pca_result_pruned = pca_result_pruned
-    
+        # pca_result_pruned = self.pca_result[:, :self.n_components]
+        # self.pca_result_pruned = pca_result_pruned
+        # ! PCA SKIP
+        self.pca_result = self.X_train
+        self.pca_result_pruned = self.X_train[:, :self.n_components]
+
+
     def transform(self, X: np.ndarray) -> np.ndarray:
-        return self.pca.transform(X)
+        """
+        Normalises and transforms the given data with the PCA
+        """
+        # return self.pca.transform(self.normalise(X))
+        # ! PCA SKIP
+        return self.normalise(X)
