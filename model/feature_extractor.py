@@ -316,6 +316,22 @@ class FeatureExtractor:
         # Extract each feature and get the leasion part only
         lesion_features = [filtered[:,:,i][mask==1] for i in range(n_features)]
         
+        # Plot histograms for feature 3, 1 and 10 and the histograms for grayscale version of original image
+        from skimage.color import rgb2gray
+        fig, axs = plt.subplots(1, 4, figsize=(20, 5))
+        og_gray = rgb2gray(img)
+        og_gray[mask==0] = 0
+        og_gray = og_gray.flatten()
+        axs[0].hist(og_gray, bins=10)
+        axs[0].set_title("Original image")
+        axs[1].hist(lesion_features[3]*256, bins=10)
+        axs[1].set_title("Filter 3")
+        axs[2].hist(lesion_features[1]*256, bins=10)
+        axs[2].set_title("Filter 1")
+        axs[3].hist(lesion_features[10]*256, bins=10)
+        axs[3].set_title("Filter 10")
+        plt.show()
+
         #region Bin size creator
         # Create n bins of different width, with the same number of elements in each bin
         # n_bins = 10
@@ -341,10 +357,10 @@ class FeatureExtractor:
     
     def do_all(self, img, mask) -> np.ndarray:
         # do all of them
-        asymmetry = np.array([self.asymmetry(img, mask)])
-        compactness = np.array([self.compactness(img, mask)])
-        color = np.array(self.color(img, mask))
-        filters = self.filters(img, mask)
+        asymmetry = np.array([self.asymmetry(img, mask)]) # 1 feature
+        compactness = np.array([self.compactness(img, mask)]) # 1 feature
+        color = np.array(self.color(img, mask)) # 6 features
+        filters = self.filters(img, mask) # 72 features
         merged = np.concatenate([asymmetry, compactness, color, filters])
         return merged
 

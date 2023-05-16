@@ -7246,3 +7246,7 @@
 [11:12:44] [INFO]     Predicted 1: |  74.8%  25.2% |
 [11:12:44] [INFO]               0: |  30.8%  69.2% |
 [11:12:44] [INFO]                  +---------------+
+[12:45:06] [WARNING] Resized images not found, proceeding with original sizes.
+[12:47:21] [INFO] Using image PAT_122_185_957.png
+[12:47:59] [INFO] Using image PAT_201_306_781.png
+[12:48:12] [INFO] Using image PAT_198_853_778.png
