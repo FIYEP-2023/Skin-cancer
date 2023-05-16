@@ -201,7 +201,7 @@ def pca(n_components: int = None):
         # Get indices of images in this split
         indices = [img_names.index(img) for img in train]
         # Get features for this split
-        X_split = PCA.normalise(X[indices])
+        X_split = X[indices]
         y_split = y[indices]
         # Fit PCA
         pca = PCA(X_split, y_split, n_components)
@@ -216,7 +216,7 @@ def pca(n_components: int = None):
     # Get indices of images in this split
     indices = [img_names.index(img) for img in train]
     # Get features for this split
-    X_split = PCA.normalise(X[indices])
+    X_split = X[indices]
     y_split = y[indices]
     # Fit PCA
     pca = PCA(X_split, y_split, n_components)
@@ -267,8 +267,7 @@ def train(k_neighbors: int = 5):
         indices = [img_names.index(img) for img in split]
         pca = pcas[i]
         # X
-        X_val = pca.normalise(X[indices])
-        X_val = pca.transform(X_val)
+        X_val = pca.transform(X[indices])
         X_val_splits.append(X_val)
         # y
         y_val = y[indices]
@@ -283,8 +282,7 @@ def train(k_neighbors: int = 5):
     # Get indices of images in test data
     indices = [img_names.index(img) for img in test_data]
     # Get features for this split
-    X_test = full_pca.normalise(X[indices])
-    X_test = full_pca.transform(X_test)
+    X_test = full_pca.transform(X[indices])
     y_test = y[indices]
     # Fit KNN
     knn = KNN(full_pca, X_test, y_test, n_neighbors=k_neighbors)

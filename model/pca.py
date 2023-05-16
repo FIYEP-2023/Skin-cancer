@@ -4,7 +4,7 @@ from model.logger import Logger
 
 class PCA:
     def __init__(self, X_train: np.ndarray, y_train: np.ndarray, n_components) -> None:
-        self.X_train = X_train
+        self.X_train = self.normalise(X_train)
         self.y_train = y_train
         self.n_components = n_components
         self.pca = sklearnPCA()
@@ -12,13 +12,11 @@ class PCA:
     @staticmethod
     def normalise(X: np.ndarray) -> np.ndarray:
         """
-        Normalises the given data to range [0, 1] and centers it around 0
+        Normalises each feature in the dataset to have a mean of 0 and a standard deviation of 1
         """
-        # Normalise each feature in to range [0, 1]
-        normrange = (X - X.min(axis=0)) / (X.max(axis=0) - X.min(axis=0))
-        # Center each feature around 0
-        centered = normrange - normrange.mean(axis=0)
-        return centered
+        mean = np.mean(X, axis=0)
+        std = np.std(X, axis=0)
+        return (X - mean) / std
 
     def fit(self) -> np.ndarray:
         Logger.log(f"Fitting PCA with {self.n_components} principal components")
