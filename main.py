@@ -173,7 +173,7 @@ def split_data(train_size: float = 0.8, folds: int = 5):
         pickle.dump(test, f)
     Logger.log(f"Saved {len(trains)} training splits, {len(validates)} validation splits and {len(test)} test data to file", level=LogTypes.INFO)
 
-def pca(n_components: int = 40):
+def pca(n_components: int = None):
     # Make sure our data exists
     validate_file("data/features/X.pkl", "--extract all --images all")
     validate_file("data/features/y.pkl", "--extract all --images all")
@@ -189,6 +189,10 @@ def pca(n_components: int = 40):
         img_names: list[str] = pickle.load(f)
     with open("data/training/training_splits.pkl", "rb") as f:
         training_splits: list[np.ndarray[str]] = pickle.load(f)
+
+    # Set n_components to feature count if not specified
+    if n_components is None:
+        n_components = X.shape[1]
 
     # Train PCA on each training split
     pcas = []
