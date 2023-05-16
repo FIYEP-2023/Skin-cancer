@@ -68,10 +68,10 @@ class Evaluator:
             y_test = self.y_val
 
             prediction = self.predict(X_test)
-            TP = np.sum(np.logical_and(prediction == 1, y_test == 1))
-            TN = np.sum(np.logical_and(prediction == 0, y_test == 0))
-            FP = np.sum(np.logical_and(prediction == 1, y_test == 0))
-            FN = np.sum(np.logical_and(prediction == 0, y_test == 1))
+            TP = np.sum(y_test * prediction)
+            FP = np.sum((1 - y_test) * prediction)
+            FN = np.sum(y_test * (1 - prediction))
+            TN = np.sum((1 - y_test) * (1 - prediction))
             confusion_matrix = np.array([[TP, FP], [FN, TN]])
 
             self.confusion_matrix = confusion_matrix
@@ -172,7 +172,6 @@ class Logistic(Evaluator):
         self.logistic.fit(X_train, y_train)
     
     def predict(self, X_test: np.ndarray) -> np.ndarray:
-        print(self.probability)
         if self.probability:
             threshold = self.probability_threshold
             return np.array([1 if prob > threshold else 0 for prob in self.logistic.predict_proba(X_test)[:,1]])
