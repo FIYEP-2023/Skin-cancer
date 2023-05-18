@@ -40,19 +40,13 @@ class DataSplitter():
         skf = StratifiedKFold(n_splits=folds) # doesn't shuffle
 
         # Split into folds
-        folds = []
-        for X_index, y_index in skf.split(X_train_val, y_train_val):
-            X_part, y_part = X_train_val[X_index], y_train_val[X_index]
-            folds.append(X_part)
         train_splits = []
         val_splits = []
-        for i in range(len(folds)):
-            # Set ith fold as validation set
-            val_split = folds[i]
-            # Merge all others into training set
-            train_split = np.concatenate(folds[:i] + folds[i+1:])
-            # Append to list
-            val_splits.append(val_split)
-            train_splits.append(train_split)
+        for X_index, y_index in skf.split(X_train_val, y_train_val):
+            X_train_fold, X_test_fold = X_train_val[X_index], X_train_val[y_index]
+            y_train_fold, y_test_fold = y_train_val[X_index], y_train_val[y_index]
+
+            train_splits.append(X_train_fold)
+            val_splits.append(X_test_fold)
         
         return train_splits, val_splits, X_test

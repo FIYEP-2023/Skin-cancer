@@ -9,7 +9,7 @@ from typing import Tuple
 
 # Custom
 from model.feature_extractor import FeatureExtractor
-from model.pca import PCA
+from model.topk import TopK
 from model.data_splitter import DataSplitter
 from model.logger import LogTypes, Logger
 from model.classifiers import KNN, LogisticRegression, train_splits, evaluate_splits
@@ -25,9 +25,9 @@ def add_args():
     parser.add_argument("--has_cancer", "-hc", help="check if the images have cancer", action="store_true")
     # pca
     parser.add_argument("--pca", "-p", help="perform pca on the extracted features", action="store_true")
-    parser.add_argument("--n_components", "-c", help="number of principal components in PCA", default=None)
+    parser.add_argument("--top_k_k", "-tk", help="value of k to use for top k", default=None)
     # Testing
-    parser.add_argument("--test_components", "-tc", help="test different numbers of components from 1 to n_components for PCA", action="store_true")
+    parser.add_argument("--test_top_k", "-tc", help="test different numbers of K for top k", action="store_true")
     parser.add_argument("--test_neighbors", "-tn", help="test different numbers of neighbors from 1 to n_neighbors for KNN", action="store_true")
     # split
     parser.add_argument("--split", "-s", help="split the data into training and testing sets", action="store_true")
@@ -173,7 +173,7 @@ def split_data(train_size: float = 0.8, folds: int = 5):
         pickle.dump(test, f)
     Logger.log(f"Saved {len(trains)} training splits, {len(validates)} validation splits and {len(test)} test data to file", level=LogTypes.INFO)
 
-def pca(n_components: int = None):
+def topk(top_k_k: int = None):
     # Make sure our data exists
     validate_file("data/features/X.pkl", "--extract all --images all")
     validate_file("data/features/y.pkl", "--extract all --images all")
@@ -190,26 +190,26 @@ def pca(n_components: int = None):
     with open("data/training/training_splits.pkl", "rb") as f:
         training_splits: list[np.ndarray[str]] = pickle.load(f)
 
-    # Set n_components to feature count if not specified
-    if n_components is None:
-        n_components = X.shape[1]
+    # Set top_k_k to feature count if not specified
+    if top_k_k is None:
+        top_k_k = X.shape[1]
 
-    # Train PCA on each training split
-    pcas = []
+    # Train topk on each training split
+    topks = []
     for i, train in enumerate(training_splits):
-        Logger.log(f"Training PCA on split {i+1}/{len(training_splits)}")
+        Logger.log(f"Training top K on split {i+1}/{len(training_splits)}")
         # Get indices of images in this split
         indices = [img_names.index(img) for img in train]
         # Get features for this split
         X_split = X[indices]
         y_split = y[indices]
-        # Fit PCA
-        pca = PCA(X_split, y_split, n_components)
-        pca.fit()
-        pcas.append(pca)
+        # Fit topk
+        topk = TopK(X_split, y_split, top_k_k)
+        topk.fit()
+        topks.append(topk)
     
-    # Train PCA on all training data
-    Logger.log("Training PCA on all training data")
+    # Train topk on all training data
+    Logger.log("Training Top K on all training data")
     # Merge all training splits (remove duplicates)
     train = np.concatenate(training_splits)
     train = np.unique(train)
@@ -218,15 +218,15 @@ def pca(n_components: int = None):
     # Get features for this split
     X_split = X[indices]
     y_split = y[indices]
-    # Fit PCA
-    pca = PCA(X_split, y_split, n_components)
-    pca.fit()
+    # Fit topk
+    topk = TopK(X_split, y_split, top_k_k)
+    topk.fit()
     
     # Save to file
     with open("data/training/full_pca.pkl", "wb") as f:
-        pickle.dump(pca, f)
+        pickle.dump(topk, f)
     with open("data/training/cross_val_pcas.pkl", "wb") as f:
-        pickle.dump(pcas, f)
+        pickle.dump(topks, f)
     Logger.log("Saved PCAs to file", level=LogTypes.INFO)
 
     # Close loaded files
@@ -250,9 +250,9 @@ def train(k_neighbors: int = 5):
     with open("data/features/img_names.pkl", "rb") as f:
         img_names: list[str] = pickle.load(f)
     with open("data/training/cross_val_pcas.pkl", "rb") as f:
-        pcas: list[PCA] = pickle.load(f)
+        topks: list[TopK] = pickle.load(f)
     with open("data/training/full_pca.pkl", "rb") as f:
-        full_pca: PCA = pickle.load(f)
+        full_topk: TopK = pickle.load(f)
     with open("data/training/validation_splits.pkl", "rb") as f:
         validation_splits: list[np.ndarray[str]] = pickle.load(f)
     with open("data/training/test_data.pkl", "rb") as f:
@@ -265,9 +265,9 @@ def train(k_neighbors: int = 5):
         Logger.log(f"Processing validation split {i+1}/{len(validation_splits)}")
         # Get indices of images in this split
         indices = [img_names.index(img) for img in split]
-        pca = pcas[i]
+        topk = topks[i]
         # X
-        X_val = pca.transform(X[indices])
+        X_val = topk.transform(X[indices])
         X_val_splits.append(X_val)
         # y
         y_val = y[indices]
@@ -275,17 +275,17 @@ def train(k_neighbors: int = 5):
 
 
     # Train models on every split
-    models = train_splits(pcas, X_val_splits, y_val_splits, n_neighbors=k_neighbors)
+    models = train_splits(topks, X_val_splits, y_val_splits, n_neighbors=k_neighbors)
 
     # Train full model on all training data
     Logger.log("Training full model on all training data")
     # Get indices of images in test data
     indices = [img_names.index(img) for img in test_data]
     # Get features for this split
-    X_test = full_pca.transform(X[indices])
+    X_test = full_topk.transform(X[indices])
     y_test = y[indices]
     # Fit KNN
-    knn = KNN(full_pca, X_test, y_test, n_neighbors=k_neighbors)
+    knn = KNN(full_topk, X_test, y_test, n_neighbors=k_neighbors)
 
     # Save to file
     with open("data/training/cross_val_models.pkl", "wb") as f:
@@ -294,7 +294,7 @@ def train(k_neighbors: int = 5):
         pickle.dump(knn, f)
     
     # Close loaded files
-    del X, y, img_names, pcas, full_pca, validation_splits, test_data
+    del X, y, img_names, topks, full_topk, validation_splits, test_data
 
 def evaluate(probability_threshold):
     """
@@ -357,39 +357,38 @@ def evaluate(probability_threshold):
     # Close loaded files
     del model
 
-def test_components(max_components: int, k_neighbors: int = 5):
+def test_top_k(max_k: int, k_neighbors: int = 5):
     """
-    Test different numbers of components for PCA and plots components vs. f1 score.
+    Test different values of K for top K and plots K vs. f1 score.
     """
     k_neighbors = 5 if k_neighbors is None else k_neighbors
     # Run tests
-    Logger.log("Testing different numbers of components for PCA")
+    Logger.log("Testing different K values for Top K")
     x = []
     y = []
-    for n in range(1, max_components+1):
-        pca(n)
+    for n in range(1, max_k+1):
+        topk(n)
         train(k_neighbors=k_neighbors)
 
         # Load data
         with open("data/training/cross_val_models.pkl", "rb") as f:
             models: list[Tuple[KNN, LogisticRegression]] = pickle.load(f)
-            knns: list[KNN] = [model[0] for model in models]
         
         # Evaluate
-        stats = evaluate_splits(knns)
-        f1 = stats["f1"]
+        stats = evaluate_splits(models)
+        f1 = stats["f1"][0] # [0] for knn
         x.append(n)
         y.append(f1)
 
         # Close loaded files
-        del knns
+        del models
     
     # Plot results
     Logger.log("Plotting results")
     plt.plot(x, y)
-    plt.xlabel("Number of components")
+    plt.xlabel("K")
     plt.ylabel("F1 score")
-    plt.title("Number of components vs. F1 score")
+    plt.title("K vs. F1 score")
 
     # Save x, y and plot to file
     Logger.log("Saving results to file")
@@ -397,19 +396,19 @@ def test_components(max_components: int, k_neighbors: int = 5):
         pickle.dump(x, f)
     with open("data/training/components_y.pkl", "wb") as f:
         pickle.dump(y, f)
-    plt.savefig(f"data/training/components_plot_{max_components}.png")
+    plt.savefig(f"data/training/components_plot_{max_k}.png")
 
     plt.show()
 
 def test_neighbors(max_neighbors: int):
     """
-    Test different numbers of neighbors for KNN and plots neighbors vs. f1 score.
+    Test different numbers of neighbors for KNN and plots neighbors vs. errors.
     """
     # Run tests
     Logger.log("Testing different numbers of neighbors for KNN")
     x = []
     y = []
-    for k in range(1, max_neighbors+1):
+    for k in range(1, max_neighbors+1, 2): # Only odd numbers
         Logger.log(f"Testing {k} neighbors")
         train(k)
 
@@ -419,9 +418,9 @@ def test_neighbors(max_neighbors: int):
         
         # Evaluate
         stats = evaluate_splits(models)
-        f1_knn, f1_log = stats["f1"]
+        cf_knn, cf_log = stats["confusion_matrix"]
         x.append(k)
-        y.append(f1_knn)
+        y.append(cf_knn[1,0] + cf_knn[0,1])
 
         # Close loaded files
         del models
@@ -430,8 +429,8 @@ def test_neighbors(max_neighbors: int):
     Logger.log("Plotting results")
     plt.plot(x, y)
     plt.xlabel("Number of neighbors")
-    plt.ylabel("F1 score")
-    plt.title("Number of neighbors vs. F1 score")
+    plt.ylabel("Errors")
+    plt.title("Number of neighbors vs. Errors")
 
     # Save x, y and plot to file
     Logger.log("Saving results to file")
@@ -474,10 +473,10 @@ def main():
         else:
             split_data()
 
-    if args.test_components:
-        if args.n_components is None:
-            raise ValueError("Please specify the number of components to test using -n or --n_components")
-        test_components(int(args.n_components), args.k_neighbors)
+    if args.test_top_k:
+        if args.top_k_k is None:
+            raise ValueError("Please specify the number of components to test using -n or --top_k_k")
+        test_top_k(int(args.top_k_k), int(args.k_neighbors))
         return # If we're testing components, we don't need to do anything else
     if args.test_neighbors:
         if args.k_neighbors is None:
@@ -486,10 +485,10 @@ def main():
         return
 
     if args.pca:
-        if args.n_components is not None:
-            pca(int(args.n_components))
+        if args.top_k_k is not None:
+            topk(int(args.top_k_k))
         else:
-            pca()
+            topk()
     
     if args.train:
         if args.k_neighbors is not None:
