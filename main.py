@@ -12,7 +12,8 @@ from model.feature_extractor import FeatureExtractor
 from model.topk import TopK
 from model.data_splitter import DataSplitter
 from model.logger import LogTypes, Logger
-from model.classifiers import KNN, LogisticRegression, train_splits, evaluate_splits
+from model.classifiers import KNN, Logistic, train_splits, evaluate_splits
+from model.figures import create_figures
 
 def add_args():
     parser = argparse.ArgumentParser()
@@ -39,7 +40,13 @@ def add_args():
     # evaluation
     parser.add_argument("--eval", "-ev", help="evaluate cross-validated model and get statistics", action="store_true")
     parser.add_argument("--probability_threshold", "-pt", help="the probability threshold to use for logistic regression", default=0.5)
+    # Final evaluation
+    parser.add_argument("--final_eval", "-fe", help="evaluate the final model on the test set", action="store_true")
     args = parser.parse_args()
+
+    # Create figures
+    parser.add_argument("--figures", "-fig", help="create figures", action="store_true")
+
     return args
 
 def validate_file(filepath: str, prerequisite: str = None):
@@ -278,7 +285,7 @@ def train(k_neighbors: int = 5):
     models = train_splits(topks, X_val_splits, y_val_splits, n_neighbors=k_neighbors)
 
     # Train full model on all training data
-    Logger.log("Training full model on all training data")
+    Logger.log("Training full models on all training data")
     # Get indices of images in test data
     indices = [img_names.index(img) for img in test_data]
     # Get features for this split
@@ -286,12 +293,15 @@ def train(k_neighbors: int = 5):
     y_test = y[indices]
     # Fit KNN
     knn = KNN(full_topk, X_test, y_test, n_neighbors=k_neighbors)
+    log = Logistic(full_topk, X_test, y_test)
 
     # Save to file
     with open("data/training/cross_val_models.pkl", "wb") as f:
         pickle.dump(models, f)
     with open("data/training/full_knn.pkl", "wb") as f:
         pickle.dump(knn, f)
+    with open("data/training/full_log.pkl", "wb") as f:
+        pickle.dump(log, f)
     
     # Close loaded files
     del X, y, img_names, topks, full_topk, validation_splits, test_data
@@ -442,6 +452,62 @@ def test_neighbors(max_neighbors: int):
 
     plt.show()
 
+def final_eval(probability_threshold):
+    """
+    Evaluate the model on the testing data.  
+    Once this function has been run, there is no going back.
+    """
+    # Make sure our data exists
+    validate_file("data/training/full_knn.pkl", "--train")
+    validate_file("data/training/full_log.pkl", "--train")
+
+    # Load data
+    with open("data/training/full_knn.pkl", "rb") as f:
+        knn: KNN = pickle.load(f)
+    with open("data/training/full_log.pkl", "rb") as f:
+        log: Logistic = pickle.load(f)
+    
+    # Evaluate
+    knn.probability = True
+    knn.probability_threshold = probability_threshold
+    log.probability = True
+    log.probability_threshold = probability_threshold
+
+    Logger.log("Evaluating full models on testing data")
+    knn_conf = knn.get_confusion_matrix()
+    log_conf = log.get_confusion_matrix()
+
+    # Change confusion matrix to percentages
+    if True: # Change this to False to disable
+        knn_conf = (knn_conf / np.sum(knn_conf, axis=1, keepdims=True))*100
+        log_conf = (log_conf / np.sum(log_conf, axis=1, keepdims=True))*100
+    
+    Logger.log(f"KNN statistics:")
+    Logger.log(f"Accuracy: {knn.accuracy():.4f}")
+    Logger.log(f"Precision: {knn.precision():.4f}")
+    Logger.log(f"Recall: {knn.recall():.4f}")
+    Logger.log(f"F1 score: {knn.f1():.4f}")
+    Logger.log(f"ROC AUC: {knn.roc_auc():.4f}")
+    Logger.log(f"Confusion matrix:   Actual values")
+    Logger.log(f"                     1       0    ")
+    Logger.log(f"                 +----------------+")
+    Logger.log(f"    Predicted 1: |  {knn_conf[0][0]:.1f}%  {knn_conf[0][1]:.1f}%  |")
+    Logger.log(f"              0: |  {knn_conf[1][0]:.1f}%  {knn_conf[1][1]:.1f}%  |")
+    Logger.log(f"                 +----------------+")
+
+    Logger.log(f"Logistic regression statistics:")
+    Logger.log(f"Accuracy: {log.accuracy():.4f}")
+    Logger.log(f"Precision: {log.precision():.4f}")
+    Logger.log(f"Recall: {log.recall():.4f}")
+    Logger.log(f"F1 score: {log.f1():.4f}")
+    Logger.log(f"ROC AUC: {log.roc_auc():.4f}")
+    Logger.log(f"Confusion matrix:   Actual values")
+    Logger.log(f"                     1        0    ")
+    Logger.log(f"                 +---------------+")
+    Logger.log(f"    Predicted 1: |  {log_conf[0][0]:.1f}%  {log_conf[0][1]:.1f}% |")
+    Logger.log(f"              0: |  {log_conf[1][0]:.1f}%  {log_conf[1][1]:.1f}% |")
+    Logger.log(f"                 +---------------+")
+
 def main():
     args = add_args()
     
@@ -498,6 +564,12 @@ def main():
 
     if args.eval:
         evaluate(float(args.probability_threshold))
+    
+    if args.final_eval:
+        final_eval(float(args.probability_threshold))
+    
+    if args.figures:
+        create_figures()
 
 if __name__ == '__main__':
     main()
