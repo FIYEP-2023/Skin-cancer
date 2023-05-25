@@ -24724,3 +24724,195 @@
 [16:33:35] [INFO]     Predicted 1: |  72.0%  28.0% |
 [16:33:35] [INFO]               0: |  36.5%  63.5% |
 [16:33:35] [INFO]                  +---------------+
+[12:21:55] [INFO] Testing different numbers of neighbors for KNN
+[12:21:55] [INFO] Testing 1 neighbors
+[12:22:01] [INFO] Processing validation split 1/5
+[12:22:01] [INFO] Processing validation split 2/5
+[12:22:01] [INFO] Processing validation split 3/5
+[12:22:01] [INFO] Processing validation split 4/5
+[12:22:01] [INFO] Processing validation split 5/5
+[12:22:01] [INFO] Training KNNs and Logistics for 5 splits
+[12:22:01] [INFO] Training KNN with 12 features
+[12:22:01] [INFO] Training Logistic with 12 features
+[12:22:01] [INFO] Training KNN with 12 features
+[12:22:01] [INFO] Training Logistic with 12 features
+[12:22:01] [INFO] Training KNN with 12 features
+[12:22:01] [INFO] Training Logistic with 12 features
+[12:22:01] [INFO] Training KNN with 12 features
+[12:22:01] [INFO] Training Logistic with 12 features
+[12:22:01] [INFO] Training KNN with 12 features
+[12:22:01] [INFO] Training Logistic with 12 features
+[12:22:01] [INFO] Training full model on all training data
+[12:22:01] [INFO] Evaluating KNNs and Logistics for 5 splits
+[12:22:01] [INFO] Testing 3 neighbors
+[12:22:01] [INFO] Processing validation split 1/5
+[12:22:01] [INFO] Processing validation split 2/5
+[12:22:01] [INFO] Processing validation split 3/5
+[12:22:01] [INFO] Processing validation split 4/5
+[12:22:01] [INFO] Processing validation split 5/5
+[12:22:01] [INFO] Training KNNs and Logistics for 5 splits
+[12:22:01] [INFO] Training KNN with 12 features
+[12:22:01] [INFO] Training Logistic with 12 features
+[12:22:01] [INFO] Training KNN with 12 features
+[12:22:01] [INFO] Training Logistic with 12 features
+[12:22:01] [INFO] Training KNN with 12 features
+[12:22:01] [INFO] Training Logistic with 12 features
+[12:22:01] [INFO] Training KNN with 12 features
+[12:22:01] [INFO] Training Logistic with 12 features
+[12:22:01] [INFO] Training KNN with 12 features
+[12:22:01] [INFO] Training Logistic with 12 features
+[12:22:01] [INFO] Training full model on all training data
+[12:22:01] [INFO] Evaluating KNNs and Logistics for 5 splits
+[12:22:01] [INFO] Testing 5 neighbors
+[12:22:01] [INFO] Processing validation split 1/5
+[12:22:01] [INFO] Processing validation split 2/5
+[12:22:01] [INFO] Processing validation split 3/5
+[12:22:01] [INFO] Processing validation split 4/5
+[12:22:01] [INFO] Processing validation split 5/5
+[12:22:01] [INFO] Training KNNs and Logistics for 5 splits
+[12:22:01] [INFO] Training KNN with 12 features
+[12:22:01] [INFO] Training Logistic with 12 features
+[12:22:01] [INFO] Training KNN with 12 features
+[12:22:01] [INFO] Training Logistic with 12 features
+[12:22:01] [INFO] Training KNN with 12 features
+[12:22:01] [INFO] Training Logistic with 12 features
+[12:22:01] [INFO] Training KNN with 12 features
+[12:22:01] [INFO] Training Logistic with 12 features
+[12:22:01] [INFO] Training KNN with 12 features
+[12:22:01] [INFO] Training Logistic with 12 features
+[12:22:01] [INFO] Training full model on all training data
+[12:22:02] [INFO] Evaluating KNNs and Logistics for 5 splits
+[12:22:02] [INFO] Testing 7 neighbors
+[12:22:02] [INFO] Processing validation split 1/5
+[12:22:02] [INFO] Processing validation split 2/5
+[12:22:02] [INFO] Processing validation split 3/5
+[12:22:02] [INFO] Processing validation split 4/5
+[12:22:02] [INFO] Processing validation split 5/5
+[12:22:02] [INFO] Training KNNs and Logistics for 5 splits
+[12:22:02] [INFO] Training KNN with 12 features
+[12:22:02] [INFO] Training Logistic with 12 features
+[12:22:02] [INFO] Training KNN with 12 features
+[12:22:02] [INFO] Training Logistic with 12 features
+[12:22:02] [INFO] Training KNN with 12 features
+[12:22:02] [INFO] Training Logistic with 12 features
+[12:22:02] [INFO] Training KNN with 12 features
+[12:22:02] [INFO] Training Logistic with 12 features
+[12:22:02] [INFO] Training KNN with 12 features
+[12:22:02] [INFO] Training Logistic with 12 features
+[12:22:02] [INFO] Training full model on all training data
+[12:22:02] [INFO] Evaluating KNNs and Logistics for 5 splits
+[12:22:02] [INFO] Testing 9 neighbors
+[12:22:02] [INFO] Processing validation split 1/5
+[12:22:02] [INFO] Processing validation split 2/5
+[12:22:02] [INFO] Processing validation split 3/5
+[12:22:02] [INFO] Processing validation split 4/5
+[12:22:02] [INFO] Processing validation split 5/5
+[12:22:02] [INFO] Training KNNs and Logistics for 5 splits
+[12:22:02] [INFO] Training KNN with 12 features
+[12:22:02] [INFO] Training Logistic with 12 features
+[12:22:02] [INFO] Training KNN with 12 features
+[12:22:02] [INFO] Training Logistic with 12 features
+[12:22:02] [INFO] Training KNN with 12 features
+[12:22:02] [INFO] Training Logistic with 12 features
+[12:22:02] [INFO] Training KNN with 12 features
+[12:22:02] [INFO] Training Logistic with 12 features
+[12:22:02] [INFO] Training KNN with 12 features
+[12:22:02] [INFO] Training Logistic with 12 features
+[12:22:02] [INFO] Training full model on all training data
+[12:22:02] [INFO] Evaluating KNNs and Logistics for 5 splits
+[12:22:02] [INFO] Testing 11 neighbors
+[12:22:02] [INFO] Processing validation split 1/5
+[12:22:02] [INFO] Processing validation split 2/5
+[12:22:02] [INFO] Processing validation split 3/5
+[12:22:02] [INFO] Processing validation split 4/5
+[12:22:02] [INFO] Processing validation split 5/5
+[12:22:02] [INFO] Training KNNs and Logistics for 5 splits
+[12:22:02] [INFO] Training KNN with 12 features
+[12:22:02] [INFO] Training Logistic with 12 features
+[12:22:02] [INFO] Training KNN with 12 features
+[12:22:02] [INFO] Training Logistic with 12 features
+[12:22:02] [INFO] Training KNN with 12 features
+[12:22:02] [INFO] Training Logistic with 12 features
+[12:22:02] [INFO] Training KNN with 12 features
+[12:22:02] [INFO] Training Logistic with 12 features
+[12:22:02] [INFO] Training KNN with 12 features
+[12:22:02] [INFO] Training Logistic with 12 features
+[12:22:02] [INFO] Training full model on all training data
+[12:22:02] [INFO] Evaluating KNNs and Logistics for 5 splits
+[12:22:02] [INFO] Testing 13 neighbors
+[12:22:02] [INFO] Processing validation split 1/5
+[12:22:02] [INFO] Processing validation split 2/5
+[12:22:02] [INFO] Processing validation split 3/5
+[12:22:02] [INFO] Processing validation split 4/5
+[12:22:02] [INFO] Processing validation split 5/5
+[12:22:02] [INFO] Training KNNs and Logistics for 5 splits
+[12:22:02] [INFO] Training KNN with 12 features
+[12:22:02] [INFO] Training Logistic with 12 features
+[12:22:02] [INFO] Training KNN with 12 features
+[12:22:02] [INFO] Training Logistic with 12 features
+[12:22:02] [INFO] Training KNN with 12 features
+[12:22:02] [INFO] Training Logistic with 12 features
+[12:22:02] [INFO] Training KNN with 12 features
+[12:22:02] [INFO] Training Logistic with 12 features
+[12:22:02] [INFO] Training KNN with 12 features
+[12:22:02] [INFO] Training Logistic with 12 features
+[12:22:02] [INFO] Training full model on all training data
+[12:22:02] [INFO] Evaluating KNNs and Logistics for 5 splits
+[12:22:02] [INFO] Plotting results
+[12:22:02] [INFO] Saving results to file
+[13:02:30] [INFO] Training top K on split 1/5
+[13:02:30] [INFO] Fitting Top K with 12 features
+[13:02:30] [INFO] Training top K on split 2/5
+[13:02:30] [INFO] Fitting Top K with 12 features
+[13:02:30] [INFO] Training top K on split 3/5
+[13:02:30] [INFO] Fitting Top K with 12 features
+[13:02:30] [INFO] Training top K on split 4/5
+[13:02:30] [INFO] Fitting Top K with 12 features
+[13:02:30] [INFO] Training top K on split 5/5
+[13:02:30] [INFO] Fitting Top K with 12 features
+[13:02:30] [INFO] Training Top K on all training data
+[13:02:30] [INFO] Fitting Top K with 12 features
+[13:02:30] [INFO] Saved PCAs to file
+[13:02:30] [INFO] Processing validation split 1/5
+[13:02:30] [INFO] Processing validation split 2/5
+[13:02:30] [INFO] Processing validation split 3/5
+[13:02:30] [INFO] Processing validation split 4/5
+[13:02:30] [INFO] Processing validation split 5/5
+[13:02:30] [INFO] Training KNNs and Logistics for 5 splits
+[13:02:30] [INFO] Training KNN with 12 features
+[13:02:30] [INFO] Training Logistic with 12 features
+[13:02:30] [INFO] Training KNN with 12 features
+[13:02:30] [INFO] Training Logistic with 12 features
+[13:02:30] [INFO] Training KNN with 12 features
+[13:02:30] [INFO] Training Logistic with 12 features
+[13:02:30] [INFO] Training KNN with 12 features
+[13:02:30] [INFO] Training Logistic with 12 features
+[13:02:30] [INFO] Training KNN with 12 features
+[13:02:30] [INFO] Training Logistic with 12 features
+[13:02:30] [INFO] Training full model on all training data
+[13:02:30] [INFO] Evaluating cross-trained models
+[13:02:30] [INFO] Evaluating KNNs and Logistics for 5 splits
+[13:02:30] [INFO] Cross-trained model stats (KNN):
+[13:02:30] [INFO] Accuracy: 0.6907
+[13:02:30] [INFO] Precision: 0.7144
+[13:02:30] [INFO] Recall: 0.7238
+[13:02:30] [INFO] F1: 0.7153
+[13:02:30] [INFO] ROC AUC: 0.6880
+[13:02:30] [INFO] Confusion matrix:   Actual values
+[13:02:30] [INFO]                      1       0    
+[13:02:30] [INFO]                  +----------------+
+[13:02:30] [INFO]     Predicted 1: |  70.8%  29.2%  |
+[13:02:30] [INFO]               0: |  33.0%  67.0%  |
+[13:02:30] [INFO]                  +----------------+
+[13:02:30] [INFO] Cross-trained model stats (Logistic Regression):
+[13:02:30] [INFO] Accuracy: 0.6764
+[13:02:30] [INFO] Precision: 0.7194
+[13:02:30] [INFO] Recall: 0.6526
+[13:02:30] [INFO] F1: 0.6842
+[13:02:30] [INFO] ROC AUC: 0.6784
+[13:02:30] [INFO] Confusion matrix:   Actual values
+[13:02:30] [INFO]                      1        0    
+[13:02:30] [INFO]                  +---------------+
+[13:02:30] [INFO]     Predicted 1: |  72.0%  28.0% |
+[13:02:30] [INFO]               0: |  36.5%  63.5% |
+[13:02:30] [INFO]                  +---------------+
