@@ -4,14 +4,14 @@ import os
 import matplotlib.pyplot as plt
 
 # Load csv
-df = pd.read_csv('../data/metadata.csv')
+df = pd.read_csv('data/metadata.csv')
 
 # Get segmented images
-segmented = os.listdir('../data/segmented')
+segmented = os.listdir('data/segmented')
 segmented = [x for x in segmented if "mask" not in x]
 
 # Get not segmented images
-not_segmented = os.listdir('../data/not_segmented')
+not_segmented = os.listdir('data/not_segmented')
 
 # Get all
 all_images = segmented + not_segmented

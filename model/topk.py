@@ -4,6 +4,8 @@ from model.logger import Logger
 from sklearn.feature_selection import SelectKBest
 
 class TopK:
+    DO_ABCD_ONLY = False # This is for comparison
+
     def __init__(self, X_train: np.ndarray, y_train: np.ndarray, top_k_k) -> None:
         self.X_train = self.normalise(X_train)
         self.y_train = y_train
@@ -30,10 +32,17 @@ class TopK:
         # ! PCA SKIP
         # self.pca_result = self.X_train
         # self.pca_result_pruned = self.X_train[:, :self.top_k_k]
+
         # ! Top K
-        Logger.log(f"Fitting Top K with {self.top_k_k} features")
-        self.topk.fit(self.X_train, self.y_train)
-        self.topk_result = self.topk.transform(self.X_train)
+        if not self.DO_ABCD_ONLY:
+            Logger.log(f"Fitting Top K with {self.top_k_k} features")
+            self.topk.fit(self.X_train, self.y_train)
+            self.topk_result = self.topk.transform(self.X_train)
+        else:
+            Logger.log(f"Using ABCD features only")
+            # Dont fint top k, just use first 8 features
+            self.topk_result = self.X_train[:, :8]
+            
 
     def transform(self, X: np.ndarray) -> np.ndarray:
         """
@@ -43,4 +52,7 @@ class TopK:
         # ! PCA SKIP
         # return self.normalise(X)
         # ! Top K
-        return self.topk.transform(self.normalise(X))
+        if not self.DO_ABCD_ONLY:
+            return self.topk.transform(self.normalise(X))
+        else:
+            return self.normalise(X)[:, :8]

@@ -24916,3 +24916,283 @@
 [13:02:30] [INFO]     Predicted 1: |  72.0%  28.0% |
 [13:02:30] [INFO]               0: |  36.5%  63.5% |
 [13:02:30] [INFO]                  +---------------+
+[14:49:22] [INFO] Training top K on split 1/5
+[14:49:22] [INFO] Fitting Top K with 12 features
+[14:49:22] [INFO] Training top K on split 2/5
+[14:49:22] [INFO] Fitting Top K with 12 features
+[14:49:22] [INFO] Training top K on split 3/5
+[14:49:22] [INFO] Fitting Top K with 12 features
+[14:49:22] [INFO] Training top K on split 4/5
+[14:49:22] [INFO] Fitting Top K with 12 features
+[14:49:22] [INFO] Training top K on split 5/5
+[14:49:22] [INFO] Fitting Top K with 12 features
+[14:49:22] [INFO] Training Top K on all training data
+[14:49:22] [INFO] Fitting Top K with 12 features
+[14:49:22] [INFO] Saved PCAs to file
+[14:49:22] [INFO] Processing validation split 1/5
+[14:49:22] [INFO] Processing validation split 2/5
+[14:49:22] [INFO] Processing validation split 3/5
+[14:49:22] [INFO] Processing validation split 4/5
+[14:49:22] [INFO] Processing validation split 5/5
+[14:49:22] [INFO] Training KNNs and Logistics for 5 splits
+[14:49:22] [INFO] Training KNN with 12 features
+[14:49:22] [INFO] Training Logistic with 12 features
+[14:49:22] [INFO] Training KNN with 12 features
+[14:49:22] [INFO] Training Logistic with 12 features
+[14:49:22] [INFO] Training KNN with 12 features
+[14:49:22] [INFO] Training Logistic with 12 features
+[14:49:22] [INFO] Training KNN with 12 features
+[14:49:22] [INFO] Training Logistic with 12 features
+[14:49:22] [INFO] Training KNN with 12 features
+[14:49:22] [INFO] Training Logistic with 12 features
+[14:49:22] [INFO] Training full models on all training data
+[14:49:22] [INFO] Evaluating cross-trained models
+[14:49:22] [INFO] Evaluating KNNs and Logistics for 5 splits
+[14:49:22] [INFO] Cross-trained model stats (KNN):
+[14:49:22] [INFO] Accuracy: 0.6907
+[14:49:22] [INFO] Precision: 0.7144
+[14:49:22] [INFO] Recall: 0.7238
+[14:49:22] [INFO] F1: 0.7153
+[14:49:22] [INFO] ROC AUC: 0.6880
+[14:49:22] [INFO] Confusion matrix:   Actual values
+[14:49:22] [INFO]                      1       0    
+[14:49:22] [INFO]                  +----------------+
+[14:49:22] [INFO]     Predicted 1: |  70.8%  29.2%  |
+[14:49:22] [INFO]               0: |  33.0%  67.0%  |
+[14:49:22] [INFO]                  +----------------+
+[14:49:22] [INFO] Cross-trained model stats (Logistic Regression):
+[14:49:22] [INFO] Accuracy: 0.6764
+[14:49:22] [INFO] Precision: 0.7194
+[14:49:22] [INFO] Recall: 0.6526
+[14:49:22] [INFO] F1: 0.6842
+[14:49:22] [INFO] ROC AUC: 0.6784
+[14:49:22] [INFO] Confusion matrix:   Actual values
+[14:49:22] [INFO]                      1        0    
+[14:49:22] [INFO]                  +---------------+
+[14:49:22] [INFO]     Predicted 1: |  72.0%  28.0% |
+[14:49:22] [INFO]               0: |  36.5%  63.5% |
+[14:49:22] [INFO]                  +---------------+
+[14:49:59] [INFO] Training top K on split 1/5
+[14:49:59] [INFO] Fitting Top K with 12 features
+[14:49:59] [INFO] Training top K on split 2/5
+[14:49:59] [INFO] Fitting Top K with 12 features
+[14:49:59] [INFO] Training top K on split 3/5
+[14:49:59] [INFO] Fitting Top K with 12 features
+[14:49:59] [INFO] Training top K on split 4/5
+[14:49:59] [INFO] Fitting Top K with 12 features
+[14:49:59] [INFO] Training top K on split 5/5
+[14:49:59] [INFO] Fitting Top K with 12 features
+[14:49:59] [INFO] Training Top K on all training data
+[14:49:59] [INFO] Fitting Top K with 12 features
+[14:49:59] [INFO] Saved PCAs to file
+[14:49:59] [INFO] Processing validation split 1/5
+[14:49:59] [INFO] Processing validation split 2/5
+[14:49:59] [INFO] Processing validation split 3/5
+[14:49:59] [INFO] Processing validation split 4/5
+[14:49:59] [INFO] Processing validation split 5/5
+[14:49:59] [INFO] Training KNNs and Logistics for 5 splits
+[14:49:59] [INFO] Training KNN with 12 features
+[14:49:59] [INFO] Training Logistic with 12 features
+[14:49:59] [INFO] Training KNN with 12 features
+[14:49:59] [INFO] Training Logistic with 12 features
+[14:49:59] [INFO] Training KNN with 12 features
+[14:49:59] [INFO] Training Logistic with 12 features
+[14:49:59] [INFO] Training KNN with 12 features
+[14:49:59] [INFO] Training Logistic with 12 features
+[14:49:59] [INFO] Training KNN with 12 features
+[14:49:59] [INFO] Training Logistic with 12 features
+[14:49:59] [INFO] Training full models on all training data
+[14:49:59] [INFO] Evaluating cross-trained models
+[14:49:59] [INFO] Evaluating KNNs and Logistics for 5 splits
+[14:49:59] [INFO] Cross-trained model stats (KNN):
+[14:49:59] [INFO] Accuracy: 0.6907
+[14:49:59] [INFO] Precision: 0.7144
+[14:49:59] [INFO] Recall: 0.7238
+[14:49:59] [INFO] F1: 0.7153
+[14:49:59] [INFO] ROC AUC: 0.6880
+[14:49:59] [INFO] Confusion matrix:   Actual values
+[14:49:59] [INFO]                      1       0    
+[14:49:59] [INFO]                  +----------------+
+[14:49:59] [INFO]     Predicted 1: |  70.8%  29.2%  |
+[14:49:59] [INFO]               0: |  33.0%  67.0%  |
+[14:49:59] [INFO]                  +----------------+
+[14:49:59] [INFO] Cross-trained model stats (Logistic Regression):
+[14:49:59] [INFO] Accuracy: 0.6764
+[14:49:59] [INFO] Precision: 0.7194
+[14:49:59] [INFO] Recall: 0.6526
+[14:49:59] [INFO] F1: 0.6842
+[14:49:59] [INFO] ROC AUC: 0.6784
+[14:49:59] [INFO] Confusion matrix:   Actual values
+[14:49:59] [INFO]                      1        0    
+[14:49:59] [INFO]                  +---------------+
+[14:49:59] [INFO]     Predicted 1: |  72.0%  28.0% |
+[14:49:59] [INFO]               0: |  36.5%  63.5% |
+[14:49:59] [INFO]                  +---------------+
+[14:50:25] [INFO] Training top K on split 1/5
+[14:50:25] [INFO] Using ABCD features
+[14:50:25] [INFO] Training top K on split 2/5
+[14:50:25] [INFO] Using ABCD features
+[14:50:25] [INFO] Training top K on split 3/5
+[14:50:25] [INFO] Using ABCD features
+[14:50:25] [INFO] Training top K on split 4/5
+[14:50:25] [INFO] Using ABCD features
+[14:50:25] [INFO] Training top K on split 5/5
+[14:50:25] [INFO] Using ABCD features
+[14:50:25] [INFO] Training Top K on all training data
+[14:50:25] [INFO] Using ABCD features
+[14:50:25] [INFO] Saved PCAs to file
+[14:50:25] [INFO] Processing validation split 1/5
+[14:50:25] [INFO] Processing validation split 2/5
+[14:50:25] [INFO] Processing validation split 3/5
+[14:50:25] [INFO] Processing validation split 4/5
+[14:50:25] [INFO] Processing validation split 5/5
+[14:50:25] [INFO] Training KNNs and Logistics for 5 splits
+[14:50:25] [INFO] Training KNN with 8 features
+[14:50:25] [INFO] Training Logistic with 8 features
+[14:50:25] [INFO] Training KNN with 8 features
+[14:50:25] [INFO] Training Logistic with 8 features
+[14:50:25] [INFO] Training KNN with 8 features
+[14:50:25] [INFO] Training Logistic with 8 features
+[14:50:25] [INFO] Training KNN with 8 features
+[14:50:25] [INFO] Training Logistic with 8 features
+[14:50:25] [INFO] Training KNN with 8 features
+[14:50:25] [INFO] Training Logistic with 8 features
+[14:50:25] [INFO] Training full models on all training data
+[14:50:25] [INFO] Evaluating cross-trained models
+[14:50:25] [INFO] Evaluating KNNs and Logistics for 5 splits
+[14:50:25] [INFO] Cross-trained model stats (KNN):
+[14:50:25] [INFO] Accuracy: 0.6465
+[14:50:25] [INFO] Precision: 0.6744
+[14:50:25] [INFO] Recall: 0.6676
+[14:50:25] [INFO] F1: 0.6705
+[14:50:25] [INFO] ROC AUC: 0.6447
+[14:50:25] [INFO] Confusion matrix:   Actual values
+[14:50:25] [INFO]                      1       0    
+[14:50:25] [INFO]                  +----------------+
+[14:50:25] [INFO]     Predicted 1: |  67.3%  32.7%  |
+[14:50:25] [INFO]               0: |  38.4%  61.6%  |
+[14:50:25] [INFO]                  +----------------+
+[14:50:25] [INFO] Cross-trained model stats (Logistic Regression):
+[14:50:25] [INFO] Accuracy: 0.6750
+[14:50:25] [INFO] Precision: 0.6977
+[14:50:25] [INFO] Recall: 0.6984
+[14:50:25] [INFO] F1: 0.6974
+[14:50:25] [INFO] ROC AUC: 0.6731
+[14:50:25] [INFO] Confusion matrix:   Actual values
+[14:50:25] [INFO]                      1        0    
+[14:50:25] [INFO]                  +---------------+
+[14:50:25] [INFO]     Predicted 1: |  69.8%  30.2% |
+[14:50:25] [INFO]               0: |  35.2%  64.8% |
+[14:50:25] [INFO]                  +---------------+
+[14:50:40] [INFO] Training top K on split 1/5
+[14:50:40] [INFO] Using ABCD features only
+[14:50:40] [INFO] Training top K on split 2/5
+[14:50:40] [INFO] Using ABCD features only
+[14:50:40] [INFO] Training top K on split 3/5
+[14:50:40] [INFO] Using ABCD features only
+[14:50:40] [INFO] Training top K on split 4/5
+[14:50:40] [INFO] Using ABCD features only
+[14:50:40] [INFO] Training top K on split 5/5
+[14:50:40] [INFO] Using ABCD features only
+[14:50:40] [INFO] Training Top K on all training data
+[14:50:40] [INFO] Using ABCD features only
+[14:50:40] [INFO] Saved PCAs to file
+[14:50:40] [INFO] Processing validation split 1/5
+[14:50:40] [INFO] Processing validation split 2/5
+[14:50:40] [INFO] Processing validation split 3/5
+[14:50:40] [INFO] Processing validation split 4/5
+[14:50:40] [INFO] Processing validation split 5/5
+[14:50:40] [INFO] Training KNNs and Logistics for 5 splits
+[14:50:40] [INFO] Training KNN with 8 features
+[14:50:40] [INFO] Training Logistic with 8 features
+[14:50:40] [INFO] Training KNN with 8 features
+[14:50:40] [INFO] Training Logistic with 8 features
+[14:50:40] [INFO] Training KNN with 8 features
+[14:50:40] [INFO] Training Logistic with 8 features
+[14:50:40] [INFO] Training KNN with 8 features
+[14:50:40] [INFO] Training Logistic with 8 features
+[14:50:40] [INFO] Training KNN with 8 features
+[14:50:40] [INFO] Training Logistic with 8 features
+[14:50:40] [INFO] Training full models on all training data
+[14:50:40] [INFO] Evaluating cross-trained models
+[14:50:40] [INFO] Evaluating KNNs and Logistics for 5 splits
+[14:50:40] [INFO] Cross-trained model stats (KNN):
+[14:50:40] [INFO] Accuracy: 0.6465
+[14:50:40] [INFO] Precision: 0.6744
+[14:50:40] [INFO] Recall: 0.6676
+[14:50:40] [INFO] F1: 0.6705
+[14:50:40] [INFO] ROC AUC: 0.6447
+[14:50:40] [INFO] Confusion matrix:   Actual values
+[14:50:40] [INFO]                      1       0    
+[14:50:40] [INFO]                  +----------------+
+[14:50:40] [INFO]     Predicted 1: |  67.3%  32.7%  |
+[14:50:40] [INFO]               0: |  38.4%  61.6%  |
+[14:50:40] [INFO]                  +----------------+
+[14:50:40] [INFO] Cross-trained model stats (Logistic Regression):
+[14:50:40] [INFO] Accuracy: 0.6750
+[14:50:40] [INFO] Precision: 0.6977
+[14:50:40] [INFO] Recall: 0.6984
+[14:50:40] [INFO] F1: 0.6974
+[14:50:40] [INFO] ROC AUC: 0.6731
+[14:50:40] [INFO] Confusion matrix:   Actual values
+[14:50:40] [INFO]                      1        0    
+[14:50:40] [INFO]                  +---------------+
+[14:50:40] [INFO]     Predicted 1: |  69.8%  30.2% |
+[14:50:40] [INFO]               0: |  35.2%  64.8% |
+[14:50:40] [INFO]                  +---------------+
+[14:51:08] [INFO] Training top K on split 1/5
+[14:51:08] [INFO] Fitting Top K with 12 features
+[14:51:08] [INFO] Training top K on split 2/5
+[14:51:08] [INFO] Fitting Top K with 12 features
+[14:51:08] [INFO] Training top K on split 3/5
+[14:51:08] [INFO] Fitting Top K with 12 features
+[14:51:08] [INFO] Training top K on split 4/5
+[14:51:08] [INFO] Fitting Top K with 12 features
+[14:51:08] [INFO] Training top K on split 5/5
+[14:51:08] [INFO] Fitting Top K with 12 features
+[14:51:08] [INFO] Training Top K on all training data
+[14:51:08] [INFO] Fitting Top K with 12 features
+[14:51:08] [INFO] Saved PCAs to file
+[14:51:08] [INFO] Processing validation split 1/5
+[14:51:08] [INFO] Processing validation split 2/5
+[14:51:08] [INFO] Processing validation split 3/5
+[14:51:08] [INFO] Processing validation split 4/5
+[14:51:08] [INFO] Processing validation split 5/5
+[14:51:08] [INFO] Training KNNs and Logistics for 5 splits
+[14:51:08] [INFO] Training KNN with 12 features
+[14:51:08] [INFO] Training Logistic with 12 features
+[14:51:08] [INFO] Training KNN with 12 features
+[14:51:08] [INFO] Training Logistic with 12 features
+[14:51:08] [INFO] Training KNN with 12 features
+[14:51:08] [INFO] Training Logistic with 12 features
+[14:51:08] [INFO] Training KNN with 12 features
+[14:51:08] [INFO] Training Logistic with 12 features
+[14:51:08] [INFO] Training KNN with 12 features
+[14:51:08] [INFO] Training Logistic with 12 features
+[14:51:08] [INFO] Training full models on all training data
+[14:51:08] [INFO] Evaluating cross-trained models
+[14:51:08] [INFO] Evaluating KNNs and Logistics for 5 splits
+[14:51:08] [INFO] Cross-trained model stats (KNN):
+[14:51:08] [INFO] Accuracy: 0.6907
+[14:51:08] [INFO] Precision: 0.7144
+[14:51:08] [INFO] Recall: 0.7238
+[14:51:08] [INFO] F1: 0.7153
+[14:51:08] [INFO] ROC AUC: 0.6880
+[14:51:08] [INFO] Confusion matrix:   Actual values
+[14:51:08] [INFO]                      1       0    
+[14:51:08] [INFO]                  +----------------+
+[14:51:08] [INFO]     Predicted 1: |  70.8%  29.2%  |
+[14:51:08] [INFO]               0: |  33.0%  67.0%  |
+[14:51:08] [INFO]                  +----------------+
+[14:51:08] [INFO] Cross-trained model stats (Logistic Regression):
+[14:51:08] [INFO] Accuracy: 0.6764
+[14:51:08] [INFO] Precision: 0.7194
+[14:51:08] [INFO] Recall: 0.6526
+[14:51:08] [INFO] F1: 0.6842
+[14:51:08] [INFO] ROC AUC: 0.6784
+[14:51:08] [INFO] Confusion matrix:   Actual values
+[14:51:08] [INFO]                      1        0    
+[14:51:08] [INFO]                  +---------------+
+[14:51:08] [INFO]     Predicted 1: |  72.0%  28.0% |
+[14:51:08] [INFO]               0: |  36.5%  63.5% |
+[14:51:08] [INFO]                  +---------------+

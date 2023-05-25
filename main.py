@@ -42,10 +42,11 @@ def add_args():
     parser.add_argument("--probability_threshold", "-pt", help="the probability threshold to use for logistic regression", default=0.5)
     # Final evaluation
     parser.add_argument("--final_eval", "-fe", help="evaluate the final model on the test set", action="store_true")
-    args = parser.parse_args()
 
     # Create figures
     parser.add_argument("--figures", "-fig", help="create figures", action="store_true")
+    
+    args = parser.parse_args()
 
     return args
 
