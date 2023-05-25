@@ -5,7 +5,8 @@ from PIL import Image
 import pickle
 # types
 import numpy as np
-from typing import Tuple
+from typing import Tuple, Union, AnyStr
+import numpy.typing as npt
 
 # Custom
 from model.feature_extractor import FeatureExtractor
@@ -45,12 +46,12 @@ def add_args():
 
     # Create figures
     parser.add_argument("--figures", "-fig", help="create figures", action="store_true")
-    
+
     args = parser.parse_args()
 
     return args
 
-def validate_file(filepath: str, prerequisite: str = None):
+def validate_file(filepath: str, prerequisite: Union[str, None] = None):
     if not os.path.exists(filepath) or os.stat(filepath).st_size == 0:
         raise FileNotFoundError(f"The file {filepath} does not exist or is empty. " + (f"Please run {prerequisite} first." if prerequisite is not None else ""))
 
@@ -181,7 +182,7 @@ def split_data(train_size: float = 0.8, folds: int = 5):
         pickle.dump(test, f)
     Logger.log(f"Saved {len(trains)} training splits, {len(validates)} validation splits and {len(test)} test data to file", level=LogTypes.INFO)
 
-def topk(top_k_k: int = None):
+def topk(top_k_k: Union[int, None] = None):
     # Make sure our data exists
     validate_file("data/features/X.pkl", "--extract all --images all")
     validate_file("data/features/y.pkl", "--extract all --images all")
@@ -196,7 +197,7 @@ def topk(top_k_k: int = None):
     with open("data/features/img_names.pkl", "rb") as f:
         img_names: list[str] = pickle.load(f)
     with open("data/training/training_splits.pkl", "rb") as f:
-        training_splits: list[np.ndarray[str]] = pickle.load(f)
+        training_splits: list[npt.NDArray[np.str_]] = pickle.load(f)
 
     # Set top_k_k to feature count if not specified
     if top_k_k is None:
@@ -262,9 +263,9 @@ def train(k_neighbors: int = 5):
     with open("data/training/full_pca.pkl", "rb") as f:
         full_topk: TopK = pickle.load(f)
     with open("data/training/validation_splits.pkl", "rb") as f:
-        validation_splits: list[np.ndarray[str]] = pickle.load(f)
+        validation_splits: list[npt.NDArray[np.str_]] = pickle.load(f)
     with open("data/training/test_data.pkl", "rb") as f:
-        test_data: np.ndarray[str] = np.array(pickle.load(f))
+        test_data: npt.NDArray[np.str_] = np.array(pickle.load(f))
 
     # Process validation data
     X_val_splits = []

@@ -7,10 +7,12 @@ import matplotlib.pyplot as plt # for testing
 import skimage
 import json
 import pandas as pd
+from typing import Union, List, Tuple
+from numpy.typing import NDArray
 
 class FeatureExtractor:
     @staticmethod
-    def has_cancer(img_names: np.ndarray):
+    def has_cancer(img_names: Union[NDArray[np.str_], List[str], Tuple[str]]):
         """
         Given an array of image names (in the form PAT_45.66.822.png), returns an array of booleans indicating whether or not the image has cancer.
         """
