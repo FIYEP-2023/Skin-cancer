@@ -583,7 +583,10 @@ def predict():
     Logger.log(f"Creating features ({len(imgs)}/{len(imgs)})", end="\r")
 
     Logger.log("Loading model")
-    with open("data/training/full_knn.pkl", "rb") as f:
+    # NOTE: This was pasted manually into the model folder.
+    #       The code actually generates it in the data/traning folder,
+    #       but that folder is not included in the git repo.
+    with open("model/full_knn.pkl", "rb") as f:
         knn: KNN = pickle.load(f)
     knn.probability = True
     knn.probability_threshold = PROBABILITY_THRESHOLD
