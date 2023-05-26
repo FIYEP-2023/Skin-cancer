@@ -3,6 +3,7 @@ import os
 import matplotlib.pyplot as plt
 from PIL import Image
 import pickle
+import pandas as pd
 # types
 import numpy as np
 from typing import Tuple, Union, AnyStr
@@ -46,6 +47,9 @@ def add_args():
 
     # Create figures
     parser.add_argument("--figures", "-fig", help="create figures", action="store_true")
+
+    # Final predictor
+    parser.add_argument("--predict", "-pred", help="predict if images in EVAL_IMGS have cancer", action="store_true")
 
     args = parser.parse_args()
 
@@ -147,14 +151,14 @@ def extract_features(args):
     
     return extract(img, mask)
 
-def resize_images(size=(1024, 1024)):
+def resize_images(size=(1024, 1024), indir: str = "data/segmented", outdir: str = "data/resized"):
     Logger.log("Resizing images...")
-    imgs = os.listdir("data/segmented")
+    imgs = [i for i in os.listdir(indir) if ".png" in i]
     for i, img_name in enumerate(imgs):
         Logger.log(f"{i+1}/{len(imgs)}", end="\r")
-        img = Image.open(f"data/segmented/{img_name}")
+        img = Image.open(f"{indir}/{img_name}")
         img = img.resize(size)
-        img.save(f"data/resized/{img_name}")
+        img.save(f"{outdir}/{img_name}")
     Logger.log("Done!")
 
 def split_data(train_size: float = 0.8, folds: int = 5):
@@ -330,8 +334,10 @@ def evaluate(probability_threshold):
     knn_conf = np.mean([conf[0] for conf in confs], axis=0)
     log_conf = np.mean([conf[1] for conf in confs], axis=0)
     # Change confusion matrices to percentages
-    knn_conf = (knn_conf / np.sum(knn_conf, axis=1, keepdims=True))*100
-    log_conf = (log_conf / np.sum(log_conf, axis=1, keepdims=True))*100
+    if False:
+        knn_conf = (knn_conf / np.sum(knn_conf, axis=1, keepdims=True))*100
+        log_conf = (log_conf / np.sum(log_conf, axis=1, keepdims=True))*100
+    print(knn_conf)
 
     stats = evaluate_splits(model, True, probability_threshold=probability_threshold)
     acc_knn, acc_log = stats["accuracy"]
@@ -475,12 +481,15 @@ def final_eval(probability_threshold):
     log.probability = True
     log.probability_threshold = probability_threshold
 
+    knn.train()
+    log.train()
+
     Logger.log("Evaluating full models on testing data")
     knn_conf = knn.get_confusion_matrix()
     log_conf = log.get_confusion_matrix()
 
     # Change confusion matrix to percentages
-    if True: # Change this to False to disable
+    if False: # Change this to False to disable
         knn_conf = (knn_conf / np.sum(knn_conf, axis=1, keepdims=True))*100
         log_conf = (log_conf / np.sum(log_conf, axis=1, keepdims=True))*100
     
@@ -509,6 +518,111 @@ def final_eval(probability_threshold):
     Logger.log(f"    Predicted 1: |  {log_conf[0][0]:.1f}%  {log_conf[0][1]:.1f}% |")
     Logger.log(f"              0: |  {log_conf[1][0]:.1f}%  {log_conf[1][1]:.1f}% |")
     Logger.log(f"                 +---------------+")
+
+def predict():
+    # These values are hardcoded and have been found through testing.
+    TOP_K_K = 12
+    K_NEIGHBORS = 11
+    PROBABILITY_THRESHOLD = 0.5
+    INDIR = "EVAL_IMGS"
+    OUTDIR = "EVAL_RESULTS"
+
+    Logger.log("Resizing images to 1024x1024")
+    resize_images(indir=INDIR, outdir=INDIR)
+
+    Logger.log("Loading images")
+    img_names = os.listdir(INDIR)
+    img_names = [i for i in img_names if ".png" in i]
+    img_names = [i for i in img_names if "mask" not in i]
+    mask_names = [f"{i.split('.')[0]}_mask.png" for i in img_names]
+    imgs = [plt.imread(f"{INDIR}/{i}") for i in img_names]
+    masks = [plt.imread(f"{INDIR}/{i}") for i in mask_names]
+    imgs: list[npt.NDArray[np.uint8]] = [clean_image(i) for i in imgs]
+    masks: list[npt.NDArray[np.uint8]] = [clean_image(i, to_binary=True) for i in masks]
+
+    Logger.log("Loading metadata")
+    # Find all .csv, .npy or .pkl files in the directory
+    csvs = [i for i in os.listdir(INDIR) if ".csv" in i]
+    npys = [i for i in os.listdir(INDIR) if ".npy" in i]
+    pkls = [i for i in os.listdir(INDIR) if ".pkl" in i]
+    # Throw error if multiple files found
+    if len(csvs + npys + pkls) > 1:
+        raise ValueError("Multiple metadata files found")
+    
+    # Load the metadata
+    cancerous = ["BCC", "SCC", "MEL"]
+    metadata = None
+    y = None
+    if len(csvs) == 1:
+        metadata = pd.read_csv(f"{INDIR}/{csvs[0]}")
+        # extract img_id and diagnostic into numpy array
+        metadata = metadata[["img_id", "diagnostic"]].to_numpy()
+    elif len(npys) == 1:
+        metadata = np.load(f"{INDIR}/{npys[0]}")
+    elif len(pkls) == 1:
+        with open(f"{INDIR}/{pkls[0]}", "rb") as f:
+            metadata = pickle.load(f)
+    else:
+        Logger.log("No metadata found, won't print statistics!", level=LogTypes.WARNING)
+    if metadata is not None:
+        metadata[:, 1] = [1 if i in cancerous else 0 for i in metadata[:, 1]]
+        # Turn into y
+        sort_indices = np.argsort(img_names)
+        metadata = metadata[sort_indices, :]
+        y = metadata[:, 1].astype(np.uint8)
+
+
+    Logger.log("Creating features", end="\r")
+    extractor = FeatureExtractor()
+    imgs_feats = []
+    # imgs_feats = [extractor.do_all(img, mask) for img, mask in zip(imgs, masks)]
+    for img, mask in zip(imgs, masks):
+        Logger.log(f"Creating features ({len(imgs_feats)}/{len(imgs)})", end="\r")
+        feats = extractor.do_all(img, mask)
+        imgs_feats.append(feats)
+    Logger.log(f"Creating features ({len(imgs)}/{len(imgs)})", end="\r")
+
+    Logger.log("Loading model")
+    with open("data/training/full_knn.pkl", "rb") as f:
+        knn: KNN = pickle.load(f)
+    knn.probability = True
+    knn.probability_threshold = PROBABILITY_THRESHOLD
+    knn.train() # Why didn't we do this in the training step???
+
+    Logger.log("Selecting features")
+    selected_feats = knn.topk.transform(imgs_feats)
+    X = np.array(selected_feats)
+
+    Logger.log("Predicting")
+    Logger.log("Predictions:")
+    preds = knn.predict(X)
+    preds_with_images = np.array([img_names, preds]).T
+    predictions = zip(img_names, ["Cancer" if i == 1 else "No cancer" for i in preds])
+    for img, pred in predictions:
+        Logger.log(f"{img}: {pred}")
+    # Save predictions
+    np.save(f"{OUTDIR}/predictions.npy", preds_with_images)
+    pd.DataFrame(preds_with_images, columns=["img_id", "prediction"]).to_csv(f"{OUTDIR}/predictions.csv", index=False)
+    
+    if y is None:
+        return
+
+    Logger.log("Evaluating")
+    knn.X_val = X
+    knn.y_val = y
+    conf = knn.get_confusion_matrix()
+    Logger.log(f"Accuracy: {knn.accuracy():.4f}")
+    Logger.log(f"Precision: {knn.precision():.4f}")
+    Logger.log(f"Recall: {knn.recall():.4f}")
+    Logger.log(f"F1 score: {knn.f1():.4f}")
+    Logger.log(f"ROC AUC: {knn.roc_auc():.4f}")
+    Logger.log(f"Confusion matrix:   Actual values")
+    Logger.log(f"                     1       0    ")
+    Logger.log(f"                 +----------------+")
+    Logger.log(f"    Predicted 1: |  {conf[0][0]}   {conf[0][1]}   |")
+    Logger.log(f"              0: |  {conf[1][0]}   {conf[1][1]}   |")
+    Logger.log(f"                 +----------------+")
+
 
 def main():
     args = add_args()
@@ -572,6 +686,9 @@ def main():
     
     if args.figures:
         create_figures()
+    
+    if args.predict:
+        predict()
 
 if __name__ == '__main__':
     main()
