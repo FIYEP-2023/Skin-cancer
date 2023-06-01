@@ -18,6 +18,8 @@ all_images = segmented + not_segmented
 
 def create_figures():
     diagnosis_distribution()
+
+    lesion_segment()
     
     asymmetry_overlap()
     asymmetry_score()
@@ -64,7 +66,22 @@ def diagnosis_distribution():
     ax2.set_title('Distribution of cancerous vs non-cancerous diagnoses')
     
     # Save to file
-    plt.savefig('../figures/diagnosis_distribution.png')
+    plt.savefig('figures/diagnosis_distribution.png')
+
+def lesion_segment():
+    num = 400
+    og = segmented[num]
+    mask = segmented[num].replace('.png', '_mask.png')
+
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(15, 5))
+    ax1.imshow(plt.imread(f'data/segmented/{og}'))
+    ax1.set_title('Original image')
+    ax2.imshow(plt.imread(f'data/segmented/{mask}'))
+    ax2.set_title('Segmented image')
+
+    plt.subplots_adjust(wspace=-0.35)
+
+    plt.savefig('figures/lesion_segment.png', bbox_inches='tight')
 
 def asymmetry_overlap():
     pass
