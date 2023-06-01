@@ -123,7 +123,30 @@ def filters():
     plt.savefig('figures/filters.png', bbox_inches='tight')
 
 def filter_histograms():
-    pass
+    img_name = "PAT_86_131_107.png"
+    mask_name = img_name.replace('.png', '_mask.png')
+    img = clean_image(plt.imread(f'data/segmented/{img_name}'))
+    mask = clean_image(plt.imread(f'data/segmented/{mask_name}'), to_binary=True)
+
+    filtered = skimage.feature.multiscale_basic_features(img, channel_axis=2)
+    n_features = filtered.shape[2]
+    lesion_features = [filtered[:,:,i][mask==1] for i in range(n_features)]
+
+    from skimage.color import rgb2gray
+    fix, axs = plt.subplots(1, 4, figsize=(20, 5))
+    og_gray = rgb2gray(img)
+    og_gray[mask==0] = 0
+    og_gray = og_gray.flatten()
+    axs[0].hist(og_gray, bins=10)
+    axs[0].set_title('Original image')
+    axs[1].hist(lesion_features[3]*256, bins=10)
+    axs[1].set_title('Filter 3')
+    axs[2].hist(lesion_features[1]*256, bins=10)
+    axs[2].set_title('Filter 1')
+    axs[3].hist(lesion_features[10]*256, bins=10)
+    axs[3].set_title('Filter 10')
+
+    plt.savefig('figures/filter_histograms.png', bbox_inches='tight')
 
 def optimisation_graphs():
     pass
