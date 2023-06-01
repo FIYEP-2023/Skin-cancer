@@ -33731,3 +33731,1503 @@
 [20:01:49] [INFO] Training KNN with 50 features
 [20:01:49] [INFO] Training Logistic with 50 features
 [20:01:49] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:07:57] [INFO] Training KNNs and Logistics for 5 splits
+[20:07:57] [INFO] Training KNN with 50 features
+[20:07:57] [INFO] Training Logistic with 50 features
+[20:07:57] [INFO] Training KNN with 50 features
+[20:07:57] [INFO] Training Logistic with 50 features
+[20:07:57] [INFO] Training KNN with 50 features
+[20:07:57] [INFO] Training Logistic with 50 features
+[20:07:57] [INFO] Training KNN with 50 features
+[20:07:57] [INFO] Training Logistic with 50 features
+[20:07:57] [INFO] Training KNN with 50 features
+[20:07:57] [INFO] Training Logistic with 50 features
+[20:07:57] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:07:57] [INFO] Training KNNs and Logistics for 5 splits
+[20:07:57] [INFO] Training KNN with 50 features
+[20:07:57] [INFO] Training Logistic with 50 features
+[20:07:57] [INFO] Training KNN with 50 features
+[20:07:57] [INFO] Training Logistic with 50 features
+[20:07:57] [INFO] Training KNN with 50 features
+[20:07:57] [INFO] Training Logistic with 50 features
+[20:07:57] [INFO] Training KNN with 50 features
+[20:07:57] [INFO] Training Logistic with 50 features
+[20:07:57] [INFO] Training KNN with 50 features
+[20:07:57] [INFO] Training Logistic with 50 features
+[20:07:57] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:07:57] [INFO] Training KNNs and Logistics for 5 splits
+[20:07:57] [INFO] Training KNN with 50 features
+[20:07:57] [INFO] Training Logistic with 50 features
+[20:07:57] [INFO] Training KNN with 50 features
+[20:07:57] [INFO] Training Logistic with 50 features
+[20:07:57] [INFO] Training KNN with 50 features
+[20:07:57] [INFO] Training Logistic with 50 features
+[20:07:58] [INFO] Training KNN with 50 features
+[20:07:58] [INFO] Training Logistic with 50 features
+[20:07:58] [INFO] Training KNN with 50 features
+[20:07:58] [INFO] Training Logistic with 50 features
+[20:07:58] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:07:58] [INFO] Training KNNs and Logistics for 5 splits
+[20:07:58] [INFO] Training KNN with 50 features
+[20:07:58] [INFO] Training Logistic with 50 features
+[20:07:58] [INFO] Training KNN with 50 features
+[20:07:58] [INFO] Training Logistic with 50 features
+[20:07:58] [INFO] Training KNN with 50 features
+[20:07:58] [INFO] Training Logistic with 50 features
+[20:07:58] [INFO] Training KNN with 50 features
+[20:07:58] [INFO] Training Logistic with 50 features
+[20:07:58] [INFO] Training KNN with 50 features
+[20:07:58] [INFO] Training Logistic with 50 features
+[20:07:58] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:07:58] [INFO] Training KNNs and Logistics for 5 splits
+[20:07:58] [INFO] Training KNN with 50 features
+[20:07:58] [INFO] Training Logistic with 50 features
+[20:07:58] [INFO] Training KNN with 50 features
+[20:07:58] [INFO] Training Logistic with 50 features
+[20:07:58] [INFO] Training KNN with 50 features
+[20:07:58] [INFO] Training Logistic with 50 features
+[20:07:58] [INFO] Training KNN with 50 features
+[20:07:58] [INFO] Training Logistic with 50 features
+[20:07:58] [INFO] Training KNN with 50 features
+[20:07:58] [INFO] Training Logistic with 50 features
+[20:07:58] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:07:58] [INFO] Training KNNs and Logistics for 5 splits
+[20:07:58] [INFO] Training KNN with 50 features
+[20:07:58] [INFO] Training Logistic with 50 features
+[20:07:58] [INFO] Training KNN with 50 features
+[20:07:58] [INFO] Training Logistic with 50 features
+[20:07:58] [INFO] Training KNN with 50 features
+[20:07:58] [INFO] Training Logistic with 50 features
+[20:07:58] [INFO] Training KNN with 50 features
+[20:07:58] [INFO] Training Logistic with 50 features
+[20:07:58] [INFO] Training KNN with 50 features
+[20:07:58] [INFO] Training Logistic with 50 features
+[20:07:58] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:07:58] [INFO] Training KNNs and Logistics for 5 splits
+[20:07:58] [INFO] Training KNN with 50 features
+[20:07:58] [INFO] Training Logistic with 50 features
+[20:07:58] [INFO] Training KNN with 50 features
+[20:07:58] [INFO] Training Logistic with 50 features
+[20:07:58] [INFO] Training KNN with 50 features
+[20:07:58] [INFO] Training Logistic with 50 features
+[20:07:59] [INFO] Training KNN with 50 features
+[20:07:59] [INFO] Training Logistic with 50 features
+[20:07:59] [INFO] Training KNN with 50 features
+[20:07:59] [INFO] Training Logistic with 50 features
+[20:07:59] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:07:59] [INFO] Training KNNs and Logistics for 5 splits
+[20:07:59] [INFO] Training KNN with 50 features
+[20:07:59] [INFO] Training Logistic with 50 features
+[20:07:59] [INFO] Training KNN with 50 features
+[20:07:59] [INFO] Training Logistic with 50 features
+[20:07:59] [INFO] Training KNN with 50 features
+[20:07:59] [INFO] Training Logistic with 50 features
+[20:07:59] [INFO] Training KNN with 50 features
+[20:07:59] [INFO] Training Logistic with 50 features
+[20:07:59] [INFO] Training KNN with 50 features
+[20:07:59] [INFO] Training Logistic with 50 features
+[20:07:59] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:07:59] [INFO] Training KNNs and Logistics for 5 splits
+[20:07:59] [INFO] Training KNN with 50 features
+[20:07:59] [INFO] Training Logistic with 50 features
+[20:07:59] [INFO] Training KNN with 50 features
+[20:07:59] [INFO] Training Logistic with 50 features
+[20:07:59] [INFO] Training KNN with 50 features
+[20:07:59] [INFO] Training Logistic with 50 features
+[20:07:59] [INFO] Training KNN with 50 features
+[20:07:59] [INFO] Training Logistic with 50 features
+[20:07:59] [INFO] Training KNN with 50 features
+[20:07:59] [INFO] Training Logistic with 50 features
+[20:07:59] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:07:59] [INFO] Training KNNs and Logistics for 5 splits
+[20:07:59] [INFO] Training KNN with 50 features
+[20:07:59] [INFO] Training Logistic with 50 features
+[20:07:59] [INFO] Training KNN with 50 features
+[20:07:59] [INFO] Training Logistic with 50 features
+[20:07:59] [INFO] Training KNN with 50 features
+[20:07:59] [INFO] Training Logistic with 50 features
+[20:07:59] [INFO] Training KNN with 50 features
+[20:07:59] [INFO] Training Logistic with 50 features
+[20:07:59] [INFO] Training KNN with 50 features
+[20:07:59] [INFO] Training Logistic with 50 features
+[20:07:59] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:08:00] [INFO] Training KNNs and Logistics for 5 splits
+[20:08:00] [INFO] Training KNN with 50 features
+[20:08:00] [INFO] Training Logistic with 50 features
+[20:08:00] [INFO] Training KNN with 50 features
+[20:08:00] [INFO] Training Logistic with 50 features
+[20:08:00] [INFO] Training KNN with 50 features
+[20:08:00] [INFO] Training Logistic with 50 features
+[20:08:00] [INFO] Training KNN with 50 features
+[20:08:00] [INFO] Training Logistic with 50 features
+[20:08:00] [INFO] Training KNN with 50 features
+[20:08:00] [INFO] Training Logistic with 50 features
+[20:08:00] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:08:00] [INFO] Training KNNs and Logistics for 5 splits
+[20:08:00] [INFO] Training KNN with 50 features
+[20:08:00] [INFO] Training Logistic with 50 features
+[20:08:00] [INFO] Training KNN with 50 features
+[20:08:00] [INFO] Training Logistic with 50 features
+[20:08:00] [INFO] Training KNN with 50 features
+[20:08:00] [INFO] Training Logistic with 50 features
+[20:08:00] [INFO] Training KNN with 50 features
+[20:08:00] [INFO] Training Logistic with 50 features
+[20:08:00] [INFO] Training KNN with 50 features
+[20:08:00] [INFO] Training Logistic with 50 features
+[20:08:00] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:08:00] [INFO] Training KNNs and Logistics for 5 splits
+[20:08:00] [INFO] Training KNN with 50 features
+[20:08:00] [INFO] Training Logistic with 50 features
+[20:08:00] [INFO] Training KNN with 50 features
+[20:08:00] [INFO] Training Logistic with 50 features
+[20:08:00] [INFO] Training KNN with 50 features
+[20:08:00] [INFO] Training Logistic with 50 features
+[20:08:00] [INFO] Training KNN with 50 features
+[20:08:00] [INFO] Training Logistic with 50 features
+[20:08:00] [INFO] Training KNN with 50 features
+[20:08:00] [INFO] Training Logistic with 50 features
+[20:08:00] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:08:00] [INFO] Training KNNs and Logistics for 5 splits
+[20:08:00] [INFO] Training KNN with 50 features
+[20:08:00] [INFO] Training Logistic with 50 features
+[20:08:00] [INFO] Training KNN with 50 features
+[20:08:00] [INFO] Training Logistic with 50 features
+[20:08:01] [INFO] Training KNN with 50 features
+[20:08:01] [INFO] Training Logistic with 50 features
+[20:08:01] [INFO] Training KNN with 50 features
+[20:08:01] [INFO] Training Logistic with 50 features
+[20:08:01] [INFO] Training KNN with 50 features
+[20:08:01] [INFO] Training Logistic with 50 features
+[20:08:01] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:08:01] [INFO] Training KNNs and Logistics for 5 splits
+[20:08:01] [INFO] Training KNN with 50 features
+[20:08:01] [INFO] Training Logistic with 50 features
+[20:08:01] [INFO] Training KNN with 50 features
+[20:08:01] [INFO] Training Logistic with 50 features
+[20:08:01] [INFO] Training KNN with 50 features
+[20:08:01] [INFO] Training Logistic with 50 features
+[20:08:01] [INFO] Training KNN with 50 features
+[20:08:01] [INFO] Training Logistic with 50 features
+[20:08:01] [INFO] Training KNN with 50 features
+[20:08:01] [INFO] Training Logistic with 50 features
+[20:08:01] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:08:01] [INFO] Training KNNs and Logistics for 5 splits
+[20:08:01] [INFO] Training KNN with 50 features
+[20:08:01] [INFO] Training Logistic with 50 features
+[20:08:01] [INFO] Training KNN with 50 features
+[20:08:01] [INFO] Training Logistic with 50 features
+[20:08:01] [INFO] Training KNN with 50 features
+[20:08:01] [INFO] Training Logistic with 50 features
+[20:08:01] [INFO] Training KNN with 50 features
+[20:08:01] [INFO] Training Logistic with 50 features
+[20:08:01] [INFO] Training KNN with 50 features
+[20:08:01] [INFO] Training Logistic with 50 features
+[20:08:01] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:08:01] [INFO] Training KNNs and Logistics for 5 splits
+[20:08:01] [INFO] Training KNN with 50 features
+[20:08:01] [INFO] Training Logistic with 50 features
+[20:08:01] [INFO] Training KNN with 50 features
+[20:08:01] [INFO] Training Logistic with 50 features
+[20:08:01] [INFO] Training KNN with 50 features
+[20:08:01] [INFO] Training Logistic with 50 features
+[20:08:01] [INFO] Training KNN with 50 features
+[20:08:01] [INFO] Training Logistic with 50 features
+[20:08:01] [INFO] Training KNN with 50 features
+[20:08:01] [INFO] Training Logistic with 50 features
+[20:08:01] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:08:02] [INFO] Training KNNs and Logistics for 5 splits
+[20:08:02] [INFO] Training KNN with 50 features
+[20:08:02] [INFO] Training Logistic with 50 features
+[20:08:02] [INFO] Training KNN with 50 features
+[20:08:02] [INFO] Training Logistic with 50 features
+[20:08:02] [INFO] Training KNN with 50 features
+[20:08:02] [INFO] Training Logistic with 50 features
+[20:08:02] [INFO] Training KNN with 50 features
+[20:08:02] [INFO] Training Logistic with 50 features
+[20:08:02] [INFO] Training KNN with 50 features
+[20:08:02] [INFO] Training Logistic with 50 features
+[20:08:02] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:08:02] [INFO] Training KNNs and Logistics for 5 splits
+[20:08:02] [INFO] Training KNN with 50 features
+[20:08:02] [INFO] Training Logistic with 50 features
+[20:08:02] [INFO] Training KNN with 50 features
+[20:08:02] [INFO] Training Logistic with 50 features
+[20:08:02] [INFO] Training KNN with 50 features
+[20:08:02] [INFO] Training Logistic with 50 features
+[20:08:02] [INFO] Training KNN with 50 features
+[20:08:02] [INFO] Training Logistic with 50 features
+[20:08:02] [INFO] Training KNN with 50 features
+[20:08:02] [INFO] Training Logistic with 50 features
+[20:08:02] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:08:02] [INFO] Training KNNs and Logistics for 5 splits
+[20:08:02] [INFO] Training KNN with 50 features
+[20:08:02] [INFO] Training Logistic with 50 features
+[20:08:02] [INFO] Training KNN with 50 features
+[20:08:02] [INFO] Training Logistic with 50 features
+[20:08:02] [INFO] Training KNN with 50 features
+[20:08:02] [INFO] Training Logistic with 50 features
+[20:08:02] [INFO] Training KNN with 50 features
+[20:08:02] [INFO] Training Logistic with 50 features
+[20:08:02] [INFO] Training KNN with 50 features
+[20:08:02] [INFO] Training Logistic with 50 features
+[20:08:02] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:08:02] [INFO] Training KNNs and Logistics for 5 splits
+[20:08:02] [INFO] Training KNN with 50 features
+[20:08:02] [INFO] Training Logistic with 50 features
+[20:08:02] [INFO] Training KNN with 50 features
+[20:08:02] [INFO] Training Logistic with 50 features
+[20:08:02] [INFO] Training KNN with 50 features
+[20:08:02] [INFO] Training Logistic with 50 features
+[20:08:02] [INFO] Training KNN with 50 features
+[20:08:02] [INFO] Training Logistic with 50 features
+[20:08:02] [INFO] Training KNN with 50 features
+[20:08:02] [INFO] Training Logistic with 50 features
+[20:08:02] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:08:02] [INFO] Training KNNs and Logistics for 5 splits
+[20:08:02] [INFO] Training KNN with 50 features
+[20:08:02] [INFO] Training Logistic with 50 features
+[20:08:03] [INFO] Training KNN with 50 features
+[20:08:03] [INFO] Training Logistic with 50 features
+[20:08:03] [INFO] Training KNN with 50 features
+[20:08:03] [INFO] Training Logistic with 50 features
+[20:08:03] [INFO] Training KNN with 50 features
+[20:08:03] [INFO] Training Logistic with 50 features
+[20:08:03] [INFO] Training KNN with 50 features
+[20:08:03] [INFO] Training Logistic with 50 features
+[20:08:03] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:08:03] [INFO] Training KNNs and Logistics for 5 splits
+[20:08:03] [INFO] Training KNN with 50 features
+[20:08:03] [INFO] Training Logistic with 50 features
+[20:08:03] [INFO] Training KNN with 50 features
+[20:08:03] [INFO] Training Logistic with 50 features
+[20:08:03] [INFO] Training KNN with 50 features
+[20:08:03] [INFO] Training Logistic with 50 features
+[20:08:03] [INFO] Training KNN with 50 features
+[20:08:03] [INFO] Training Logistic with 50 features
+[20:08:03] [INFO] Training KNN with 50 features
+[20:08:03] [INFO] Training Logistic with 50 features
+[20:08:03] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:08:03] [INFO] Training KNNs and Logistics for 5 splits
+[20:08:03] [INFO] Training KNN with 50 features
+[20:08:03] [INFO] Training Logistic with 50 features
+[20:08:03] [INFO] Training KNN with 50 features
+[20:08:03] [INFO] Training Logistic with 50 features
+[20:08:03] [INFO] Training KNN with 50 features
+[20:08:03] [INFO] Training Logistic with 50 features
+[20:08:03] [INFO] Training KNN with 50 features
+[20:08:03] [INFO] Training Logistic with 50 features
+[20:08:03] [INFO] Training KNN with 50 features
+[20:08:03] [INFO] Training Logistic with 50 features
+[20:08:03] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:08:03] [INFO] Training KNNs and Logistics for 5 splits
+[20:08:03] [INFO] Training KNN with 50 features
+[20:08:03] [INFO] Training Logistic with 50 features
+[20:08:03] [INFO] Training KNN with 50 features
+[20:08:03] [INFO] Training Logistic with 50 features
+[20:08:03] [INFO] Training KNN with 50 features
+[20:08:03] [INFO] Training Logistic with 50 features
+[20:08:03] [INFO] Training KNN with 50 features
+[20:08:03] [INFO] Training Logistic with 50 features
+[20:08:03] [INFO] Training KNN with 50 features
+[20:08:03] [INFO] Training Logistic with 50 features
+[20:08:03] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:08:04] [INFO] Training KNNs and Logistics for 5 splits
+[20:08:04] [INFO] Training KNN with 50 features
+[20:08:04] [INFO] Training Logistic with 50 features
+[20:08:04] [INFO] Training KNN with 50 features
+[20:08:04] [INFO] Training Logistic with 50 features
+[20:08:04] [INFO] Training KNN with 50 features
+[20:08:04] [INFO] Training Logistic with 50 features
+[20:08:04] [INFO] Training KNN with 50 features
+[20:08:04] [INFO] Training Logistic with 50 features
+[20:08:04] [INFO] Training KNN with 50 features
+[20:08:04] [INFO] Training Logistic with 50 features
+[20:08:04] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:08:04] [INFO] Training KNNs and Logistics for 5 splits
+[20:08:04] [INFO] Training KNN with 50 features
+[20:08:04] [INFO] Training Logistic with 50 features
+[20:08:04] [INFO] Training KNN with 50 features
+[20:08:04] [INFO] Training Logistic with 50 features
+[20:08:04] [INFO] Training KNN with 50 features
+[20:08:04] [INFO] Training Logistic with 50 features
+[20:08:04] [INFO] Training KNN with 50 features
+[20:08:04] [INFO] Training Logistic with 50 features
+[20:08:04] [INFO] Training KNN with 50 features
+[20:08:04] [INFO] Training Logistic with 50 features
+[20:08:04] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:08:04] [INFO] Training KNNs and Logistics for 5 splits
+[20:08:04] [INFO] Training KNN with 50 features
+[20:08:04] [INFO] Training Logistic with 50 features
+[20:08:04] [INFO] Training KNN with 50 features
+[20:08:04] [INFO] Training Logistic with 50 features
+[20:08:04] [INFO] Training KNN with 50 features
+[20:08:04] [INFO] Training Logistic with 50 features
+[20:08:04] [INFO] Training KNN with 50 features
+[20:08:04] [INFO] Training Logistic with 50 features
+[20:08:04] [INFO] Training KNN with 50 features
+[20:08:04] [INFO] Training Logistic with 50 features
+[20:08:04] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:08:04] [INFO] Training KNNs and Logistics for 5 splits
+[20:08:04] [INFO] Training KNN with 50 features
+[20:08:04] [INFO] Training Logistic with 50 features
+[20:08:04] [INFO] Training KNN with 50 features
+[20:08:04] [INFO] Training Logistic with 50 features
+[20:08:04] [INFO] Training KNN with 50 features
+[20:08:04] [INFO] Training Logistic with 50 features
+[20:08:04] [INFO] Training KNN with 50 features
+[20:08:04] [INFO] Training Logistic with 50 features
+[20:08:04] [INFO] Training KNN with 50 features
+[20:08:04] [INFO] Training Logistic with 50 features
+[20:08:04] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:08:05] [INFO] Training KNNs and Logistics for 5 splits
+[20:08:05] [INFO] Training KNN with 50 features
+[20:08:05] [INFO] Training Logistic with 50 features
+[20:08:05] [INFO] Training KNN with 50 features
+[20:08:05] [INFO] Training Logistic with 50 features
+[20:08:05] [INFO] Training KNN with 50 features
+[20:08:05] [INFO] Training Logistic with 50 features
+[20:08:05] [INFO] Training KNN with 50 features
+[20:08:05] [INFO] Training Logistic with 50 features
+[20:08:05] [INFO] Training KNN with 50 features
+[20:08:05] [INFO] Training Logistic with 50 features
+[20:08:05] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:08:05] [INFO] Training KNNs and Logistics for 5 splits
+[20:08:05] [INFO] Training KNN with 50 features
+[20:08:05] [INFO] Training Logistic with 50 features
+[20:08:05] [INFO] Training KNN with 50 features
+[20:08:05] [INFO] Training Logistic with 50 features
+[20:08:05] [INFO] Training KNN with 50 features
+[20:08:05] [INFO] Training Logistic with 50 features
+[20:08:05] [INFO] Training KNN with 50 features
+[20:08:05] [INFO] Training Logistic with 50 features
+[20:08:05] [INFO] Training KNN with 50 features
+[20:08:05] [INFO] Training Logistic with 50 features
+[20:08:05] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:08:05] [INFO] Training KNNs and Logistics for 5 splits
+[20:08:05] [INFO] Training KNN with 50 features
+[20:08:05] [INFO] Training Logistic with 50 features
+[20:08:05] [INFO] Training KNN with 50 features
+[20:08:05] [INFO] Training Logistic with 50 features
+[20:08:05] [INFO] Training KNN with 50 features
+[20:08:05] [INFO] Training Logistic with 50 features
+[20:08:05] [INFO] Training KNN with 50 features
+[20:08:05] [INFO] Training Logistic with 50 features
+[20:08:05] [INFO] Training KNN with 50 features
+[20:08:05] [INFO] Training Logistic with 50 features
+[20:08:05] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:08:05] [INFO] Training KNNs and Logistics for 5 splits
+[20:08:05] [INFO] Training KNN with 50 features
+[20:08:05] [INFO] Training Logistic with 50 features
+[20:08:05] [INFO] Training KNN with 50 features
+[20:08:05] [INFO] Training Logistic with 50 features
+[20:08:05] [INFO] Training KNN with 50 features
+[20:08:05] [INFO] Training Logistic with 50 features
+[20:08:05] [INFO] Training KNN with 50 features
+[20:08:05] [INFO] Training Logistic with 50 features
+[20:08:05] [INFO] Training KNN with 50 features
+[20:08:05] [INFO] Training Logistic with 50 features
+[20:08:05] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:08:06] [INFO] Training KNNs and Logistics for 5 splits
+[20:08:06] [INFO] Training KNN with 50 features
+[20:08:06] [INFO] Training Logistic with 50 features
+[20:08:06] [INFO] Training KNN with 50 features
+[20:08:06] [INFO] Training Logistic with 50 features
+[20:08:06] [INFO] Training KNN with 50 features
+[20:08:06] [INFO] Training Logistic with 50 features
+[20:08:06] [INFO] Training KNN with 50 features
+[20:08:06] [INFO] Training Logistic with 50 features
+[20:08:06] [INFO] Training KNN with 50 features
+[20:08:06] [INFO] Training Logistic with 50 features
+[20:08:06] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:08:06] [INFO] Training KNNs and Logistics for 5 splits
+[20:08:06] [INFO] Training KNN with 50 features
+[20:08:06] [INFO] Training Logistic with 50 features
+[20:08:06] [INFO] Training KNN with 50 features
+[20:08:06] [INFO] Training Logistic with 50 features
+[20:08:06] [INFO] Training KNN with 50 features
+[20:08:06] [INFO] Training Logistic with 50 features
+[20:08:06] [INFO] Training KNN with 50 features
+[20:08:06] [INFO] Training Logistic with 50 features
+[20:08:06] [INFO] Training KNN with 50 features
+[20:08:06] [INFO] Training Logistic with 50 features
+[20:08:06] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:08:06] [INFO] Training KNNs and Logistics for 5 splits
+[20:08:06] [INFO] Training KNN with 50 features
+[20:08:06] [INFO] Training Logistic with 50 features
+[20:08:06] [INFO] Training KNN with 50 features
+[20:08:06] [INFO] Training Logistic with 50 features
+[20:08:06] [INFO] Training KNN with 50 features
+[20:08:06] [INFO] Training Logistic with 50 features
+[20:08:06] [INFO] Training KNN with 50 features
+[20:08:06] [INFO] Training Logistic with 50 features
+[20:08:06] [INFO] Training KNN with 50 features
+[20:08:06] [INFO] Training Logistic with 50 features
+[20:08:07] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:08:07] [INFO] Training KNNs and Logistics for 5 splits
+[20:08:07] [INFO] Training KNN with 50 features
+[20:08:07] [INFO] Training Logistic with 50 features
+[20:08:07] [INFO] Training KNN with 50 features
+[20:08:07] [INFO] Training Logistic with 50 features
+[20:08:07] [INFO] Training KNN with 50 features
+[20:08:07] [INFO] Training Logistic with 50 features
+[20:08:07] [INFO] Training KNN with 50 features
+[20:08:07] [INFO] Training Logistic with 50 features
+[20:08:07] [INFO] Training KNN with 50 features
+[20:08:07] [INFO] Training Logistic with 50 features
+[20:08:07] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:08:07] [INFO] Training KNNs and Logistics for 5 splits
+[20:08:07] [INFO] Training KNN with 50 features
+[20:08:07] [INFO] Training Logistic with 50 features
+[20:08:07] [INFO] Training KNN with 50 features
+[20:08:07] [INFO] Training Logistic with 50 features
+[20:08:07] [INFO] Training KNN with 50 features
+[20:08:07] [INFO] Training Logistic with 50 features
+[20:08:07] [INFO] Training KNN with 50 features
+[20:08:07] [INFO] Training Logistic with 50 features
+[20:08:07] [INFO] Training KNN with 50 features
+[20:08:07] [INFO] Training Logistic with 50 features
+[20:08:07] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:08:07] [INFO] Training KNNs and Logistics for 5 splits
+[20:08:07] [INFO] Training KNN with 50 features
+[20:08:07] [INFO] Training Logistic with 50 features
+[20:08:07] [INFO] Training KNN with 50 features
+[20:08:07] [INFO] Training Logistic with 50 features
+[20:08:08] [INFO] Training KNN with 50 features
+[20:08:08] [INFO] Training Logistic with 50 features
+[20:08:08] [INFO] Training KNN with 50 features
+[20:08:08] [INFO] Training Logistic with 50 features
+[20:08:08] [INFO] Training KNN with 50 features
+[20:08:08] [INFO] Training Logistic with 50 features
+[20:08:08] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:08:08] [INFO] Training KNNs and Logistics for 5 splits
+[20:08:08] [INFO] Training KNN with 50 features
+[20:08:08] [INFO] Training Logistic with 50 features
+[20:08:08] [INFO] Training KNN with 50 features
+[20:08:08] [INFO] Training Logistic with 50 features
+[20:08:08] [INFO] Training KNN with 50 features
+[20:08:08] [INFO] Training Logistic with 50 features
+[20:08:08] [INFO] Training KNN with 50 features
+[20:08:08] [INFO] Training Logistic with 50 features
+[20:08:08] [INFO] Training KNN with 50 features
+[20:08:08] [INFO] Training Logistic with 50 features
+[20:08:08] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:08:08] [INFO] Training KNNs and Logistics for 5 splits
+[20:08:08] [INFO] Training KNN with 50 features
+[20:08:08] [INFO] Training Logistic with 50 features
+[20:08:08] [INFO] Training KNN with 50 features
+[20:08:08] [INFO] Training Logistic with 50 features
+[20:08:08] [INFO] Training KNN with 50 features
+[20:08:08] [INFO] Training Logistic with 50 features
+[20:08:08] [INFO] Training KNN with 50 features
+[20:08:08] [INFO] Training Logistic with 50 features
+[20:08:08] [INFO] Training KNN with 50 features
+[20:08:08] [INFO] Training Logistic with 50 features
+[20:08:08] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:08:08] [INFO] Training KNNs and Logistics for 5 splits
+[20:08:08] [INFO] Training KNN with 50 features
+[20:08:08] [INFO] Training Logistic with 50 features
+[20:08:08] [INFO] Training KNN with 50 features
+[20:08:08] [INFO] Training Logistic with 50 features
+[20:08:08] [INFO] Training KNN with 50 features
+[20:08:08] [INFO] Training Logistic with 50 features
+[20:08:08] [INFO] Training KNN with 50 features
+[20:08:08] [INFO] Training Logistic with 50 features
+[20:08:08] [INFO] Training KNN with 50 features
+[20:08:08] [INFO] Training Logistic with 50 features
+[20:08:08] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:08:09] [INFO] Training KNNs and Logistics for 5 splits
+[20:08:09] [INFO] Training KNN with 50 features
+[20:08:09] [INFO] Training Logistic with 50 features
+[20:08:09] [INFO] Training KNN with 50 features
+[20:08:09] [INFO] Training Logistic with 50 features
+[20:08:09] [INFO] Training KNN with 50 features
+[20:08:09] [INFO] Training Logistic with 50 features
+[20:08:09] [INFO] Training KNN with 50 features
+[20:08:09] [INFO] Training Logistic with 50 features
+[20:08:09] [INFO] Training KNN with 50 features
+[20:08:09] [INFO] Training Logistic with 50 features
+[20:08:09] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:08:09] [INFO] Training KNNs and Logistics for 5 splits
+[20:08:09] [INFO] Training KNN with 50 features
+[20:08:09] [INFO] Training Logistic with 50 features
+[20:08:09] [INFO] Training KNN with 50 features
+[20:08:09] [INFO] Training Logistic with 50 features
+[20:08:09] [INFO] Training KNN with 50 features
+[20:08:09] [INFO] Training Logistic with 50 features
+[20:08:09] [INFO] Training KNN with 50 features
+[20:08:09] [INFO] Training Logistic with 50 features
+[20:08:09] [INFO] Training KNN with 50 features
+[20:08:09] [INFO] Training Logistic with 50 features
+[20:08:09] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:08:09] [INFO] Training KNNs and Logistics for 5 splits
+[20:08:09] [INFO] Training KNN with 50 features
+[20:08:09] [INFO] Training Logistic with 50 features
+[20:08:09] [INFO] Training KNN with 50 features
+[20:08:09] [INFO] Training Logistic with 50 features
+[20:08:09] [INFO] Training KNN with 50 features
+[20:08:09] [INFO] Training Logistic with 50 features
+[20:08:09] [INFO] Training KNN with 50 features
+[20:08:09] [INFO] Training Logistic with 50 features
+[20:08:09] [INFO] Training KNN with 50 features
+[20:08:09] [INFO] Training Logistic with 50 features
+[20:08:09] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:08:09] [INFO] Training KNNs and Logistics for 5 splits
+[20:08:09] [INFO] Training KNN with 50 features
+[20:08:09] [INFO] Training Logistic with 50 features
+[20:08:09] [INFO] Training KNN with 50 features
+[20:08:09] [INFO] Training Logistic with 50 features
+[20:08:09] [INFO] Training KNN with 50 features
+[20:08:09] [INFO] Training Logistic with 50 features
+[20:08:09] [INFO] Training KNN with 50 features
+[20:08:09] [INFO] Training Logistic with 50 features
+[20:08:09] [INFO] Training KNN with 50 features
+[20:08:09] [INFO] Training Logistic with 50 features
+[20:08:10] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:08:10] [INFO] Training KNNs and Logistics for 5 splits
+[20:08:10] [INFO] Training KNN with 50 features
+[20:08:10] [INFO] Training Logistic with 50 features
+[20:08:10] [INFO] Training KNN with 50 features
+[20:08:10] [INFO] Training Logistic with 50 features
+[20:08:10] [INFO] Training KNN with 50 features
+[20:08:10] [INFO] Training Logistic with 50 features
+[20:08:10] [INFO] Training KNN with 50 features
+[20:08:10] [INFO] Training Logistic with 50 features
+[20:08:10] [INFO] Training KNN with 50 features
+[20:08:10] [INFO] Training Logistic with 50 features
+[20:08:10] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:08:10] [INFO] Training KNNs and Logistics for 5 splits
+[20:08:10] [INFO] Training KNN with 50 features
+[20:08:10] [INFO] Training Logistic with 50 features
+[20:08:10] [INFO] Training KNN with 50 features
+[20:08:10] [INFO] Training Logistic with 50 features
+[20:08:10] [INFO] Training KNN with 50 features
+[20:08:10] [INFO] Training Logistic with 50 features
+[20:08:10] [INFO] Training KNN with 50 features
+[20:08:10] [INFO] Training Logistic with 50 features
+[20:08:10] [INFO] Training KNN with 50 features
+[20:08:10] [INFO] Training Logistic with 50 features
+[20:08:10] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:08:10] [INFO] Training KNNs and Logistics for 5 splits
+[20:08:10] [INFO] Training KNN with 50 features
+[20:08:10] [INFO] Training Logistic with 50 features
+[20:08:10] [INFO] Training KNN with 50 features
+[20:08:10] [INFO] Training Logistic with 50 features
+[20:08:10] [INFO] Training KNN with 50 features
+[20:08:10] [INFO] Training Logistic with 50 features
+[20:08:10] [INFO] Training KNN with 50 features
+[20:08:10] [INFO] Training Logistic with 50 features
+[20:08:10] [INFO] Training KNN with 50 features
+[20:08:10] [INFO] Training Logistic with 50 features
+[20:08:10] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:08:11] [INFO] Training KNNs and Logistics for 5 splits
+[20:08:11] [INFO] Training KNN with 50 features
+[20:08:11] [INFO] Training Logistic with 50 features
+[20:08:11] [INFO] Training KNN with 50 features
+[20:08:11] [INFO] Training Logistic with 50 features
+[20:08:11] [INFO] Training KNN with 50 features
+[20:08:11] [INFO] Training Logistic with 50 features
+[20:08:11] [INFO] Training KNN with 50 features
+[20:08:11] [INFO] Training Logistic with 50 features
+[20:08:11] [INFO] Training KNN with 50 features
+[20:08:11] [INFO] Training Logistic with 50 features
+[20:08:11] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:08:11] [INFO] Fitting Top K with 1 features
+[20:08:11] [INFO] Fitting Top K with 1 features
+[20:08:11] [INFO] Fitting Top K with 1 features
+[20:08:11] [INFO] Fitting Top K with 1 features
+[20:08:11] [INFO] Fitting Top K with 1 features
+[20:08:11] [INFO] Using ABCD features only
+[20:08:11] [INFO] Training KNNs and Logistics for 5 splits
+[20:08:11] [INFO] Training KNN with 1 features
+[20:08:11] [INFO] Training Logistic with 1 features
+[20:08:11] [INFO] Training KNN with 1 features
+[20:08:11] [INFO] Training Logistic with 1 features
+[20:08:11] [INFO] Training KNN with 1 features
+[20:08:11] [INFO] Training Logistic with 1 features
+[20:08:11] [INFO] Training KNN with 1 features
+[20:08:11] [INFO] Training Logistic with 1 features
+[20:08:11] [INFO] Training KNN with 1 features
+[20:08:11] [INFO] Training Logistic with 1 features
+[20:08:11] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:08:11] [INFO] Fitting Top K with 2 features
+[20:08:11] [INFO] Fitting Top K with 2 features
+[20:08:11] [INFO] Fitting Top K with 2 features
+[20:08:11] [INFO] Fitting Top K with 2 features
+[20:08:11] [INFO] Fitting Top K with 2 features
+[20:08:11] [INFO] Using ABCD features only
+[20:08:12] [INFO] Training KNNs and Logistics for 5 splits
+[20:08:12] [INFO] Training KNN with 2 features
+[20:08:12] [INFO] Training Logistic with 2 features
+[20:08:12] [INFO] Training KNN with 2 features
+[20:08:12] [INFO] Training Logistic with 2 features
+[20:08:12] [INFO] Training KNN with 2 features
+[20:08:12] [INFO] Training Logistic with 2 features
+[20:08:12] [INFO] Training KNN with 2 features
+[20:08:12] [INFO] Training Logistic with 2 features
+[20:08:12] [INFO] Training KNN with 2 features
+[20:08:12] [INFO] Training Logistic with 2 features
+[20:08:12] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:08:12] [INFO] Fitting Top K with 3 features
+[20:08:12] [INFO] Fitting Top K with 3 features
+[20:08:12] [INFO] Fitting Top K with 3 features
+[20:08:12] [INFO] Fitting Top K with 3 features
+[20:08:12] [INFO] Fitting Top K with 3 features
+[20:08:12] [INFO] Using ABCD features only
+[20:08:12] [INFO] Training KNNs and Logistics for 5 splits
+[20:08:12] [INFO] Training KNN with 3 features
+[20:08:12] [INFO] Training Logistic with 3 features
+[20:08:12] [INFO] Training KNN with 3 features
+[20:08:12] [INFO] Training Logistic with 3 features
+[20:08:12] [INFO] Training KNN with 3 features
+[20:08:12] [INFO] Training Logistic with 3 features
+[20:08:12] [INFO] Training KNN with 3 features
+[20:08:12] [INFO] Training Logistic with 3 features
+[20:08:12] [INFO] Training KNN with 3 features
+[20:08:12] [INFO] Training Logistic with 3 features
+[20:08:12] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:08:12] [INFO] Fitting Top K with 4 features
+[20:08:12] [INFO] Fitting Top K with 4 features
+[20:08:12] [INFO] Fitting Top K with 4 features
+[20:08:12] [INFO] Fitting Top K with 4 features
+[20:08:12] [INFO] Fitting Top K with 4 features
+[20:08:12] [INFO] Using ABCD features only
+[20:08:12] [INFO] Training KNNs and Logistics for 5 splits
+[20:08:12] [INFO] Training KNN with 4 features
+[20:08:12] [INFO] Training Logistic with 4 features
+[20:08:12] [INFO] Training KNN with 4 features
+[20:08:12] [INFO] Training Logistic with 4 features
+[20:08:12] [INFO] Training KNN with 4 features
+[20:08:12] [INFO] Training Logistic with 4 features
+[20:08:12] [INFO] Training KNN with 4 features
+[20:08:12] [INFO] Training Logistic with 4 features
+[20:08:12] [INFO] Training KNN with 4 features
+[20:08:12] [INFO] Training Logistic with 4 features
+[20:08:12] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:08:12] [INFO] Fitting Top K with 5 features
+[20:08:12] [INFO] Fitting Top K with 5 features
+[20:08:12] [INFO] Fitting Top K with 5 features
+[20:08:12] [INFO] Fitting Top K with 5 features
+[20:08:12] [INFO] Fitting Top K with 5 features
+[20:08:12] [INFO] Using ABCD features only
+[20:08:12] [INFO] Training KNNs and Logistics for 5 splits
+[20:08:12] [INFO] Training KNN with 5 features
+[20:08:12] [INFO] Training Logistic with 5 features
+[20:08:12] [INFO] Training KNN with 5 features
+[20:08:12] [INFO] Training Logistic with 5 features
+[20:08:12] [INFO] Training KNN with 5 features
+[20:08:12] [INFO] Training Logistic with 5 features
+[20:08:12] [INFO] Training KNN with 5 features
+[20:08:12] [INFO] Training Logistic with 5 features
+[20:08:12] [INFO] Training KNN with 5 features
+[20:08:12] [INFO] Training Logistic with 5 features
+[20:08:12] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:08:12] [INFO] Fitting Top K with 6 features
+[20:08:12] [INFO] Fitting Top K with 6 features
+[20:08:12] [INFO] Fitting Top K with 6 features
+[20:08:12] [INFO] Fitting Top K with 6 features
+[20:08:12] [INFO] Fitting Top K with 6 features
+[20:08:12] [INFO] Using ABCD features only
+[20:08:12] [INFO] Training KNNs and Logistics for 5 splits
+[20:08:12] [INFO] Training KNN with 6 features
+[20:08:12] [INFO] Training Logistic with 6 features
+[20:08:12] [INFO] Training KNN with 6 features
+[20:08:12] [INFO] Training Logistic with 6 features
+[20:08:12] [INFO] Training KNN with 6 features
+[20:08:12] [INFO] Training Logistic with 6 features
+[20:08:12] [INFO] Training KNN with 6 features
+[20:08:12] [INFO] Training Logistic with 6 features
+[20:08:12] [INFO] Training KNN with 6 features
+[20:08:12] [INFO] Training Logistic with 6 features
+[20:08:12] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:08:12] [INFO] Fitting Top K with 7 features
+[20:08:12] [INFO] Fitting Top K with 7 features
+[20:08:12] [INFO] Fitting Top K with 7 features
+[20:08:12] [INFO] Fitting Top K with 7 features
+[20:08:12] [INFO] Fitting Top K with 7 features
+[20:08:12] [INFO] Using ABCD features only
+[20:08:12] [INFO] Training KNNs and Logistics for 5 splits
+[20:08:12] [INFO] Training KNN with 7 features
+[20:08:12] [INFO] Training Logistic with 7 features
+[20:08:12] [INFO] Training KNN with 7 features
+[20:08:12] [INFO] Training Logistic with 7 features
+[20:08:12] [INFO] Training KNN with 7 features
+[20:08:12] [INFO] Training Logistic with 7 features
+[20:08:12] [INFO] Training KNN with 7 features
+[20:08:12] [INFO] Training Logistic with 7 features
+[20:08:12] [INFO] Training KNN with 7 features
+[20:08:12] [INFO] Training Logistic with 7 features
+[20:08:12] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:08:12] [INFO] Fitting Top K with 8 features
+[20:08:12] [INFO] Fitting Top K with 8 features
+[20:08:12] [INFO] Fitting Top K with 8 features
+[20:08:12] [INFO] Fitting Top K with 8 features
+[20:08:12] [INFO] Fitting Top K with 8 features
+[20:08:12] [INFO] Using ABCD features only
+[20:08:12] [INFO] Training KNNs and Logistics for 5 splits
+[20:08:12] [INFO] Training KNN with 8 features
+[20:08:12] [INFO] Training Logistic with 8 features
+[20:08:12] [INFO] Training KNN with 8 features
+[20:08:12] [INFO] Training Logistic with 8 features
+[20:08:12] [INFO] Training KNN with 8 features
+[20:08:12] [INFO] Training Logistic with 8 features
+[20:08:13] [INFO] Training KNN with 8 features
+[20:08:13] [INFO] Training Logistic with 8 features
+[20:08:13] [INFO] Training KNN with 8 features
+[20:08:13] [INFO] Training Logistic with 8 features
+[20:08:13] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:08:13] [INFO] Fitting Top K with 9 features
+[20:08:13] [INFO] Fitting Top K with 9 features
+[20:08:13] [INFO] Fitting Top K with 9 features
+[20:08:13] [INFO] Fitting Top K with 9 features
+[20:08:13] [INFO] Fitting Top K with 9 features
+[20:08:13] [INFO] Using ABCD features only
+[20:08:13] [INFO] Training KNNs and Logistics for 5 splits
+[20:08:13] [INFO] Training KNN with 9 features
+[20:08:13] [INFO] Training Logistic with 9 features
+[20:08:13] [INFO] Training KNN with 9 features
+[20:08:13] [INFO] Training Logistic with 9 features
+[20:08:13] [INFO] Training KNN with 9 features
+[20:08:13] [INFO] Training Logistic with 9 features
+[20:08:13] [INFO] Training KNN with 9 features
+[20:08:13] [INFO] Training Logistic with 9 features
+[20:08:13] [INFO] Training KNN with 9 features
+[20:08:13] [INFO] Training Logistic with 9 features
+[20:08:13] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:08:13] [INFO] Fitting Top K with 10 features
+[20:08:13] [INFO] Fitting Top K with 10 features
+[20:08:13] [INFO] Fitting Top K with 10 features
+[20:08:13] [INFO] Fitting Top K with 10 features
+[20:08:13] [INFO] Fitting Top K with 10 features
+[20:08:13] [INFO] Using ABCD features only
+[20:08:13] [INFO] Training KNNs and Logistics for 5 splits
+[20:08:13] [INFO] Training KNN with 10 features
+[20:08:13] [INFO] Training Logistic with 10 features
+[20:08:13] [INFO] Training KNN with 10 features
+[20:08:13] [INFO] Training Logistic with 10 features
+[20:08:13] [INFO] Training KNN with 10 features
+[20:08:13] [INFO] Training Logistic with 10 features
+[20:08:13] [INFO] Training KNN with 10 features
+[20:08:13] [INFO] Training Logistic with 10 features
+[20:08:13] [INFO] Training KNN with 10 features
+[20:08:13] [INFO] Training Logistic with 10 features
+[20:08:13] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:08:13] [INFO] Fitting Top K with 11 features
+[20:08:13] [INFO] Fitting Top K with 11 features
+[20:08:13] [INFO] Fitting Top K with 11 features
+[20:08:13] [INFO] Fitting Top K with 11 features
+[20:08:13] [INFO] Fitting Top K with 11 features
+[20:08:13] [INFO] Using ABCD features only
+[20:08:13] [INFO] Training KNNs and Logistics for 5 splits
+[20:08:13] [INFO] Training KNN with 11 features
+[20:08:13] [INFO] Training Logistic with 11 features
+[20:08:13] [INFO] Training KNN with 11 features
+[20:08:13] [INFO] Training Logistic with 11 features
+[20:08:13] [INFO] Training KNN with 11 features
+[20:08:13] [INFO] Training Logistic with 11 features
+[20:08:13] [INFO] Training KNN with 11 features
+[20:08:13] [INFO] Training Logistic with 11 features
+[20:08:13] [INFO] Training KNN with 11 features
+[20:08:13] [INFO] Training Logistic with 11 features
+[20:08:13] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:08:13] [INFO] Fitting Top K with 12 features
+[20:08:13] [INFO] Fitting Top K with 12 features
+[20:08:13] [INFO] Fitting Top K with 12 features
+[20:08:13] [INFO] Fitting Top K with 12 features
+[20:08:13] [INFO] Fitting Top K with 12 features
+[20:08:13] [INFO] Using ABCD features only
+[20:08:13] [INFO] Training KNNs and Logistics for 5 splits
+[20:08:13] [INFO] Training KNN with 12 features
+[20:08:13] [INFO] Training Logistic with 12 features
+[20:08:13] [INFO] Training KNN with 12 features
+[20:08:13] [INFO] Training Logistic with 12 features
+[20:08:13] [INFO] Training KNN with 12 features
+[20:08:13] [INFO] Training Logistic with 12 features
+[20:08:13] [INFO] Training KNN with 12 features
+[20:08:13] [INFO] Training Logistic with 12 features
+[20:08:13] [INFO] Training KNN with 12 features
+[20:08:13] [INFO] Training Logistic with 12 features
+[20:08:13] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:08:13] [INFO] Fitting Top K with 13 features
+[20:08:13] [INFO] Fitting Top K with 13 features
+[20:08:13] [INFO] Fitting Top K with 13 features
+[20:08:13] [INFO] Fitting Top K with 13 features
+[20:08:13] [INFO] Fitting Top K with 13 features
+[20:08:13] [INFO] Using ABCD features only
+[20:08:13] [INFO] Training KNNs and Logistics for 5 splits
+[20:08:13] [INFO] Training KNN with 13 features
+[20:08:13] [INFO] Training Logistic with 13 features
+[20:08:13] [INFO] Training KNN with 13 features
+[20:08:13] [INFO] Training Logistic with 13 features
+[20:08:13] [INFO] Training KNN with 13 features
+[20:08:13] [INFO] Training Logistic with 13 features
+[20:08:13] [INFO] Training KNN with 13 features
+[20:08:13] [INFO] Training Logistic with 13 features
+[20:08:13] [INFO] Training KNN with 13 features
+[20:08:13] [INFO] Training Logistic with 13 features
+[20:08:13] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:08:13] [INFO] Fitting Top K with 14 features
+[20:08:13] [INFO] Fitting Top K with 14 features
+[20:08:13] [INFO] Fitting Top K with 14 features
+[20:08:13] [INFO] Fitting Top K with 14 features
+[20:08:13] [INFO] Fitting Top K with 14 features
+[20:08:13] [INFO] Using ABCD features only
+[20:08:13] [INFO] Training KNNs and Logistics for 5 splits
+[20:08:13] [INFO] Training KNN with 14 features
+[20:08:13] [INFO] Training Logistic with 14 features
+[20:08:13] [INFO] Training KNN with 14 features
+[20:08:13] [INFO] Training Logistic with 14 features
+[20:08:13] [INFO] Training KNN with 14 features
+[20:08:13] [INFO] Training Logistic with 14 features
+[20:08:13] [INFO] Training KNN with 14 features
+[20:08:13] [INFO] Training Logistic with 14 features
+[20:08:13] [INFO] Training KNN with 14 features
+[20:08:13] [INFO] Training Logistic with 14 features
+[20:08:14] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:08:14] [INFO] Fitting Top K with 15 features
+[20:08:14] [INFO] Fitting Top K with 15 features
+[20:08:14] [INFO] Fitting Top K with 15 features
+[20:08:14] [INFO] Fitting Top K with 15 features
+[20:08:14] [INFO] Fitting Top K with 15 features
+[20:08:14] [INFO] Using ABCD features only
+[20:08:14] [INFO] Training KNNs and Logistics for 5 splits
+[20:08:14] [INFO] Training KNN with 15 features
+[20:08:14] [INFO] Training Logistic with 15 features
+[20:08:14] [INFO] Training KNN with 15 features
+[20:08:14] [INFO] Training Logistic with 15 features
+[20:08:14] [INFO] Training KNN with 15 features
+[20:08:14] [INFO] Training Logistic with 15 features
+[20:08:14] [INFO] Training KNN with 15 features
+[20:08:14] [INFO] Training Logistic with 15 features
+[20:08:14] [INFO] Training KNN with 15 features
+[20:08:14] [INFO] Training Logistic with 15 features
+[20:08:14] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:08:14] [INFO] Fitting Top K with 16 features
+[20:08:14] [INFO] Fitting Top K with 16 features
+[20:08:14] [INFO] Fitting Top K with 16 features
+[20:08:14] [INFO] Fitting Top K with 16 features
+[20:08:14] [INFO] Fitting Top K with 16 features
+[20:08:14] [INFO] Using ABCD features only
+[20:08:14] [INFO] Training KNNs and Logistics for 5 splits
+[20:08:14] [INFO] Training KNN with 16 features
+[20:08:14] [INFO] Training Logistic with 16 features
+[20:08:14] [INFO] Training KNN with 16 features
+[20:08:14] [INFO] Training Logistic with 16 features
+[20:08:14] [INFO] Training KNN with 16 features
+[20:08:14] [INFO] Training Logistic with 16 features
+[20:08:14] [INFO] Training KNN with 16 features
+[20:08:14] [INFO] Training Logistic with 16 features
+[20:08:14] [INFO] Training KNN with 16 features
+[20:08:14] [INFO] Training Logistic with 16 features
+[20:08:14] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:08:14] [INFO] Fitting Top K with 17 features
+[20:08:14] [INFO] Fitting Top K with 17 features
+[20:08:14] [INFO] Fitting Top K with 17 features
+[20:08:14] [INFO] Fitting Top K with 17 features
+[20:08:14] [INFO] Fitting Top K with 17 features
+[20:08:14] [INFO] Using ABCD features only
+[20:08:14] [INFO] Training KNNs and Logistics for 5 splits
+[20:08:14] [INFO] Training KNN with 17 features
+[20:08:14] [INFO] Training Logistic with 17 features
+[20:08:14] [INFO] Training KNN with 17 features
+[20:08:14] [INFO] Training Logistic with 17 features
+[20:08:14] [INFO] Training KNN with 17 features
+[20:08:14] [INFO] Training Logistic with 17 features
+[20:08:14] [INFO] Training KNN with 17 features
+[20:08:14] [INFO] Training Logistic with 17 features
+[20:08:14] [INFO] Training KNN with 17 features
+[20:08:14] [INFO] Training Logistic with 17 features
+[20:08:14] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:08:14] [INFO] Fitting Top K with 18 features
+[20:08:14] [INFO] Fitting Top K with 18 features
+[20:08:14] [INFO] Fitting Top K with 18 features
+[20:08:14] [INFO] Fitting Top K with 18 features
+[20:08:14] [INFO] Fitting Top K with 18 features
+[20:08:14] [INFO] Using ABCD features only
+[20:08:14] [INFO] Training KNNs and Logistics for 5 splits
+[20:08:14] [INFO] Training KNN with 18 features
+[20:08:14] [INFO] Training Logistic with 18 features
+[20:08:14] [INFO] Training KNN with 18 features
+[20:08:14] [INFO] Training Logistic with 18 features
+[20:08:14] [INFO] Training KNN with 18 features
+[20:08:14] [INFO] Training Logistic with 18 features
+[20:08:14] [INFO] Training KNN with 18 features
+[20:08:14] [INFO] Training Logistic with 18 features
+[20:08:14] [INFO] Training KNN with 18 features
+[20:08:14] [INFO] Training Logistic with 18 features
+[20:08:14] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:08:14] [INFO] Fitting Top K with 19 features
+[20:08:14] [INFO] Fitting Top K with 19 features
+[20:08:14] [INFO] Fitting Top K with 19 features
+[20:08:14] [INFO] Fitting Top K with 19 features
+[20:08:14] [INFO] Fitting Top K with 19 features
+[20:08:14] [INFO] Using ABCD features only
+[20:08:14] [INFO] Training KNNs and Logistics for 5 splits
+[20:08:14] [INFO] Training KNN with 19 features
+[20:08:14] [INFO] Training Logistic with 19 features
+[20:08:14] [INFO] Training KNN with 19 features
+[20:08:14] [INFO] Training Logistic with 19 features
+[20:08:14] [INFO] Training KNN with 19 features
+[20:08:14] [INFO] Training Logistic with 19 features
+[20:08:14] [INFO] Training KNN with 19 features
+[20:08:14] [INFO] Training Logistic with 19 features
+[20:08:14] [INFO] Training KNN with 19 features
+[20:08:14] [INFO] Training Logistic with 19 features
+[20:08:14] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:08:15] [INFO] Fitting Top K with 20 features
+[20:08:15] [INFO] Fitting Top K with 20 features
+[20:08:15] [INFO] Fitting Top K with 20 features
+[20:08:15] [INFO] Fitting Top K with 20 features
+[20:08:15] [INFO] Fitting Top K with 20 features
+[20:08:15] [INFO] Using ABCD features only
+[20:08:15] [INFO] Training KNNs and Logistics for 5 splits
+[20:08:15] [INFO] Training KNN with 20 features
+[20:08:15] [INFO] Training Logistic with 20 features
+[20:08:15] [INFO] Training KNN with 20 features
+[20:08:15] [INFO] Training Logistic with 20 features
+[20:08:15] [INFO] Training KNN with 20 features
+[20:08:15] [INFO] Training Logistic with 20 features
+[20:08:15] [INFO] Training KNN with 20 features
+[20:08:15] [INFO] Training Logistic with 20 features
+[20:08:15] [INFO] Training KNN with 20 features
+[20:08:15] [INFO] Training Logistic with 20 features
+[20:08:15] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:08:15] [INFO] Fitting Top K with 21 features
+[20:08:15] [INFO] Fitting Top K with 21 features
+[20:08:15] [INFO] Fitting Top K with 21 features
+[20:08:15] [INFO] Fitting Top K with 21 features
+[20:08:15] [INFO] Fitting Top K with 21 features
+[20:08:15] [INFO] Using ABCD features only
+[20:08:15] [INFO] Training KNNs and Logistics for 5 splits
+[20:08:15] [INFO] Training KNN with 21 features
+[20:08:15] [INFO] Training Logistic with 21 features
+[20:08:15] [INFO] Training KNN with 21 features
+[20:08:15] [INFO] Training Logistic with 21 features
+[20:08:15] [INFO] Training KNN with 21 features
+[20:08:15] [INFO] Training Logistic with 21 features
+[20:08:15] [INFO] Training KNN with 21 features
+[20:08:15] [INFO] Training Logistic with 21 features
+[20:08:15] [INFO] Training KNN with 21 features
+[20:08:15] [INFO] Training Logistic with 21 features
+[20:08:15] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:08:15] [INFO] Fitting Top K with 22 features
+[20:08:15] [INFO] Fitting Top K with 22 features
+[20:08:15] [INFO] Fitting Top K with 22 features
+[20:08:15] [INFO] Fitting Top K with 22 features
+[20:08:15] [INFO] Fitting Top K with 22 features
+[20:08:15] [INFO] Using ABCD features only
+[20:08:15] [INFO] Training KNNs and Logistics for 5 splits
+[20:08:15] [INFO] Training KNN with 22 features
+[20:08:15] [INFO] Training Logistic with 22 features
+[20:08:15] [INFO] Training KNN with 22 features
+[20:08:15] [INFO] Training Logistic with 22 features
+[20:08:15] [INFO] Training KNN with 22 features
+[20:08:15] [INFO] Training Logistic with 22 features
+[20:08:15] [INFO] Training KNN with 22 features
+[20:08:15] [INFO] Training Logistic with 22 features
+[20:08:15] [INFO] Training KNN with 22 features
+[20:08:15] [INFO] Training Logistic with 22 features
+[20:08:15] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:08:15] [INFO] Fitting Top K with 23 features
+[20:08:15] [INFO] Fitting Top K with 23 features
+[20:08:15] [INFO] Fitting Top K with 23 features
+[20:08:15] [INFO] Fitting Top K with 23 features
+[20:08:15] [INFO] Fitting Top K with 23 features
+[20:08:15] [INFO] Using ABCD features only
+[20:08:15] [INFO] Training KNNs and Logistics for 5 splits
+[20:08:15] [INFO] Training KNN with 23 features
+[20:08:15] [INFO] Training Logistic with 23 features
+[20:08:15] [INFO] Training KNN with 23 features
+[20:08:15] [INFO] Training Logistic with 23 features
+[20:08:15] [INFO] Training KNN with 23 features
+[20:08:15] [INFO] Training Logistic with 23 features
+[20:08:15] [INFO] Training KNN with 23 features
+[20:08:15] [INFO] Training Logistic with 23 features
+[20:08:15] [INFO] Training KNN with 23 features
+[20:08:15] [INFO] Training Logistic with 23 features
+[20:08:15] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:08:15] [INFO] Fitting Top K with 24 features
+[20:08:15] [INFO] Fitting Top K with 24 features
+[20:08:15] [INFO] Fitting Top K with 24 features
+[20:08:15] [INFO] Fitting Top K with 24 features
+[20:08:15] [INFO] Fitting Top K with 24 features
+[20:08:15] [INFO] Using ABCD features only
+[20:08:15] [INFO] Training KNNs and Logistics for 5 splits
+[20:08:15] [INFO] Training KNN with 24 features
+[20:08:15] [INFO] Training Logistic with 24 features
+[20:08:15] [INFO] Training KNN with 24 features
+[20:08:15] [INFO] Training Logistic with 24 features
+[20:08:16] [INFO] Training KNN with 24 features
+[20:08:16] [INFO] Training Logistic with 24 features
+[20:08:16] [INFO] Training KNN with 24 features
+[20:08:16] [INFO] Training Logistic with 24 features
+[20:08:16] [INFO] Training KNN with 24 features
+[20:08:16] [INFO] Training Logistic with 24 features
+[20:08:16] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:08:16] [INFO] Fitting Top K with 25 features
+[20:08:16] [INFO] Fitting Top K with 25 features
+[20:08:16] [INFO] Fitting Top K with 25 features
+[20:08:16] [INFO] Fitting Top K with 25 features
+[20:08:16] [INFO] Fitting Top K with 25 features
+[20:08:16] [INFO] Using ABCD features only
+[20:08:16] [INFO] Training KNNs and Logistics for 5 splits
+[20:08:16] [INFO] Training KNN with 25 features
+[20:08:16] [INFO] Training Logistic with 25 features
+[20:08:16] [INFO] Training KNN with 25 features
+[20:08:16] [INFO] Training Logistic with 25 features
+[20:08:16] [INFO] Training KNN with 25 features
+[20:08:16] [INFO] Training Logistic with 25 features
+[20:08:16] [INFO] Training KNN with 25 features
+[20:08:16] [INFO] Training Logistic with 25 features
+[20:08:16] [INFO] Training KNN with 25 features
+[20:08:16] [INFO] Training Logistic with 25 features
+[20:08:16] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:08:16] [INFO] Fitting Top K with 26 features
+[20:08:16] [INFO] Fitting Top K with 26 features
+[20:08:16] [INFO] Fitting Top K with 26 features
+[20:08:16] [INFO] Fitting Top K with 26 features
+[20:08:16] [INFO] Fitting Top K with 26 features
+[20:08:16] [INFO] Using ABCD features only
+[20:08:16] [INFO] Training KNNs and Logistics for 5 splits
+[20:08:16] [INFO] Training KNN with 26 features
+[20:08:16] [INFO] Training Logistic with 26 features
+[20:08:16] [INFO] Training KNN with 26 features
+[20:08:16] [INFO] Training Logistic with 26 features
+[20:08:16] [INFO] Training KNN with 26 features
+[20:08:16] [INFO] Training Logistic with 26 features
+[20:08:16] [INFO] Training KNN with 26 features
+[20:08:16] [INFO] Training Logistic with 26 features
+[20:08:16] [INFO] Training KNN with 26 features
+[20:08:16] [INFO] Training Logistic with 26 features
+[20:08:16] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:08:16] [INFO] Fitting Top K with 27 features
+[20:08:16] [INFO] Fitting Top K with 27 features
+[20:08:16] [INFO] Fitting Top K with 27 features
+[20:08:16] [INFO] Fitting Top K with 27 features
+[20:08:16] [INFO] Fitting Top K with 27 features
+[20:08:16] [INFO] Using ABCD features only
+[20:08:16] [INFO] Training KNNs and Logistics for 5 splits
+[20:08:16] [INFO] Training KNN with 27 features
+[20:08:16] [INFO] Training Logistic with 27 features
+[20:08:16] [INFO] Training KNN with 27 features
+[20:08:16] [INFO] Training Logistic with 27 features
+[20:08:16] [INFO] Training KNN with 27 features
+[20:08:16] [INFO] Training Logistic with 27 features
+[20:08:16] [INFO] Training KNN with 27 features
+[20:08:16] [INFO] Training Logistic with 27 features
+[20:08:16] [INFO] Training KNN with 27 features
+[20:08:16] [INFO] Training Logistic with 27 features
+[20:08:16] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:08:17] [INFO] Fitting Top K with 28 features
+[20:08:17] [INFO] Fitting Top K with 28 features
+[20:08:17] [INFO] Fitting Top K with 28 features
+[20:08:17] [INFO] Fitting Top K with 28 features
+[20:08:17] [INFO] Fitting Top K with 28 features
+[20:08:17] [INFO] Using ABCD features only
+[20:08:17] [INFO] Training KNNs and Logistics for 5 splits
+[20:08:17] [INFO] Training KNN with 28 features
+[20:08:17] [INFO] Training Logistic with 28 features
+[20:08:17] [INFO] Training KNN with 28 features
+[20:08:17] [INFO] Training Logistic with 28 features
+[20:08:17] [INFO] Training KNN with 28 features
+[20:08:17] [INFO] Training Logistic with 28 features
+[20:08:17] [INFO] Training KNN with 28 features
+[20:08:17] [INFO] Training Logistic with 28 features
+[20:08:17] [INFO] Training KNN with 28 features
+[20:08:17] [INFO] Training Logistic with 28 features
+[20:08:17] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:08:17] [INFO] Fitting Top K with 29 features
+[20:08:17] [INFO] Fitting Top K with 29 features
+[20:08:17] [INFO] Fitting Top K with 29 features
+[20:08:17] [INFO] Fitting Top K with 29 features
+[20:08:17] [INFO] Fitting Top K with 29 features
+[20:08:17] [INFO] Using ABCD features only
+[20:08:17] [INFO] Training KNNs and Logistics for 5 splits
+[20:08:17] [INFO] Training KNN with 29 features
+[20:08:17] [INFO] Training Logistic with 29 features
+[20:08:17] [INFO] Training KNN with 29 features
+[20:08:17] [INFO] Training Logistic with 29 features
+[20:08:17] [INFO] Training KNN with 29 features
+[20:08:17] [INFO] Training Logistic with 29 features
+[20:08:17] [INFO] Training KNN with 29 features
+[20:08:17] [INFO] Training Logistic with 29 features
+[20:08:17] [INFO] Training KNN with 29 features
+[20:08:17] [INFO] Training Logistic with 29 features
+[20:08:17] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:08:17] [INFO] Fitting Top K with 30 features
+[20:08:17] [INFO] Fitting Top K with 30 features
+[20:08:17] [INFO] Fitting Top K with 30 features
+[20:08:17] [INFO] Fitting Top K with 30 features
+[20:08:17] [INFO] Fitting Top K with 30 features
+[20:08:17] [INFO] Using ABCD features only
+[20:08:17] [INFO] Training KNNs and Logistics for 5 splits
+[20:08:17] [INFO] Training KNN with 30 features
+[20:08:17] [INFO] Training Logistic with 30 features
+[20:08:17] [INFO] Training KNN with 30 features
+[20:08:17] [INFO] Training Logistic with 30 features
+[20:08:17] [INFO] Training KNN with 30 features
+[20:08:17] [INFO] Training Logistic with 30 features
+[20:08:17] [INFO] Training KNN with 30 features
+[20:08:17] [INFO] Training Logistic with 30 features
+[20:08:17] [INFO] Training KNN with 30 features
+[20:08:17] [INFO] Training Logistic with 30 features
+[20:08:17] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:08:17] [INFO] Fitting Top K with 31 features
+[20:08:17] [INFO] Fitting Top K with 31 features
+[20:08:17] [INFO] Fitting Top K with 31 features
+[20:08:17] [INFO] Fitting Top K with 31 features
+[20:08:17] [INFO] Fitting Top K with 31 features
+[20:08:17] [INFO] Using ABCD features only
+[20:08:17] [INFO] Training KNNs and Logistics for 5 splits
+[20:08:17] [INFO] Training KNN with 31 features
+[20:08:17] [INFO] Training Logistic with 31 features
+[20:08:17] [INFO] Training KNN with 31 features
+[20:08:17] [INFO] Training Logistic with 31 features
+[20:08:17] [INFO] Training KNN with 31 features
+[20:08:17] [INFO] Training Logistic with 31 features
+[20:08:17] [INFO] Training KNN with 31 features
+[20:08:17] [INFO] Training Logistic with 31 features
+[20:08:18] [INFO] Training KNN with 31 features
+[20:08:18] [INFO] Training Logistic with 31 features
+[20:08:18] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:08:18] [INFO] Fitting Top K with 32 features
+[20:08:18] [INFO] Fitting Top K with 32 features
+[20:08:18] [INFO] Fitting Top K with 32 features
+[20:08:18] [INFO] Fitting Top K with 32 features
+[20:08:18] [INFO] Fitting Top K with 32 features
+[20:08:18] [INFO] Using ABCD features only
+[20:08:18] [INFO] Training KNNs and Logistics for 5 splits
+[20:08:18] [INFO] Training KNN with 32 features
+[20:08:18] [INFO] Training Logistic with 32 features
+[20:08:18] [INFO] Training KNN with 32 features
+[20:08:18] [INFO] Training Logistic with 32 features
+[20:08:18] [INFO] Training KNN with 32 features
+[20:08:18] [INFO] Training Logistic with 32 features
+[20:08:18] [INFO] Training KNN with 32 features
+[20:08:18] [INFO] Training Logistic with 32 features
+[20:08:18] [INFO] Training KNN with 32 features
+[20:08:18] [INFO] Training Logistic with 32 features
+[20:08:18] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:08:18] [INFO] Fitting Top K with 33 features
+[20:08:18] [INFO] Fitting Top K with 33 features
+[20:08:18] [INFO] Fitting Top K with 33 features
+[20:08:18] [INFO] Fitting Top K with 33 features
+[20:08:18] [INFO] Fitting Top K with 33 features
+[20:08:18] [INFO] Using ABCD features only
+[20:08:18] [INFO] Training KNNs and Logistics for 5 splits
+[20:08:18] [INFO] Training KNN with 33 features
+[20:08:18] [INFO] Training Logistic with 33 features
+[20:08:18] [INFO] Training KNN with 33 features
+[20:08:18] [INFO] Training Logistic with 33 features
+[20:08:18] [INFO] Training KNN with 33 features
+[20:08:18] [INFO] Training Logistic with 33 features
+[20:08:18] [INFO] Training KNN with 33 features
+[20:08:18] [INFO] Training Logistic with 33 features
+[20:08:18] [INFO] Training KNN with 33 features
+[20:08:18] [INFO] Training Logistic with 33 features
+[20:08:18] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:08:18] [INFO] Fitting Top K with 34 features
+[20:08:18] [INFO] Fitting Top K with 34 features
+[20:08:18] [INFO] Fitting Top K with 34 features
+[20:08:18] [INFO] Fitting Top K with 34 features
+[20:08:18] [INFO] Fitting Top K with 34 features
+[20:08:18] [INFO] Using ABCD features only
+[20:08:18] [INFO] Training KNNs and Logistics for 5 splits
+[20:08:18] [INFO] Training KNN with 34 features
+[20:08:18] [INFO] Training Logistic with 34 features
+[20:08:18] [INFO] Training KNN with 34 features
+[20:08:18] [INFO] Training Logistic with 34 features
+[20:08:18] [INFO] Training KNN with 34 features
+[20:08:18] [INFO] Training Logistic with 34 features
+[20:08:18] [INFO] Training KNN with 34 features
+[20:08:18] [INFO] Training Logistic with 34 features
+[20:08:18] [INFO] Training KNN with 34 features
+[20:08:18] [INFO] Training Logistic with 34 features
+[20:08:18] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:08:18] [INFO] Fitting Top K with 35 features
+[20:08:18] [INFO] Fitting Top K with 35 features
+[20:08:18] [INFO] Fitting Top K with 35 features
+[20:08:18] [INFO] Fitting Top K with 35 features
+[20:08:18] [INFO] Fitting Top K with 35 features
+[20:08:18] [INFO] Using ABCD features only
+[20:08:19] [INFO] Training KNNs and Logistics for 5 splits
+[20:08:19] [INFO] Training KNN with 35 features
+[20:08:19] [INFO] Training Logistic with 35 features
+[20:08:19] [INFO] Training KNN with 35 features
+[20:08:19] [INFO] Training Logistic with 35 features
+[20:08:19] [INFO] Training KNN with 35 features
+[20:08:19] [INFO] Training Logistic with 35 features
+[20:08:19] [INFO] Training KNN with 35 features
+[20:08:19] [INFO] Training Logistic with 35 features
+[20:08:19] [INFO] Training KNN with 35 features
+[20:08:19] [INFO] Training Logistic with 35 features
+[20:08:19] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:08:19] [INFO] Fitting Top K with 36 features
+[20:08:19] [INFO] Fitting Top K with 36 features
+[20:08:19] [INFO] Fitting Top K with 36 features
+[20:08:19] [INFO] Fitting Top K with 36 features
+[20:08:19] [INFO] Fitting Top K with 36 features
+[20:08:19] [INFO] Using ABCD features only
+[20:08:19] [INFO] Training KNNs and Logistics for 5 splits
+[20:08:19] [INFO] Training KNN with 36 features
+[20:08:19] [INFO] Training Logistic with 36 features
+[20:08:19] [INFO] Training KNN with 36 features
+[20:08:19] [INFO] Training Logistic with 36 features
+[20:08:19] [INFO] Training KNN with 36 features
+[20:08:19] [INFO] Training Logistic with 36 features
+[20:08:19] [INFO] Training KNN with 36 features
+[20:08:19] [INFO] Training Logistic with 36 features
+[20:08:19] [INFO] Training KNN with 36 features
+[20:08:19] [INFO] Training Logistic with 36 features
+[20:08:19] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:08:19] [INFO] Fitting Top K with 37 features
+[20:08:19] [INFO] Fitting Top K with 37 features
+[20:08:19] [INFO] Fitting Top K with 37 features
+[20:08:19] [INFO] Fitting Top K with 37 features
+[20:08:19] [INFO] Fitting Top K with 37 features
+[20:08:19] [INFO] Using ABCD features only
+[20:08:19] [INFO] Training KNNs and Logistics for 5 splits
+[20:08:19] [INFO] Training KNN with 37 features
+[20:08:19] [INFO] Training Logistic with 37 features
+[20:08:19] [INFO] Training KNN with 37 features
+[20:08:19] [INFO] Training Logistic with 37 features
+[20:08:19] [INFO] Training KNN with 37 features
+[20:08:19] [INFO] Training Logistic with 37 features
+[20:08:19] [INFO] Training KNN with 37 features
+[20:08:19] [INFO] Training Logistic with 37 features
+[20:08:19] [INFO] Training KNN with 37 features
+[20:08:19] [INFO] Training Logistic with 37 features
+[20:08:19] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:08:19] [INFO] Fitting Top K with 38 features
+[20:08:19] [INFO] Fitting Top K with 38 features
+[20:08:19] [INFO] Fitting Top K with 38 features
+[20:08:19] [INFO] Fitting Top K with 38 features
+[20:08:19] [INFO] Fitting Top K with 38 features
+[20:08:19] [INFO] Using ABCD features only
+[20:08:19] [INFO] Training KNNs and Logistics for 5 splits
+[20:08:19] [INFO] Training KNN with 38 features
+[20:08:19] [INFO] Training Logistic with 38 features
+[20:08:19] [INFO] Training KNN with 38 features
+[20:08:19] [INFO] Training Logistic with 38 features
+[20:08:19] [INFO] Training KNN with 38 features
+[20:08:19] [INFO] Training Logistic with 38 features
+[20:08:19] [INFO] Training KNN with 38 features
+[20:08:19] [INFO] Training Logistic with 38 features
+[20:08:20] [INFO] Training KNN with 38 features
+[20:08:20] [INFO] Training Logistic with 38 features
+[20:08:20] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:08:20] [INFO] Fitting Top K with 39 features
+[20:08:20] [INFO] Fitting Top K with 39 features
+[20:08:20] [INFO] Fitting Top K with 39 features
+[20:08:20] [INFO] Fitting Top K with 39 features
+[20:08:20] [INFO] Fitting Top K with 39 features
+[20:08:20] [INFO] Using ABCD features only
+[20:08:20] [INFO] Training KNNs and Logistics for 5 splits
+[20:08:20] [INFO] Training KNN with 39 features
+[20:08:20] [INFO] Training Logistic with 39 features
+[20:08:20] [INFO] Training KNN with 39 features
+[20:08:20] [INFO] Training Logistic with 39 features
+[20:08:20] [INFO] Training KNN with 39 features
+[20:08:20] [INFO] Training Logistic with 39 features
+[20:08:20] [INFO] Training KNN with 39 features
+[20:08:20] [INFO] Training Logistic with 39 features
+[20:08:20] [INFO] Training KNN with 39 features
+[20:08:20] [INFO] Training Logistic with 39 features
+[20:08:20] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:08:20] [INFO] Fitting Top K with 40 features
+[20:08:20] [INFO] Fitting Top K with 40 features
+[20:08:20] [INFO] Fitting Top K with 40 features
+[20:08:20] [INFO] Fitting Top K with 40 features
+[20:08:20] [INFO] Fitting Top K with 40 features
+[20:08:20] [INFO] Using ABCD features only
+[20:08:20] [INFO] Training KNNs and Logistics for 5 splits
+[20:08:20] [INFO] Training KNN with 40 features
+[20:08:20] [INFO] Training Logistic with 40 features
+[20:08:20] [INFO] Training KNN with 40 features
+[20:08:20] [INFO] Training Logistic with 40 features
+[20:08:20] [INFO] Training KNN with 40 features
+[20:08:20] [INFO] Training Logistic with 40 features
+[20:08:20] [INFO] Training KNN with 40 features
+[20:08:20] [INFO] Training Logistic with 40 features
+[20:08:20] [INFO] Training KNN with 40 features
+[20:08:20] [INFO] Training Logistic with 40 features
+[20:08:20] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:08:20] [INFO] Fitting Top K with 41 features
+[20:08:20] [INFO] Fitting Top K with 41 features
+[20:08:20] [INFO] Fitting Top K with 41 features
+[20:08:20] [INFO] Fitting Top K with 41 features
+[20:08:20] [INFO] Fitting Top K with 41 features
+[20:08:20] [INFO] Using ABCD features only
+[20:08:20] [INFO] Training KNNs and Logistics for 5 splits
+[20:08:20] [INFO] Training KNN with 41 features
+[20:08:20] [INFO] Training Logistic with 41 features
+[20:08:20] [INFO] Training KNN with 41 features
+[20:08:20] [INFO] Training Logistic with 41 features
+[20:08:20] [INFO] Training KNN with 41 features
+[20:08:20] [INFO] Training Logistic with 41 features
+[20:08:20] [INFO] Training KNN with 41 features
+[20:08:20] [INFO] Training Logistic with 41 features
+[20:08:20] [INFO] Training KNN with 41 features
+[20:08:20] [INFO] Training Logistic with 41 features
+[20:08:20] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:08:21] [INFO] Fitting Top K with 42 features
+[20:08:21] [INFO] Fitting Top K with 42 features
+[20:08:21] [INFO] Fitting Top K with 42 features
+[20:08:21] [INFO] Fitting Top K with 42 features
+[20:08:21] [INFO] Fitting Top K with 42 features
+[20:08:21] [INFO] Using ABCD features only
+[20:08:21] [INFO] Training KNNs and Logistics for 5 splits
+[20:08:21] [INFO] Training KNN with 42 features
+[20:08:21] [INFO] Training Logistic with 42 features
+[20:08:21] [INFO] Training KNN with 42 features
+[20:08:21] [INFO] Training Logistic with 42 features
+[20:08:21] [INFO] Training KNN with 42 features
+[20:08:21] [INFO] Training Logistic with 42 features
+[20:08:21] [INFO] Training KNN with 42 features
+[20:08:21] [INFO] Training Logistic with 42 features
+[20:08:21] [INFO] Training KNN with 42 features
+[20:08:21] [INFO] Training Logistic with 42 features
+[20:08:21] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:08:21] [INFO] Fitting Top K with 43 features
+[20:08:21] [INFO] Fitting Top K with 43 features
+[20:08:21] [INFO] Fitting Top K with 43 features
+[20:08:21] [INFO] Fitting Top K with 43 features
+[20:08:21] [INFO] Fitting Top K with 43 features
+[20:08:21] [INFO] Using ABCD features only
+[20:08:21] [INFO] Training KNNs and Logistics for 5 splits
+[20:08:21] [INFO] Training KNN with 43 features
+[20:08:21] [INFO] Training Logistic with 43 features
+[20:08:21] [INFO] Training KNN with 43 features
+[20:08:21] [INFO] Training Logistic with 43 features
+[20:08:21] [INFO] Training KNN with 43 features
+[20:08:21] [INFO] Training Logistic with 43 features
+[20:08:21] [INFO] Training KNN with 43 features
+[20:08:21] [INFO] Training Logistic with 43 features
+[20:08:21] [INFO] Training KNN with 43 features
+[20:08:21] [INFO] Training Logistic with 43 features
+[20:08:21] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:08:21] [INFO] Fitting Top K with 44 features
+[20:08:21] [INFO] Fitting Top K with 44 features
+[20:08:21] [INFO] Fitting Top K with 44 features
+[20:08:21] [INFO] Fitting Top K with 44 features
+[20:08:21] [INFO] Fitting Top K with 44 features
+[20:08:21] [INFO] Using ABCD features only
+[20:08:21] [INFO] Training KNNs and Logistics for 5 splits
+[20:08:21] [INFO] Training KNN with 44 features
+[20:08:21] [INFO] Training Logistic with 44 features
+[20:08:21] [INFO] Training KNN with 44 features
+[20:08:21] [INFO] Training Logistic with 44 features
+[20:08:21] [INFO] Training KNN with 44 features
+[20:08:21] [INFO] Training Logistic with 44 features
+[20:08:21] [INFO] Training KNN with 44 features
+[20:08:21] [INFO] Training Logistic with 44 features
+[20:08:21] [INFO] Training KNN with 44 features
+[20:08:21] [INFO] Training Logistic with 44 features
+[20:08:21] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:08:21] [INFO] Fitting Top K with 45 features
+[20:08:21] [INFO] Fitting Top K with 45 features
+[20:08:21] [INFO] Fitting Top K with 45 features
+[20:08:21] [INFO] Fitting Top K with 45 features
+[20:08:21] [INFO] Fitting Top K with 45 features
+[20:08:21] [INFO] Using ABCD features only
+[20:08:22] [INFO] Training KNNs and Logistics for 5 splits
+[20:08:22] [INFO] Training KNN with 45 features
+[20:08:22] [INFO] Training Logistic with 45 features
+[20:08:22] [INFO] Training KNN with 45 features
+[20:08:22] [INFO] Training Logistic with 45 features
+[20:08:22] [INFO] Training KNN with 45 features
+[20:08:22] [INFO] Training Logistic with 45 features
+[20:08:22] [INFO] Training KNN with 45 features
+[20:08:22] [INFO] Training Logistic with 45 features
+[20:08:22] [INFO] Training KNN with 45 features
+[20:08:22] [INFO] Training Logistic with 45 features
+[20:08:22] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:08:22] [INFO] Fitting Top K with 46 features
+[20:08:22] [INFO] Fitting Top K with 46 features
+[20:08:22] [INFO] Fitting Top K with 46 features
+[20:08:22] [INFO] Fitting Top K with 46 features
+[20:08:22] [INFO] Fitting Top K with 46 features
+[20:08:22] [INFO] Using ABCD features only
+[20:08:22] [INFO] Training KNNs and Logistics for 5 splits
+[20:08:22] [INFO] Training KNN with 46 features
+[20:08:22] [INFO] Training Logistic with 46 features
+[20:08:22] [INFO] Training KNN with 46 features
+[20:08:22] [INFO] Training Logistic with 46 features
+[20:08:22] [INFO] Training KNN with 46 features
+[20:08:22] [INFO] Training Logistic with 46 features
+[20:08:22] [INFO] Training KNN with 46 features
+[20:08:22] [INFO] Training Logistic with 46 features
+[20:08:22] [INFO] Training KNN with 46 features
+[20:08:22] [INFO] Training Logistic with 46 features
+[20:08:22] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:08:22] [INFO] Fitting Top K with 47 features
+[20:08:22] [INFO] Fitting Top K with 47 features
+[20:08:22] [INFO] Fitting Top K with 47 features
+[20:08:22] [INFO] Fitting Top K with 47 features
+[20:08:22] [INFO] Fitting Top K with 47 features
+[20:08:22] [INFO] Using ABCD features only
+[20:08:22] [INFO] Training KNNs and Logistics for 5 splits
+[20:08:22] [INFO] Training KNN with 47 features
+[20:08:22] [INFO] Training Logistic with 47 features
+[20:08:22] [INFO] Training KNN with 47 features
+[20:08:22] [INFO] Training Logistic with 47 features
+[20:08:22] [INFO] Training KNN with 47 features
+[20:08:22] [INFO] Training Logistic with 47 features
+[20:08:22] [INFO] Training KNN with 47 features
+[20:08:22] [INFO] Training Logistic with 47 features
+[20:08:22] [INFO] Training KNN with 47 features
+[20:08:22] [INFO] Training Logistic with 47 features
+[20:08:22] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:08:22] [INFO] Fitting Top K with 48 features
+[20:08:22] [INFO] Fitting Top K with 48 features
+[20:08:22] [INFO] Fitting Top K with 48 features
+[20:08:22] [INFO] Fitting Top K with 48 features
+[20:08:22] [INFO] Fitting Top K with 48 features
+[20:08:22] [INFO] Using ABCD features only
+[20:08:22] [INFO] Training KNNs and Logistics for 5 splits
+[20:08:22] [INFO] Training KNN with 48 features
+[20:08:22] [INFO] Training Logistic with 48 features
+[20:08:22] [INFO] Training KNN with 48 features
+[20:08:22] [INFO] Training Logistic with 48 features
+[20:08:22] [INFO] Training KNN with 48 features
+[20:08:22] [INFO] Training Logistic with 48 features
+[20:08:22] [INFO] Training KNN with 48 features
+[20:08:22] [INFO] Training Logistic with 48 features
+[20:08:23] [INFO] Training KNN with 48 features
+[20:08:23] [INFO] Training Logistic with 48 features
+[20:08:23] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:08:23] [INFO] Fitting Top K with 49 features
+[20:08:23] [INFO] Fitting Top K with 49 features
+[20:08:23] [INFO] Fitting Top K with 49 features
+[20:08:23] [INFO] Fitting Top K with 49 features
+[20:08:23] [INFO] Fitting Top K with 49 features
+[20:08:23] [INFO] Using ABCD features only
+[20:08:23] [INFO] Training KNNs and Logistics for 5 splits
+[20:08:23] [INFO] Training KNN with 49 features
+[20:08:23] [INFO] Training Logistic with 49 features
+[20:08:23] [INFO] Training KNN with 49 features
+[20:08:23] [INFO] Training Logistic with 49 features
+[20:08:23] [INFO] Training KNN with 49 features
+[20:08:23] [INFO] Training Logistic with 49 features
+[20:08:23] [INFO] Training KNN with 49 features
+[20:08:23] [INFO] Training Logistic with 49 features
+[20:08:23] [INFO] Training KNN with 49 features
+[20:08:23] [INFO] Training Logistic with 49 features
+[20:08:23] [INFO] Evaluating KNNs and Logistics for 5 splits
+[20:08:23] [INFO] Fitting Top K with 50 features
+[20:08:23] [INFO] Fitting Top K with 50 features
+[20:08:23] [INFO] Fitting Top K with 50 features
+[20:08:23] [INFO] Fitting Top K with 50 features
+[20:08:23] [INFO] Fitting Top K with 50 features
+[20:08:23] [INFO] Using ABCD features only
+[20:08:23] [INFO] Training KNNs and Logistics for 5 splits
+[20:08:23] [INFO] Training KNN with 50 features
+[20:08:23] [INFO] Training Logistic with 50 features
+[20:08:23] [INFO] Training KNN with 50 features
+[20:08:23] [INFO] Training Logistic with 50 features
+[20:08:23] [INFO] Training KNN with 50 features
+[20:08:23] [INFO] Training Logistic with 50 features
+[20:08:23] [INFO] Training KNN with 50 features
+[20:08:23] [INFO] Training Logistic with 50 features
+[20:08:23] [INFO] Training KNN with 50 features
+[20:08:23] [INFO] Training Logistic with 50 features
+[20:08:23] [INFO] Evaluating KNNs and Logistics for 5 splits
