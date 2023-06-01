@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 import os
 import matplotlib.pyplot as plt
+import skimage
 
 # Load csv
 df = pd.read_csv('data/metadata.csv')
@@ -15,6 +16,21 @@ not_segmented = os.listdir('data/not_segmented')
 
 # Get all
 all_images = segmented + not_segmented
+
+def clean_image(img: np.ndarray, to_binary: bool = False):
+    # Check if image contains alpha channel
+    if img.shape[2] == 4:
+        # Remove alpha channel
+        img = img[:, :, :3]
+    
+    # Convert to binary if specified
+    if to_binary:
+        # Merge all color channels
+        img = img.mean(axis=2)
+        # Convert to binary
+        img = (img > 0).astype(np.uint8)
+
+    return img
 
 def create_figures():
     diagnosis_distribution()
@@ -90,7 +106,27 @@ def asymmetry_score():
     pass
 
 def filters():
-    pass
+    img_name = "PAT_86_131_107.png"
+    mask_name = img_name.replace('.png', '_mask.png')
+    img = clean_image(plt.imread(f'data/segmented/{img_name}'))
+    mask = clean_image(plt.imread(f'data/segmented/{mask_name}'), to_binary=True)
+
+    filtered = skimage.feature.multiscale_basic_features(img, channel_axis=2)
+    filtered = np.array([filtered[:,:,3], filtered[:,:,1], filtered[:,:,10]])
+    for i in filtered:
+        i[mask == 0] = 0
+
+    fig, (ax1, ax2, ax3, ax4) = plt.subplots(1, 4, figsize=(16, 5))
+    ax1.imshow(img)
+    ax1.set_title('Original image')
+    ax2.imshow(filtered[0], cmap='gray')
+    ax2.set_title('Filter 3')
+    ax3.imshow(filtered[1], cmap='gray')
+    ax3.set_title('Filter 1')
+    ax4.imshow(filtered[2], cmap='gray')
+    ax4.set_title('Filter 10')
+
+    plt.savefig('figures/filters.png', bbox_inches='tight')
 
 def filter_histograms():
     pass
