@@ -3,6 +3,7 @@ import numpy as np
 import os
 import matplotlib.pyplot as plt
 import skimage
+from scipy import ndimage
 
 # Load csv
 df = pd.read_csv('data/metadata.csv')
@@ -37,9 +38,8 @@ def create_figures():
 
     lesion_segment()
     
-    asymmetry_overlap()
-    asymmetry_score()
-    
+    asymmetry()
+
     filters()
     filter_histograms()
 
@@ -99,12 +99,6 @@ def lesion_segment():
 
     plt.savefig('figures/lesion_segment.png', bbox_inches='tight')
 
-def asymmetry_overlap():
-    pass
-
-def asymmetry_score():
-    pass
-
 def filters():
     img_name = "PAT_86_131_107.png"
     mask_name = img_name.replace('.png', '_mask.png')
@@ -129,51 +123,30 @@ def filters():
     plt.savefig('figures/filters.png', bbox_inches='tight')
 
 def filter_histograms():
-    pass
-
-def optimisation_graphs():
-    pass
-
-def color_figures():
-    def manhatten(true_color, pixel_color):
-        return np.sum(np.abs(true_color - pixel_color))
-
-    img_name = 'PAT_108_161_423.png'
+    img_name = "PAT_86_131_107.png"
     mask_name = img_name.replace('.png', '_mask.png')
     img = clean_image(plt.imread(f'data/segmented/{img_name}'))
     mask = clean_image(plt.imread(f'data/segmented/{mask_name}'), to_binary=True)
 
-    mask = mask[:, :, 0].astype(np.uint8)
+    filtered = skimage.feature.multiscale_basic_features(img, channel_axis=2)
+    n_features = filtered.shape[2]
+    lesion_features = [filtered[:,:,i][mask==1] for i in range(n_features)]
 
-    color_dict = {
-        'white':[(175, 172, 167),0],
-        'light-brown':[(143, 100, 76),0],
-        'dark-brown':[(82, 70, 67),0],
-        'blue-grey':[(59, 63, 75),0],
-        'red':[(146, 80, 86),0],
-        'black':[(48, 51, 49),0] 
-    }
+    from skimage.color import rgb2gray
+    fix, axs = plt.subplots(1, 4, figsize=(20, 5))
+    og_gray = rgb2gray(img)
+    og_gray[mask==0] = 0
+    og_gray = og_gray.flatten()
+    axs[0].hist(og_gray, bins=10)
+    axs[0].set_title('Original image')
+    axs[1].hist(lesion_features[3]*256, bins=10)
+    axs[1].set_title('Filter 3')
+    axs[2].hist(lesion_features[1]*256, bins=10)
+    axs[2].set_title('Filter 1')
+    axs[3].hist(lesion_features[10]*256, bins=10)
+    axs[3].set_title('Filter 10')
 
-    slic = skimage.segmentation.slic(img, n_segments=100, compactness=10, sigma=1, start_label=1, mask=mask)
-    img_new = img.copy()
-    img_res = img.copy()
-    for i in np.unique(slic):
-        if np.sum(mask[slic == i]) == 0:
-            continue
-        img_new[slic == i] = np.mean(img_new[slic == i], axis=0)
-        norm = np.mean(img_new[slic == i], axis=0)
-        rgb = np.array((norm * 255).astype(int))
-        min_dist = 1000
-        color = None
-        for key, value in color_dict.items():
-            dist = manhatten(rgb, value[0])
-            if dist < min_dist:
-                min_dist = dist
-                color = key
-        color_dict[color][1] += 1
-        img_res[slic == i] = np.array(color_dict[color][0]) / 255   
-    fig, ax = plt.subplots(1, 2, figsize=(10, 5))
-    ax[0].imshow(img_new)
-    ax[1].imshow(img_res)
+    plt.savefig('figures/filter_histograms.png', bbox_inches='tight')
 
-    plt.savefig('figures/color.png')      
+def optimisation_graphs():
+    pass
