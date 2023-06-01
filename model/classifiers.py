@@ -129,6 +129,7 @@ class Evaluator:
         return roc_auc
 
 class KNN(Evaluator):
+    probability_threshold = 0.5
     def __init__(self, pca: TopK, X_val: np.ndarray, y_val: np.ndarray, n_neighbors: int = 5) -> None:
         """
         pca: PCA object with the training data  
@@ -161,6 +162,13 @@ class KNN(Evaluator):
             threshold = self.probability_threshold
             return np.array([1 if prob > threshold else 0 for prob in self.knn.predict_proba(X_test)[:,1]])
         return self.knn.predict(X_test)
+    
+    def proba(self, X_test: np.ndarray) -> np.ndarray:
+        """
+        Returns the probability of each label for the given test data  
+        Note: make sure to transform the test data with the PCA first
+        """
+        return self.knn.predict_proba(X_test)
 
 class Logistic(Evaluator):
     def __init__(self, topk: TopK, X_val: np.ndarray, y_val: np.ndarray) -> None:

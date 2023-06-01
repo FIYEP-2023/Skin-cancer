@@ -4,7 +4,7 @@ from model.logger import Logger
 from sklearn.feature_selection import SelectKBest
 
 class TopK:
-    DO_ABCD_ONLY = False # This is for comparison
+    DO_ABCD_ONLY: bool = True # This is for comparison
 
     def __init__(self, X_train: np.ndarray, y_train: np.ndarray, top_k_k) -> None:
         self.X_train = self.normalise(X_train)

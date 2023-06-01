@@ -363,7 +363,7 @@ class FeatureExtractor:
         compactness = np.array([self.compactness(img, mask)]) # 1 feature
         color = np.array(self.color(img, mask)) # 6 features
         filters = self.filters(img, mask) # 72 features
-        merged = np.concatenate([asymmetry, compactness, color, filters])
+        merged = np.concatenate([asymmetry, compactness, color, filters]) #! It's important that "filters" is the final one, as the top_k selector selects the first 8 features (that being asymmetry, compactness and color)
         return merged
 
     def extract_feat(self, feat: str, img, mask):
