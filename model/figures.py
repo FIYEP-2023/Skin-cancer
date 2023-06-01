@@ -43,6 +43,8 @@ def create_figures():
     filters()
     filter_histograms()
 
+    color_figures()
+
     optimisation_graphs()
 
 def diagnosis_distribution():
