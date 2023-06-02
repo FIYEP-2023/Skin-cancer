@@ -1,3 +1,3 @@
-img_id,             diagnostic, comment
-PAT_45_66_822.png,  MEL,        Any columns other than img_id and diagnostic is optional and will not break the system. Note that if using .npy or .pkl the file HAS to be a numpy array with 2 columns with the same values are seen here.
-PAT_46_880_308.png, BCC,        No extra rows are allowed. Make sure the diagnostic column is one of [BCC SCC MEL ACK NEV SEK]. No dots are allowed in image names. All images have to be png files.
+img_id,          diagnostic, comment
+EXAMPLE.png,     BCC,        Any columns other than img_id and diagnostic is optional and will not break the system. Note that if using .npy or .pkl the file HAS to be a numpy array with 2 columns with the same values are seen here.
+EXAMPLE_TWO.png, NEV,        No extra rows are allowed. Make sure the diagnostic column is one of [BCC SCC MEL ACK NEV SEK] or the number 0 or 1. No dots are allowed in image names except the file extension. All images have to be png files.

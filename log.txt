@@ -35231,3 +35231,631 @@
 [20:08:23] [INFO] Training KNN with 50 features
 [20:08:23] [INFO] Training Logistic with 50 features
 [20:08:23] [INFO] Evaluating KNNs and Logistics for 5 splits
+[10:15:29] [INFO] Resizing images to 1024x1024
+[10:15:29] [INFO] Resizing images...
+[10:15:29] [INFO] 1/4
+[10:15:30] [INFO] 2/4
+[10:15:30] [INFO] 3/4
+[10:15:30] [INFO] 4/4
+[10:15:30] [INFO] Done!
+[10:15:30] [INFO] Loading images
+[10:15:30] [INFO] Loading metadata
+[10:16:21] [INFO] Resizing images to 1024x1024
+[10:16:21] [INFO] Resizing images...
+[10:16:21] [INFO] 1/4
+[10:16:21] [INFO] 2/4
+[10:16:21] [INFO] 3/4
+[10:16:22] [INFO] 4/4
+[10:16:22] [INFO] Done!
+[10:16:22] [INFO] Loading images
+[10:16:22] [INFO] Loading metadata
+[10:18:06] [INFO] Resizing images to 1024x1024
+[10:18:06] [INFO] Resizing images...
+[10:18:06] [INFO] 1/4
+[10:18:07] [INFO] 2/4
+[10:18:07] [INFO] 3/4
+[10:18:09] [INFO] 4/4
+[10:18:09] [INFO] Done!
+[10:18:09] [INFO] Loading images
+[10:18:09] [INFO] Loading metadata
+[10:19:10] [INFO] Resizing images to 1024x1024
+[10:19:10] [INFO] Resizing images...
+[10:19:10] [INFO] 1/4
+[10:19:11] [INFO] 2/4
+[10:19:11] [INFO] 3/4
+[10:19:11] [INFO] 4/4
+[10:19:12] [INFO] Done!
+[10:19:12] [INFO] Loading images
+[10:19:12] [INFO] Loading metadata
+[10:19:12] [INFO] Creating features
+[10:19:12] [INFO] Creating features (0/2)
+[10:19:15] [INFO] Creating features (1/2)
+[10:19:19] [INFO] Creating features (2/2)
+[10:19:19] [INFO] Loading model
+[10:19:19] [INFO] Training KNN with 8 features
+[10:19:19] [INFO] Selecting features
+[10:19:19] [INFO] Predicting
+[10:19:19] [INFO] Predictions:
+[10:19:25] [INFO] Resizing images to 1024x1024
+[10:19:25] [INFO] Resizing images...
+[10:19:25] [INFO] 1/4
+[10:19:25] [INFO] 2/4
+[10:19:25] [INFO] 3/4
+[10:19:26] [INFO] 4/4
+[10:19:26] [INFO] Done!
+[10:19:26] [INFO] Loading images
+[10:19:26] [INFO] Loading metadata
+[10:19:26] [INFO] Creating features
+[10:19:26] [INFO] Creating features (0/2)
+[10:19:29] [INFO] Creating features (1/2)
+[10:19:32] [INFO] Creating features (2/2)
+[10:19:32] [INFO] Loading model
+[10:19:32] [INFO] Training KNN with 8 features
+[10:19:32] [INFO] Selecting features
+[10:19:32] [INFO] Predicting
+[10:19:32] [INFO] Predictions:
+[10:20:06] [INFO] Resizing images to 1024x1024
+[10:20:06] [INFO] Resizing images...
+[10:20:06] [INFO] 1/4
+[10:20:06] [INFO] 2/4
+[10:20:06] [INFO] 3/4
+[10:20:07] [INFO] 4/4
+[10:20:07] [INFO] Done!
+[10:20:07] [INFO] Loading images
+[10:20:07] [INFO] Loading metadata
+[10:20:07] [INFO] Creating features
+[10:20:07] [INFO] Creating features (0/2)
+[10:20:11] [INFO] Creating features (1/2)
+[10:20:14] [INFO] Creating features (2/2)
+[10:20:14] [INFO] Loading model
+[10:20:14] [INFO] Training KNN with 8 features
+[10:20:14] [INFO] Selecting features
+[10:20:14] [INFO] Predicting
+[10:20:14] [INFO] Predictions:
+[10:20:37] [INFO] Resizing images to 1024x1024
+[10:20:37] [INFO] Resizing images...
+[10:20:37] [INFO] 1/4
+[10:20:37] [INFO] 2/4
+[10:20:37] [INFO] 3/4
+[10:20:38] [INFO] 4/4
+[10:20:38] [INFO] Done!
+[10:20:38] [INFO] Loading images
+[10:20:38] [INFO] Loading metadata
+[10:20:38] [INFO] Creating features
+[10:20:38] [INFO] Creating features (0/2)
+[10:20:42] [INFO] Creating features (1/2)
+[10:20:45] [INFO] Creating features (2/2)
+[10:20:45] [INFO] Loading model
+[10:20:45] [INFO] Training KNN with 8 features
+[10:20:45] [INFO] Selecting features
+[10:20:45] [INFO] Predicting
+[10:20:45] [INFO] Predictions:
+[10:21:16] [INFO] Resizing images to 1024x1024
+[10:21:16] [INFO] Resizing images...
+[10:21:16] [INFO] 1/4
+[10:21:17] [INFO] 2/4
+[10:21:17] [INFO] 3/4
+[10:21:17] [INFO] 4/4
+[10:21:17] [INFO] Done!
+[10:21:17] [INFO] Loading images
+[10:21:17] [INFO] Loading metadata
+[10:21:17] [INFO] Creating features
+[10:21:17] [INFO] Creating features (0/2)
+[10:21:21] [INFO] Creating features (1/2)
+[10:21:24] [INFO] Creating features (2/2)
+[10:21:24] [INFO] Loading model
+[10:21:24] [INFO] Training KNN with 8 features
+[10:21:24] [INFO] Selecting features
+[10:21:24] [INFO] Predicting
+[10:21:24] [INFO] Predictions:
+[10:22:35] [INFO] Resizing images to 1024x1024
+[10:22:35] [INFO] Resizing images...
+[10:22:35] [INFO] 1/4
+[10:22:35] [INFO] 2/4
+[10:22:35] [INFO] 3/4
+[10:22:36] [INFO] 4/4
+[10:22:36] [INFO] Done!
+[10:22:36] [INFO] Loading images
+[10:22:36] [INFO] Loading metadata
+[10:22:36] [INFO] Creating features
+[10:22:36] [INFO] Creating features (0/2)
+[10:22:40] [INFO] Creating features (1/2)
+[10:22:43] [INFO] Creating features (2/2)
+[10:22:43] [INFO] Loading model
+[10:22:43] [INFO] Training KNN with 8 features
+[10:22:43] [INFO] Selecting features
+[10:22:43] [INFO] Predicting
+[10:22:43] [INFO] Predictions:
+[10:23:16] [INFO] Resizing images to 1024x1024
+[10:23:16] [INFO] Resizing images...
+[10:23:16] [INFO] 1/4
+[10:23:17] [INFO] 2/4
+[10:23:17] [INFO] 3/4
+[10:23:17] [INFO] 4/4
+[10:23:17] [INFO] Done!
+[10:23:17] [INFO] Loading images
+[10:23:17] [INFO] Loading metadata
+[10:23:17] [INFO] Creating features
+[10:23:17] [INFO] Creating features (0/2)
+[10:23:21] [INFO] Creating features (1/2)
+[10:23:24] [INFO] Creating features (2/2)
+[10:23:24] [INFO] Loading model
+[10:23:24] [INFO] Training KNN with 8 features
+[10:23:24] [INFO] Selecting features
+[10:23:24] [INFO] Predicting
+[10:23:24] [INFO] Predictions:
+[10:23:24] [INFO] EXAMPLE.png: No cancer
+[10:23:24] [INFO] EXAMPLE_TWO.png: Cancer
+[10:23:24] [INFO] Evaluating
+[10:23:24] [INFO] Accuracy: 0.5000
+[10:23:24] [INFO] Precision: 0.0000
+[10:23:24] [INFO] Recall: nan
+[10:23:24] [INFO] F1 score: nan
+[10:23:37] [INFO] Resizing images to 1024x1024
+[10:23:37] [INFO] Resizing images...
+[10:23:37] [INFO] 1/4
+[10:23:37] [INFO] 2/4
+[10:23:37] [INFO] 3/4
+[10:23:38] [INFO] 4/4
+[10:23:38] [INFO] Done!
+[10:23:38] [INFO] Loading images
+[10:23:38] [INFO] Loading metadata
+[10:23:38] [INFO] Creating features
+[10:23:38] [INFO] Creating features (0/2)
+[10:23:41] [INFO] Creating features (1/2)
+[10:23:44] [INFO] Creating features (2/2)
+[10:23:44] [INFO] Loading model
+[10:23:45] [INFO] Training KNN with 8 features
+[10:23:45] [INFO] Selecting features
+[10:23:45] [INFO] Predicting
+[10:23:45] [INFO] Predictions:
+[10:23:45] [INFO] EXAMPLE.png: No cancer
+[10:23:45] [INFO] EXAMPLE_TWO.png: Cancer
+[10:23:45] [INFO] Evaluating
+[10:23:45] [INFO] Accuracy: 0.5000
+[10:23:45] [INFO] Precision: 0.0000
+[10:23:45] [INFO] Recall: nan
+[10:23:45] [INFO] F1 score: nan
+[10:24:43] [INFO] Resizing images to 1024x1024
+[10:24:43] [INFO] Resizing images...
+[10:24:43] [INFO] 1/4
+[10:24:44] [INFO] 2/4
+[10:24:44] [INFO] 3/4
+[10:24:44] [INFO] 4/4
+[10:24:45] [INFO] Done!
+[10:24:45] [INFO] Loading images
+[10:24:45] [INFO] Loading metadata
+[10:24:45] [INFO] Creating features
+[10:24:45] [INFO] Creating features (0/2)
+[10:24:48] [INFO] Creating features (1/2)
+[10:24:51] [INFO] Creating features (2/2)
+[10:24:52] [INFO] Loading model
+[10:24:52] [INFO] Training KNN with 8 features
+[10:24:52] [INFO] Selecting features
+[10:24:52] [INFO] Predicting
+[10:24:52] [INFO] Predictions:
+[10:24:52] [INFO] EXAMPLE.png: No cancer
+[10:24:52] [INFO] EXAMPLE_TWO.png: Cancer
+[10:24:52] [INFO] Evaluating
+[10:24:52] [INFO] Accuracy: 0.5000
+[10:24:52] [INFO] Precision: 0.0000
+[10:24:52] [INFO] Recall: 0.0000
+[10:24:52] [INFO] F1 score: 0.0000
+[10:27:27] [INFO] Resizing images to 1024x1024
+[10:27:27] [INFO] Resizing images...
+[10:27:27] [INFO] 1/4
+[10:27:28] [INFO] 2/4
+[10:27:28] [INFO] 3/4
+[10:27:28] [INFO] 4/4
+[10:27:28] [INFO] Done!
+[10:27:28] [INFO] Loading images
+[10:27:28] [INFO] Loading metadata
+[10:27:28] [INFO] Creating features
+[10:27:28] [INFO] Creating features (0/2)
+[10:27:32] [INFO] Creating features (1/2)
+[10:27:35] [INFO] Creating features (2/2)
+[10:27:35] [INFO] Loading model
+[10:27:35] [INFO] Training KNN with 8 features
+[10:27:35] [INFO] Selecting features
+[10:27:35] [INFO] Predicting
+[10:27:35] [INFO] Predictions:
+[10:27:35] [INFO] EXAMPLE.png: No cancer
+[10:27:35] [INFO] EXAMPLE_TWO.png: Cancer
+[10:27:35] [INFO] Evaluating
+[10:27:35] [INFO] Accuracy: 0.5000
+[10:27:35] [INFO] Precision: 0.0000
+[10:27:35] [INFO] Recall: 0.0000
+[10:27:35] [INFO] F1 score: 0.0000
+[10:27:58] [INFO] Resizing images to 1024x1024
+[10:27:58] [INFO] Resizing images...
+[10:27:58] [INFO] 1/4
+[10:27:58] [INFO] 2/4
+[10:27:58] [INFO] 3/4
+[10:27:59] [INFO] 4/4
+[10:27:59] [INFO] Done!
+[10:27:59] [INFO] Loading images
+[10:27:59] [INFO] Loading metadata
+[10:27:59] [INFO] Creating features
+[10:27:59] [INFO] Creating features (0/2)
+[10:28:02] [INFO] Creating features (1/2)
+[10:28:05] [INFO] Creating features (2/2)
+[10:28:05] [INFO] Loading model
+[10:28:05] [INFO] Training KNN with 8 features
+[10:28:05] [INFO] Selecting features
+[10:28:05] [INFO] Predicting
+[10:28:05] [INFO] Predictions:
+[10:28:05] [INFO] EXAMPLE.png: No cancer
+[10:28:05] [INFO] EXAMPLE_TWO.png: Cancer
+[10:28:05] [INFO] Evaluating
+[10:28:05] [INFO] Accuracy: 0.5000
+[10:28:05] [INFO] Precision: 0.0000
+[10:28:05] [INFO] Recall: 0.0000
+[10:28:05] [INFO] F1 score: 0.0000
+[10:28:35] [INFO] Resizing images to 1024x1024
+[10:28:35] [INFO] Resizing images...
+[10:28:35] [INFO] 1/4
+[10:28:35] [INFO] 2/4
+[10:28:35] [INFO] 3/4
+[10:28:36] [INFO] 4/4
+[10:28:36] [INFO] Done!
+[10:28:36] [INFO] Loading images
+[10:28:36] [INFO] Loading metadata
+[10:28:36] [INFO] Creating features
+[10:28:36] [INFO] Creating features (0/2)
+[10:28:39] [INFO] Creating features (1/2)
+[10:28:42] [INFO] Creating features (2/2)
+[10:28:42] [INFO] Loading model
+[10:28:42] [INFO] Training KNN with 8 features
+[10:28:42] [INFO] Selecting features
+[10:28:42] [INFO] Predicting
+[10:28:42] [INFO] Predictions:
+[10:28:42] [INFO] EXAMPLE.png: No cancer
+[10:28:42] [INFO] EXAMPLE_TWO.png: Cancer
+[10:28:42] [INFO] Evaluating
+[10:28:42] [INFO] Accuracy: 0.5000
+[10:28:42] [INFO] Precision: 0.0000
+[10:28:42] [INFO] Recall: 0.0000
+[10:28:42] [INFO] F1 score: 0.0000
+[10:29:35] [INFO] Resizing images to 1024x1024
+[10:29:35] [INFO] Resizing images...
+[10:29:35] [INFO] 1/4
+[10:29:35] [INFO] 2/4
+[10:29:35] [INFO] 3/4
+[10:29:35] [INFO] 4/4
+[10:29:35] [INFO] Done!
+[10:29:35] [INFO] Loading images
+[10:29:35] [INFO] Loading metadata
+[10:29:35] [INFO] Creating features
+[10:29:35] [INFO] Creating features (0/2)
+[10:29:39] [INFO] Creating features (1/2)
+[10:29:42] [INFO] Creating features (2/2)
+[10:29:43] [INFO] Loading model
+[10:29:43] [INFO] Training KNN with 8 features
+[10:29:43] [INFO] Selecting features
+[10:29:43] [INFO] Predicting
+[10:29:43] [INFO] Predictions:
+[10:29:43] [INFO] EXAMPLE.png: No cancer
+[10:29:43] [INFO] EXAMPLE_TWO.png: Cancer
+[10:29:43] [INFO] Evaluating
+[10:29:43] [INFO] Accuracy: 0.5000
+[10:29:43] [INFO] Precision: 0.0000
+[10:29:43] [INFO] Recall: 0.0000
+[10:29:43] [INFO] F1 score: 0.0000
+[10:29:50] [INFO] Resizing images to 1024x1024
+[10:29:50] [INFO] Resizing images...
+[10:29:50] [INFO] 1/4
+[10:29:50] [INFO] 2/4
+[10:29:50] [INFO] 3/4
+[10:29:50] [INFO] 4/4
+[10:29:50] [INFO] Done!
+[10:29:50] [INFO] Loading images
+[10:29:51] [INFO] Loading metadata
+[10:29:51] [INFO] Creating features
+[10:29:51] [INFO] Creating features (0/2)
+[10:29:54] [INFO] Creating features (1/2)
+[10:29:57] [INFO] Creating features (2/2)
+[10:29:57] [INFO] Loading model
+[10:29:57] [INFO] Training KNN with 8 features
+[10:29:57] [INFO] Selecting features
+[10:29:57] [INFO] Predicting
+[10:29:57] [INFO] Predictions:
+[10:29:57] [INFO] EXAMPLE.png: No cancer
+[10:29:57] [INFO] EXAMPLE_TWO.png: Cancer
+[10:29:57] [INFO] Evaluating
+[10:29:57] [INFO] Accuracy: 0.5000
+[10:29:57] [INFO] Precision: 0.0000
+[10:29:57] [INFO] Recall: 0.0000
+[10:29:57] [INFO] F1 score: 0.0000
+[10:31:48] [INFO] Resizing images to 1024x1024
+[10:31:48] [INFO] Resizing images...
+[10:31:48] [INFO] 1/4
+[10:31:50] [INFO] 2/4
+[10:31:50] [INFO] 3/4
+[10:31:51] [INFO] 4/4
+[10:31:51] [INFO] Done!
+[10:31:51] [INFO] Loading images
+[10:31:51] [INFO] Loading metadata
+[10:31:51] [INFO] Creating features
+[10:31:51] [INFO] Creating features (0/2)
+[10:31:55] [INFO] Creating features (1/2)
+[10:31:58] [INFO] Creating features (2/2)
+[10:31:58] [INFO] Loading model
+[10:31:58] [INFO] Training KNN with 8 features
+[10:31:58] [INFO] Selecting features
+[10:31:58] [INFO] Predicting
+[10:31:58] [INFO] Predictions:
+[10:31:58] [INFO] EXAMPLE.png: No cancer
+[10:31:58] [INFO] EXAMPLE_TWO.png: Cancer
+[10:31:58] [INFO] Evaluating
+[10:31:58] [INFO] Accuracy: 0.5000
+[10:31:58] [INFO] Precision: 0.0000
+[10:31:58] [INFO] Recall: 0.0000
+[10:31:58] [INFO] F1 score: 0.0000
+[10:32:12] [INFO] Resizing images to 1024x1024
+[10:32:12] [INFO] Resizing images...
+[10:32:12] [INFO] 1/4
+[10:32:13] [INFO] 2/4
+[10:32:13] [INFO] 3/4
+[10:32:13] [INFO] 4/4
+[10:32:13] [INFO] Done!
+[10:32:13] [INFO] Loading images
+[10:32:13] [INFO] Loading metadata
+[10:32:13] [INFO] Creating features
+[10:32:13] [INFO] Creating features (0/2)
+[10:32:16] [INFO] Creating features (1/2)
+[10:32:19] [INFO] Creating features (2/2)
+[10:32:19] [INFO] Loading model
+[10:32:20] [INFO] Training KNN with 8 features
+[10:32:20] [INFO] Selecting features
+[10:32:20] [INFO] Predicting
+[10:32:20] [INFO] Predictions:
+[10:32:20] [INFO] EXAMPLE.png: No cancer
+[10:32:20] [INFO] EXAMPLE_TWO.png: Cancer
+[10:32:20] [INFO] Evaluating
+[10:32:20] [INFO] Accuracy: 0.0000
+[10:32:20] [INFO] Precision: 0.0000
+[10:32:20] [INFO] Recall: 0.0000
+[10:32:20] [INFO] F1 score: 0.0000
+[10:32:20] [INFO] ROC AUC: 0.0000
+[10:32:20] [INFO] Confusion matrix:   Actual values
+[10:32:20] [INFO]                      1       0    
+[10:32:20] [INFO]                  +----------------+
+[10:32:20] [INFO]     Predicted 1: |  0   1   |
+[10:32:20] [INFO]               0: |  1   0   |
+[10:32:20] [INFO]                  +----------------+
+[10:33:10] [INFO] Resizing images to 1024x1024
+[10:33:10] [INFO] Resizing images...
+[10:33:10] [INFO] 1/4
+[10:33:10] [INFO] 2/4
+[10:33:10] [INFO] 3/4
+[10:33:11] [INFO] 4/4
+[10:33:11] [INFO] Done!
+[10:33:11] [INFO] Loading images
+[10:33:11] [INFO] Loading metadata
+[10:33:11] [INFO] Creating features
+[10:33:11] [INFO] Creating features (0/2)
+[10:33:15] [INFO] Creating features (1/2)
+[10:33:20] [INFO] Resizing images to 1024x1024
+[10:33:20] [INFO] Resizing images...
+[10:33:20] [INFO] 1/4
+[10:33:20] [INFO] 2/4
+[10:33:20] [INFO] 3/4
+[10:33:21] [INFO] 4/4
+[10:33:21] [INFO] Done!
+[10:33:21] [INFO] Loading images
+[10:33:21] [INFO] Loading metadata
+[10:33:21] [INFO] Creating features
+[10:33:21] [INFO] Creating features (0/2)
+[10:33:24] [INFO] Creating features (1/2)
+[10:33:27] [INFO] Creating features (2/2)
+[10:33:27] [INFO] Loading model
+[10:33:27] [INFO] Training KNN with 8 features
+[10:33:27] [INFO] Selecting features
+[10:33:27] [INFO] Predicting
+[10:33:27] [INFO] Predictions:
+[10:33:27] [INFO] EXAMPLE.png: No cancer
+[10:33:27] [INFO] EXAMPLE_TWO.png: Cancer
+[10:33:27] [INFO] Evaluating
+[10:33:27] [INFO] Accuracy: 0.0000
+[10:33:27] [INFO] Precision: 0.0000
+[10:33:27] [INFO] Recall: 0.0000
+[10:33:27] [INFO] F1 score: 0.0000
+[10:33:27] [INFO] ROC AUC: 0.0000
+[10:33:27] [INFO] Confusion matrix:   Actual values
+[10:33:27] [INFO]                      1       0    
+[10:33:27] [INFO]                  +----------------+
+[10:33:27] [INFO]     Predicted 1: |  0   1   |
+[10:33:27] [INFO]               0: |  1   0   |
+[10:33:27] [INFO]                  +----------------+
+[10:37:03] [INFO] Resizing images to 1024x1024
+[10:37:03] [INFO] Resizing images...
+[10:37:03] [INFO] 1/4
+[10:37:03] [INFO] 2/4
+[10:37:04] [INFO] 3/4
+[10:37:04] [INFO] 4/4
+[10:37:04] [INFO] Done!
+[10:37:04] [INFO] Loading images
+[10:37:04] [INFO] Loading metadata
+[10:37:04] [INFO] Creating features
+[10:37:04] [INFO] Creating features (0/2)
+[10:37:09] [INFO] Creating features (1/2)
+[10:37:12] [INFO] Creating features (2/2)
+[10:37:12] [INFO] Loading model
+[10:37:12] [INFO] Training KNN with 8 features
+[10:37:12] [INFO] Selecting features
+[10:37:12] [INFO] Predicting
+[10:37:12] [INFO] Predictions:
+[10:37:12] [INFO] PAT_112_168_360.png: No cancer
+[10:37:12] [INFO] PAT_1516_1765_530.png: Cancer
+[10:37:12] [INFO] Evaluating
+[10:37:12] [INFO] Accuracy: 1.0000
+[10:37:12] [INFO] Precision: 1.0000
+[10:37:12] [INFO] Recall: 1.0000
+[10:37:12] [INFO] F1 score: 1.0000
+[10:37:12] [INFO] ROC AUC: 1.0000
+[10:37:12] [INFO] Confusion matrix:   Actual values
+[10:37:12] [INFO]                      1       0    
+[10:37:12] [INFO]                  +----------------+
+[10:37:12] [INFO]     Predicted 1: |  1   0   |
+[10:37:12] [INFO]               0: |  0   1   |
+[10:37:12] [INFO]                  +----------------+
+[10:38:44] [INFO] Resizing images to 1024x1024
+[10:38:44] [INFO] Resizing images...
+[10:38:44] [INFO] 1/4
+[10:38:44] [INFO] 2/4
+[10:38:44] [INFO] 3/4
+[10:38:45] [INFO] 4/4
+[10:38:45] [INFO] Done!
+[10:38:45] [INFO] Loading images
+[10:38:45] [INFO] Loading metadata
+[10:38:45] [INFO] Creating features
+[10:38:45] [INFO] Creating features (0/2)
+[10:38:49] [INFO] Creating features (1/2)
+[10:38:53] [INFO] Creating features (2/2)
+[10:38:53] [INFO] Loading model
+[10:38:53] [INFO] Training KNN with 8 features
+[10:38:53] [INFO] Selecting features
+[10:38:53] [INFO] Predicting
+[10:38:53] [INFO] Predictions:
+[10:38:53] [INFO] EXAMPLE.png: Cancer
+[10:38:53] [INFO] EXAMPLE_TWO.png: No cancer
+[10:38:53] [INFO] Evaluating
+[10:38:53] [INFO] Accuracy: 0.0000
+[10:38:53] [INFO] Precision: 0.0000
+[10:38:53] [INFO] Recall: 0.0000
+[10:38:53] [INFO] F1 score: 0.0000
+[10:38:53] [INFO] ROC AUC: 0.0000
+[10:38:53] [INFO] Confusion matrix:   Actual values
+[10:38:53] [INFO]                      1       0    
+[10:38:53] [INFO]                  +----------------+
+[10:38:53] [INFO]     Predicted 1: |  0   1   |
+[10:38:53] [INFO]               0: |  1   0   |
+[10:38:53] [INFO]                  +----------------+
+[10:39:09] [INFO] Resizing images to 1024x1024
+[10:39:09] [INFO] Resizing images...
+[10:39:09] [INFO] 1/4
+[10:39:09] [INFO] 2/4
+[10:39:10] [INFO] 3/4
+[10:39:10] [INFO] 4/4
+[10:39:10] [INFO] Done!
+[10:39:10] [INFO] Loading images
+[10:39:10] [INFO] Loading metadata
+[10:39:10] [INFO] Creating features
+[10:39:10] [INFO] Creating features (0/2)
+[10:39:13] [INFO] Creating features (1/2)
+[10:39:18] [INFO] Creating features (2/2)
+[10:39:18] [INFO] Loading model
+[10:39:18] [INFO] Training KNN with 8 features
+[10:39:18] [INFO] Selecting features
+[10:39:18] [INFO] Predicting
+[10:39:18] [INFO] Predictions:
+[10:39:18] [INFO] EXAMPLE.png: Cancer
+[10:39:18] [INFO] EXAMPLE_TWO.png: No cancer
+[10:39:18] [INFO] Evaluating
+[10:39:18] [INFO] Accuracy: 1.0000
+[10:39:18] [INFO] Precision: 1.0000
+[10:39:18] [INFO] Recall: 1.0000
+[10:39:18] [INFO] F1 score: 1.0000
+[10:39:18] [INFO] ROC AUC: 1.0000
+[10:39:18] [INFO] Confusion matrix:   Actual values
+[10:39:18] [INFO]                      1       0    
+[10:39:18] [INFO]                  +----------------+
+[10:39:18] [INFO]     Predicted 1: |  1   0   |
+[10:39:18] [INFO]               0: |  0   1   |
+[10:39:18] [INFO]                  +----------------+
+[10:39:49] [INFO] Resizing images to 1024x1024
+[10:39:49] [INFO] Resizing images...
+[10:39:49] [INFO] 1/4
+[10:39:49] [INFO] 2/4
+[10:39:49] [INFO] 3/4
+[10:39:50] [INFO] 4/4
+[10:39:50] [INFO] Done!
+[10:39:50] [INFO] Loading images
+[10:39:50] [INFO] Loading metadata
+[10:39:50] [INFO] Creating features
+[10:39:50] [INFO] Creating features (0/2)
+[10:39:53] [INFO] Creating features (1/2)
+[10:39:58] [INFO] Creating features (2/2)
+[10:39:58] [INFO] Loading model
+[10:39:58] [INFO] Training KNN with 8 features
+[10:39:58] [INFO] Selecting features
+[10:39:58] [INFO] Predicting
+[10:39:58] [INFO] Predictions:
+[10:39:58] [INFO] EXAMPLE.png: Cancer
+[10:39:58] [INFO] EXAMPLE_TWO.png: No cancer
+[10:39:58] [INFO] Evaluating
+[10:39:58] [INFO] Accuracy: 0.0000
+[10:39:58] [INFO] Precision: 0.0000
+[10:39:58] [INFO] Recall: 0.0000
+[10:39:58] [INFO] F1 score: 0.0000
+[10:39:58] [INFO] ROC AUC: 0.0000
+[10:39:58] [INFO] Confusion matrix:   Actual values
+[10:39:58] [INFO]                      1       0    
+[10:39:58] [INFO]                  +----------------+
+[10:39:58] [INFO]     Predicted 1: |  0   1   |
+[10:39:58] [INFO]               0: |  1   0   |
+[10:39:58] [INFO]                  +----------------+
+[10:40:51] [INFO] Resizing images to 1024x1024
+[10:40:51] [INFO] Resizing images...
+[10:40:51] [INFO] 1/4
+[10:40:51] [INFO] 2/4
+[10:40:51] [INFO] 3/4
+[10:40:52] [INFO] 4/4
+[10:40:52] [INFO] Done!
+[10:40:52] [INFO] Loading images
+[10:40:52] [INFO] Loading metadata
+[10:40:52] [INFO] Creating features
+[10:40:52] [INFO] Creating features (0/2)
+[10:40:55] [INFO] Creating features (1/2)
+[10:40:59] [INFO] Creating features (2/2)
+[10:40:59] [INFO] Loading model
+[10:41:00] [INFO] Training KNN with 8 features
+[10:41:00] [INFO] Selecting features
+[10:41:00] [INFO] Predicting
+[10:41:00] [INFO] Predictions:
+[10:41:00] [INFO] EXAMPLE.png: Cancer
+[10:41:00] [INFO] EXAMPLE_TWO.png: No cancer
+[10:41:00] [INFO] Evaluating
+[10:41:00] [INFO] Accuracy: 0.0000
+[10:41:00] [INFO] Precision: 0.0000
+[10:41:00] [INFO] Recall: 0.0000
+[10:41:00] [INFO] F1 score: 0.0000
+[10:41:00] [INFO] ROC AUC: 0.0000
+[10:41:00] [INFO] Confusion matrix:   Actual values
+[10:41:00] [INFO]                      1       0    
+[10:41:00] [INFO]                  +----------------+
+[10:41:00] [INFO]     Predicted 1: |  0   1   |
+[10:41:00] [INFO]               0: |  1   0   |
+[10:41:00] [INFO]                  +----------------+
+[10:41:35] [INFO] Resizing images to 1024x1024
+[10:41:35] [INFO] Resizing images...
+[10:41:35] [INFO] 1/4
+[10:41:35] [INFO] 2/4
+[10:41:35] [INFO] 3/4
+[10:41:36] [INFO] 4/4
+[10:41:36] [INFO] Done!
+[10:41:36] [INFO] Loading images
+[10:41:36] [INFO] Loading metadata
+[10:41:36] [INFO] Creating features
+[10:41:36] [INFO] Creating features (0/2)
+[10:41:39] [INFO] Creating features (1/2)
+[10:41:43] [INFO] Creating features (2/2)
+[10:41:43] [INFO] Loading model
+[10:41:43] [INFO] Training KNN with 8 features
+[10:41:43] [INFO] Selecting features
+[10:41:43] [INFO] Predicting
+[10:41:43] [INFO] Predictions:
+[10:41:43] [INFO] EXAMPLE.png: Cancer
+[10:41:43] [INFO] EXAMPLE_TWO.png: No cancer
+[10:41:43] [INFO] Evaluating
+[10:41:43] [INFO] Accuracy: 1.0000
+[10:41:43] [INFO] Precision: 1.0000
+[10:41:43] [INFO] Recall: 1.0000
+[10:41:43] [INFO] F1 score: 1.0000
+[10:41:43] [INFO] ROC AUC: 1.0000
+[10:41:43] [INFO] Confusion matrix:   Actual values
+[10:41:43] [INFO]                      1       0    
+[10:41:43] [INFO]                  +----------------+
+[10:41:43] [INFO]     Predicted 1: |  1   0   |
+[10:41:43] [INFO]               0: |  0   1   |
+[10:41:43] [INFO]                  +----------------+

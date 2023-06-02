@@ -89,7 +89,7 @@ class Evaluator:
         TN = confusion_matrix[1,1]
         FP = confusion_matrix[0,1]
         FN = confusion_matrix[1,0]
-        accuracy = (TP + TN) / (TP + TN + FP + FN)
+        accuracy = (TP + TN) / (TP + TN + FP + FN) if TP + TN + FP + FN > 0 else 0
         return accuracy
     def precision(self):
         """
@@ -98,7 +98,7 @@ class Evaluator:
         confusion_matrix = self.get_confusion_matrix()
         TP = confusion_matrix[0,0]
         FP = confusion_matrix[0,1]
-        precision = TP / (TP + FP)
+        precision = TP / (TP + FP) if TP + FP > 0 else 0
         return precision
     def recall(self):
         """
@@ -107,7 +107,7 @@ class Evaluator:
         confusion_matrix = self.get_confusion_matrix()
         TP = confusion_matrix[0,0]
         FN = confusion_matrix[1,0]
-        recall = TP / (TP + FN)
+        recall = TP / (TP + FN) if TP + FN > 0 else 0
         return recall
     def f1(self):
         """
@@ -115,7 +115,7 @@ class Evaluator:
         """
         precision = self.precision()
         recall = self.recall()
-        f1 = 2 * (precision * recall) / (precision + recall)
+        f1 = 2 * (precision * recall) / (precision + recall) if precision + recall > 0 else 0
         return f1
     def roc_auc(self):
         """

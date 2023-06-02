@@ -20,6 +20,8 @@ class TopK:
         """
         mean = np.mean(X, axis=0)
         std = np.std(X, axis=0)
+        # Replace zeros in std with 1 to avoid division by zero
+        std[std == 0] = 1
         return (X - mean) / std
 
     def fit(self) -> np.ndarray:

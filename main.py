@@ -527,6 +527,10 @@ def predict():
     INDIR = "EVAL_IMGS"
     OUTDIR = "EVAL_RESULTS"
 
+    # Create output directory if it doesn't exist
+    if not os.path.exists(OUTDIR):
+        os.makedirs(OUTDIR)
+
     Logger.log("Resizing images to 1024x1024")
     resize_images(indir=INDIR, outdir=INDIR)
 
@@ -550,11 +554,22 @@ def predict():
         raise ValueError("Multiple metadata files found")
     
     # Load the metadata
-    cancerous = ["BCC", "SCC", "MEL"]
+    def cancerous(x):
+        cancers = ["BCC", "SCC", "MEL"]
+        # Check if x could be a number
+        try:
+            x = int(x)
+            return x == 1
+        except ValueError:
+            return x in cancers
+        
     metadata = None
     y = None
     if len(csvs) == 1:
         metadata = pd.read_csv(f"{INDIR}/{csvs[0]}")
+        metadata.columns = metadata.columns.str.replace(" ", "")
+        for column in metadata.columns:
+            metadata[column] = metadata[column].str.replace(" ", "")
         # extract img_id and diagnostic into numpy array
         metadata = metadata[["img_id", "diagnostic"]].to_numpy()
     elif len(npys) == 1:
@@ -565,7 +580,7 @@ def predict():
     else:
         Logger.log("No metadata found, won't print statistics!", level=LogTypes.WARNING)
     if metadata is not None:
-        metadata[:, 1] = [1 if i in cancerous else 0 for i in metadata[:, 1]]
+        metadata[:, 1] = [1 if cancerous(i) else 0 for i in metadata[:, 1]]
         # Turn into y
         sort_indices = np.argsort(img_names)
         metadata = metadata[sort_indices, :]
@@ -688,6 +703,7 @@ def main():
         final_eval(float(args.probability_threshold))
     
     if args.figures:
+        Logger.log("This figure code expects there to be a data/segmented folder with specific segmented images in it, so it will most likely not run if you'ra a TA or professor.", LogTypes.WARNING)
         create_figures()
     
     if args.predict:
