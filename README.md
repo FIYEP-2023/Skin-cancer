@@ -2,8 +2,8 @@
 ## Second project: analysis of skin lesions  
   
 # Running the code
-Install requirements with `pip install -r requirements.txt`. The code works with python 3.9.  
-To generate figures, run `python main.py --figures`.  
+Install requirements with `pip install -r requirements.txt`. The code works with python 3.9 (but most likely also in newer versions).  
+To generate figures, run `python main.py --figures`. Note that some of the figures rely on the image data and our segmentation of them, which is not present in the repository.  
 ## Running the code - Single image mode  
 We implement the [classify](https://github.com/vcheplygina/fyp2023/blob/0c12126ef8013e4f95e9cec99ec0007d5a55d974/03_evaluate_classifier.py#LL11C25-L11C25) function in [03_evaluate_classifier.py](./03_evaluate_classifier.py#L19). This function takes an image and a mask, then prints and returns both the predicted class and the probability/confidence.
 ## Running the code - Batch mode  
