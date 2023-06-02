@@ -16,6 +16,7 @@ Then run `python main.py --predict`
 **Optionally** include metadata: a .csv file with columns "img_id" and "diagnostic", a .npy two-dimensional numpy array with columns `["img_id.png", "diagnostic"]` or a .pkl numpy array with the same properties.  
 Put this metadata file into "EVAL_IMGS".  
 Predictions will be saved into a .npy and .csv file in "EVAL_RESULTS", as well as printed to the console and saved in "log.txt".  
+See the example files in EVAL_IMGS for more information.  
 If metadata is included, stats such as recall, f1-score and confusion matrix will also be printed to the console.
 
 # Contributors  
